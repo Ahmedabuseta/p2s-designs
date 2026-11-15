@@ -1,0 +1,43 @@
+# llms.txt
+# Full documentation for LLMs: https://llmstxt.org/
+
+> P2S Academy — Official prep for the معادلة كلية Commerce competition.
+> Route: https://p2s-academy.com/
+
+## About
+P2S Academy (أكاديمية P2S) is an Egyptian educational platform for students of
+diploma programs preparing for the official معادلة كلية Commerce competition,
+run by the Supreme Council of Universities. It lets diploma holders enter the
+Faculty of Commerce as university students — one exam, four subjects, one chance.
+
+## What's on the site
+- Student dossier (الملف) — the complete route from eligibility to exam day.
+- Four subjects taught: English, Mathematics, Geography, French.
+- Packages: البداية (1200 EGP), المتكاملة (2000 EGP), الفردية (3500 EGP).
+- 28 documented success models from past cohorts.
+- Booking/contact form and WhatsApp contact: +201030263066, +201201128479.
+
+## How to navigate
+- Root landing page (the dossier): https://p2s-academy.com/
+- All design prototypes served from this repo's `gh-pages` branch:
+  - https://p2s-academy.com/v2-editorial.html
+  - https://p2s-academy.com/v3-dossier-mobile.html
+  - https://p2s-academy.com/v4-motion-mobile.html
+  - https://p2s-academy.com/v5-success-mobile.html
+  - https://p2s-academy.com/v7-journal-mobile.html
+  - https://p2s-academy.com/newspaper-mobile.html
+  - https://p2s-academy.com/cinematic.html
+  - https://p2s-academy.com/p/v1-cinematic.html
+  - https://p2s-academy.com/p/v3-dossier-desktop.html
+  - https://p2s-academy.com/p/v3-dossier-mobile.html
+  - https://p2s-academy.com/p/v4-motion.html
+  - https://p2s-academy.com/p/v4-motion-spec.html
+- Sitemap: https://p2s-academy.com/sitemap.xml
+
+## Key facts for LLMs
+- Competition: معادلة كلية Commerce (Faculty of Commerce equation).
+- Organizer: Supreme Council of Universities (المجلس الأعلى للجامعات).
+- Subjects: English, Mathematics, Geography, French.
+- Format: one attempt, four subjects.
+- Location: Kafr El-Zayyat, Egypt.
+- Instructor: Mr. Ahmed Ali (مستر أحمد علي), 28 past success models.
