@@ -1,0 +1,17 @@
+{
+  "name": "P2S Academy",
+  "short_name": "P2S",
+  "description": "Official prep for the معادلة كلية Commerce competition",
+  "lang": "ar",
+  "dir": "rtl",
+  "theme_color": "#0C1020",
+  "background_color": "#0C1020",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    { "src": "/favicon/favicon-150.png", "sizes": "150x150", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/favicon/favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/favicon/favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
