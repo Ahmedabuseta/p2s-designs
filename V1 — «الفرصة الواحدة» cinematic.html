@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><style data-doop-fonts>
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/TGLdaTyvOx.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/l1HcTBJNrv.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/4MZwBBBvJk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/_Sp0bFQust.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/SAPcWl-d4Y.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/Cb9I8TF8sP.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+</style><style data-doop-tokens>:root{--color-ground:#0C1020;--color-surface:#161E36;--color-paper:#FFFFFF;--color-mist:#EAEDEF;--color-ink:#0C1020;--color-ink-soft:#5A6379;--color-ink-mute:#8C93A4;--color-line:#DCE1E5;--color-line-night:#2A3453;--color-accent:#FBC701;--color-accent-deep:#E0AF00;--color-brand:#FB0045;--color-brand-deep:#C40035;--color-brand-glow:#FF2656;--font-display:"thmanyah serif display", serif;--font-sans:"thmanyah sans", sans-serif}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2S Academy</title>
+<style>
+*{margin:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--color-ground)}
+body{font-family:var(--font-sans);color:var(--color-paper);-webkit-font-smoothing:antialiased}
+#screen{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:none;position:relative}
+#screen::-webkit-scrollbar{width:0;display:none}
+.nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;background:color-mix(in srgb,var(--color-ground) 86%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-line-night)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--color-paper)}
+.brand img{height:34px;width:auto;display:block}
+.brand b{font-size:14px;font-weight:700;letter-spacing:.02em}
+.brand span{display:block;font-size:9px;color:var(--color-ink-mute);letter-spacing:.08em;margin-top:2px}
+.navcta{background:var(--color-accent);color:var(--color-ink);font-weight:700;font-size:13px;padding:9px 15px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--color-accent)}
+.eyebrow i{width:6px;height:6px;border-radius:2px;background:var(--color-accent);display:block}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:var(--color-mist);background:color-mix(in srgb,var(--color-paper) 7%,transparent);border:1px solid var(--color-line-night);padding:7px 11px;border-radius:999px;white-space:nowrap}
+.hint{display:flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.1em;color:var(--color-ink-mute)}
+.hint i{width:1px;height:26px;background:linear-gradient(var(--color-accent),transparent);display:block;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(-3px);opacity:.4}50%{transform:translateY(3px);opacity:1}}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(50%)}}
+summary{list-style:none;cursor:pointer}summary::-webkit-details-marker{display:none}details[open] .plus{transform:rotate(45deg)}
+.field{width:100%;background:var(--color-surface);border:1px solid var(--color-line-night);border-radius:14px;padding:14px;color:var(--color-paper);font-family:var(--font-sans);font-size:14px}
+.field::placeholder{color:var(--color-ink-mute)}
+.field:focus{outline:2px solid var(--color-accent);outline-offset:1px;border-color:var(--color-accent)}
+.card{background:var(--color-surface);border:1px solid var(--color-line-night);border-radius:18px;padding:16px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.07s}
+.reveal[data-d="2"]{transition-delay:.14s}
+.reveal[data-d="3"]{transition-delay:.21s}
+#rail{position:fixed;top:0;left:0;width:3px;height:100%;background:var(--color-line-night);z-index:80}
+#rail b{display:block;width:100%;height:100%;background:var(--color-accent);transform:scaleY(0);transform-origin:top}
+.sec{padding:52px 20px;position:relative}
+.h2{font-family:var(--font-display);font-weight:900;font-size:31px;line-height:1.3;letter-spacing:-.01em}
+.lead{font-size:14.5px;line-height:1.85;color:var(--color-ink-mute)}
+.num{font-family:var(--font-display);font-weight:900;font-variant-numeric:tabular-nums}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:9px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--color-ground) 92%,transparent);backdrop-filter:blur(16px);border-top:1px solid var(--color-line-night)}
+.bar .ghost{flex:0 0 44%;display:flex;align-items:center;justify-content:center;gap:7px;min-height:50px;border-radius:999px;border:1px solid var(--color-line-night);color:var(--color-paper);font-size:14px;font-weight:700;text-decoration:none;background:color-mix(in srgb,var(--color-paper) 6%,transparent)}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hint i{animation:none}}
+</style><style data-doop-component-css="cy80n9scuz">
+:where([data-doop-instance="cy80n9scuz"]) .cta, .cta:where([data-doop-instance="cy80n9scuz"]) {display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:14px 22px;border-radius:999px;font-family:var(--font-sans);font-weight:700;font-size:16px;line-height:1.2;text-align:center;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+:where([data-doop-instance="cy80n9scuz"]) .cta:active, .cta:where([data-doop-instance="cy80n9scuz"]):active {transform:scale(.975)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="accent"], .cta[data-tone="accent"]:where([data-doop-instance="cy80n9scuz"]) {background:var(--color-accent);color:var(--color-ink);border:1px solid var(--color-accent)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="accent"]:hover, .cta[data-tone="accent"]:where([data-doop-instance="cy80n9scuz"]):hover {background:var(--color-accent-deep);border-color:var(--color-accent-deep)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="ghost"], .cta[data-tone="ghost"]:where([data-doop-instance="cy80n9scuz"]) {background:color-mix(in srgb,var(--color-paper) 6%,transparent);color:var(--color-paper);border:1px solid var(--color-line-night)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="ghost"]:hover, .cta[data-tone="ghost"]:where([data-doop-instance="cy80n9scuz"]):hover {background:color-mix(in srgb,var(--color-paper) 12%,transparent)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="dark"], .cta[data-tone="dark"]:where([data-doop-instance="cy80n9scuz"]) {background:var(--color-ground);color:var(--color-paper);border:1px solid var(--color-ground)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="line"], .cta[data-tone="line"]:where([data-doop-instance="cy80n9scuz"]) {background:transparent;color:var(--color-ink);border:1px solid var(--color-line)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="line"]:hover, .cta[data-tone="line"]:where([data-doop-instance="cy80n9scuz"]):hover {border-color:var(--color-ink)}
+</style>
+</head>
+<body>
+<div id="screen">
+<div id="rail" aria-hidden="true"><b id="railfill"></b></div>
+
+<nav class="nav">
+  <a class="brand" href="#top">
+    <img src="https://doop.design/a/WSd15VzELa.png" alt="P2S — طريقك لكلية التجارة">
+    <span><b>P2S Academy</b><span>طريقك لكلية التجارة</span></span>
+  </a>
+  <a class="navcta" href="#book">احجز مكانك</a>
+</nav>
+
+<section id="top" style="position:relative;min-height:calc(100% - 61px);padding:24px 22px 116px;display:flex;flex-direction:column;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 62% at 88% -8%,color-mix(in srgb,var(--color-brand) 24%,transparent),transparent 62%),radial-gradient(90% 50% at 6% 112%,color-mix(in srgb,var(--color-accent) 14%,transparent),transparent 62%)"></div>
+  <div id="ghost" aria-hidden="true" style="position:absolute;left:-40px;top:26px;font-family:var(--font-display);font-weight:900;font-size:420px;line-height:.78;color:transparent;-webkit-text-stroke:1.5px var(--color-line-night);opacity:.75;pointer-events:none">١</div>
+
+  <div id="heroin" style="position:relative;z-index:2;margin-block:auto">
+    <span class="eyebrow"><i></i>مسابقة رسمية من المجلس الأعلى للجامعات</span>
+    <h1 style="font-family:var(--font-display);font-weight:900;font-size:50px;line-height:1.24;letter-spacing:-.015em;margin-top:16px">
+      من دبلوم تجارة<br>
+      <span style="-webkit-text-stroke:2px var(--color-brand);color:transparent">لكلية التجارة</span><br>
+      بمحاولة واحدة
+    </h1>
+    <p class="lead" style="margin-top:14px;max-width:330px">المعادلة فرصة واحدة بس. إحنا بنجهّزك لها من أول يوم — الأوراق، المذاكرة، والامتحان.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px">
+      <span class="pill">٤ مواد</span>
+      <span class="pill">محاولة واحدة</span>
+      <span class="pill">متابعة لحد الامتحان</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:9px;margin-top:20px">
+      <a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="x5lxa2" data-tone="accent" data-doop-props="{&quot;cta&quot;:&quot;احجز مكانك — الأماكن محدودة&quot;}">احجز مكانك — الأماكن محدودة</a>
+      <a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="psfdpe" data-tone="ghost" data-doop-props="{&quot;cta&quot;:&quot;شوف إنت مؤهل ولا لأ&quot;,&quot;tone&quot;:&quot;ghost&quot;}">شوف إنت مؤهل ولا لأ</a>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;border-top:1px solid var(--color-line-night);padding-top:14px">
+    <div>
+      <div style="font-size:12px;font-weight:700">مع مستر أحمد علي</div>
+      <div style="font-size:10px;color:var(--color-ink-mute);margin-top:3px">من كفر الزيات · لكل محافظات مصر</div>
+    </div>
+    <div class="hint"><i></i>اسحب</div>
+  </div>
+</section>
+
+<div style="position:relative;z-index:5;overflow:hidden;background:var(--color-accent);color:var(--color-ink);border-block:1px solid var(--color-accent-deep)">
+  <div style="display:flex;width:max-content;animation:mq 22s linear infinite;padding:9px 0">
+    <div style="display:flex;gap:16px;align-items:center;white-space:nowrap;font-weight:900;font-size:12.5px;letter-spacing:.04em;padding-inline-end:16px">
+      <span>فرصة واحدة</span><span>◆</span><span>٤ مواد</span><span>◆</span><span>مسابقة رسمية</span><span>◆</span><span>مع مستر أحمد علي</span><span>◆</span><span>من كفر الزيات</span><span>◆</span>
+    </div>
+    <div aria-hidden="true" style="display:flex;gap:16px;align-items:center;white-space:nowrap;font-weight:900;font-size:12.5px;letter-spacing:.04em;padding-inline-end:16px">
+      <span>فرصة واحدة</span><span>◆</span><span>٤ مواد</span><span>◆</span><span>مسابقة رسمية</span><span>◆</span><span>مع مستر أحمد علي</span><span>◆</span><span>من كفر الزيات</span><span>◆</span>
+    </div>
+  </div>
+</div>
+
+<section class="sec" style="background:var(--color-ground);padding-top:44px">
+  <div class="reveal">
+    <span class="eyebrow"><i></i>الحقيقة اللي محدش بيقولها</span>
+    <div class="num" style="font-size:104px;line-height:.95;margin-top:12px;color:var(--color-brand);letter-spacing:-.03em">٩٨٫٪</div>
+    <div style="font-size:12px;color:var(--color-ink-mute);margin-top:4px">ده التنسيق اللي بيقفل باب كلية التجارة</div>
+    <h2 class="h2" style="margin-top:20px">السنة اللي فاتت، <span style="color:var(--color-accent)">ولا طالب</span> دخل كلية تجارة بالتنسيق في كفر الزيات.</h2>
+    <p class="lead" style="margin-top:12px">التنسيق عالي وبيظهر متأخر. اللي بيستنى، بيدفع سنة كاملة من عمره — وسنة مش بترجع.</p>
+  </div>
+  <div class="card reveal" data-d="1" style="margin-top:22px;display:flex;gap:13px;align-items:flex-start;background:color-mix(in srgb,var(--color-brand) 12%,var(--color-surface));border-color:color-mix(in srgb,var(--color-brand) 40%,var(--color-line-night))">
+    <div style="flex:0 0 34px;height:34px;border-radius:10px;background:var(--color-brand);display:flex;align-items:center;justify-content:center">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 8v5"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+    </div>
+    <div>
+      <div style="font-weight:700;font-size:14px">أخطر حاجة مش الامتحان</div>
+      <div style="font-size:12.5px;line-height:1.75;color:var(--color-mist);margin-top:4px">تضيّع سنة من عمرك وأنت مستني التنسيق. المعادلة هي الباب التاني — واللي بيدخلها بدري هو اللي بيكسبها.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-paper);color:var(--color-ink);padding-top:46px">
+  <div class="reveal">
+    <span class="eyebrow" style="color:var(--color-brand-deep)"><i style="background:var(--color-brand-deep)"></i>يعني إيه معادلة؟</span>
+    <h2 class="h2" style="margin-top:12px">مسابقة رسمية بتخليك طالب جامعي — <span style="background:linear-gradient(transparent 58%,var(--color-accent) 58%,var(--color-accent) 94%,transparent 94%)">زي طالب الثانوية العامة بالظبط</span>.</h2>
+    <p class="lead" style="color:var(--color-ink-soft);margin-top:12px">المعادلة بتنظّمها المجلس الأعلى للجامعات، وبتمتحن فيها أربع مواد. لو نجحت، بتدخل كلية التجارة رسمي — مش دبلومة، ومش كورس.</p>
+  </div>
+
+  <div class="reveal" data-d="1" style="margin-top:24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--color-line);padding-bottom:10px">
+    <span style="font-size:12px;font-weight:700;letter-spacing:.04em">المواد الأربعة</span>
+    <span style="font-size:10px;color:var(--color-ink-soft)">مفيش مادة زيادة</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+    <div class="reveal" style="border:1px solid var(--color-line);border-radius:16px;padding:14px;background:var(--color-mist)">
+      <div class="num" style="font-size:11px;color:var(--color-brand-deep)">٠١</div>
+      <div style="font-weight:700;font-size:17px;margin-top:5px">إنجليزي</div>
+    </div>
+    <div class="reveal" data-d="1" style="border:1px solid var(--color-line);border-radius:16px;padding:14px;background:var(--color-mist)">
+      <div class="num" style="font-size:11px;color:var(--color-brand-deep)">٠٢</div>
+      <div style="font-weight:700;font-size:17px;margin-top:5px">رياضيات</div>
+    </div>
+    <div class="reveal" data-d="2" style="border:1px solid var(--color-line);border-radius:16px;padding:14px;background:var(--color-mist)">
+      <div class="num" style="font-size:11px;color:var(--color-brand-deep)">٠٣</div>
+      <div style="font-weight:700;font-size:17px;margin-top:5px">جغرافيا</div>
+    </div>
+    <div class="reveal" data-d="3" style="border:1px solid var(--color-line);border-radius:16px;padding:14px;background:var(--color-mist)">
+      <div class="num" style="font-size:11px;color:var(--color-brand-deep)">٠٤</div>
+      <div style="font-weight:700;font-size:17px;margin-top:5px">فرنساوي</div>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top:16px;display:flex;gap:10px;align-items:center;background:var(--color-ground);border-radius:14px;padding:12px 14px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+    <div style="font-size:12px;line-height:1.7;color:var(--color-mist)">المعادلة مش صعبة — محتاجة مجهود وترتيب، وبداية بدري.</div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-ground)">
+  <span class="eyebrow reveal"><i></i>ليه أصلاً تعمل معادلة؟</span>
+  <h2 class="h2 reveal" style="margin-top:12px">عشان الفرق بين دبلوم وبكالوريوس، مش ورقة — <span style="color:var(--color-brand)">دنيا تانية</span>.</h2>
+  <div style="margin-top:22px;border-top:1px solid var(--color-line-night)">
+    <div class="reveal" style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--color-line-night)">
+      <div class="num" style="font-size:13px;color:var(--color-accent);padding-top:3px">٠١</div>
+      <div><div style="font-weight:700;font-size:16px">شهادة بكالوريوس معتمدة</div><div style="font-size:12.5px;line-height:1.75;color:var(--color-ink-mute);margin-top:4px">بتتخرج من كلية التجارة بشهادة جامعية — مش دبلوم.</div></div>
+    </div>
+    <div class="reveal" data-d="1" style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--color-line-night)">
+      <div class="num" style="font-size:13px;color:var(--color-accent);padding-top:3px">٠٢</div>
+      <div><div style="font-weight:700;font-size:16px">شغل أوسع</div><div style="font-size:12.5px;line-height:1.75;color:var(--color-ink-mute);margin-top:4px">بنوك، شركات، محاسبة، تسويق — أبواب بتتفتح لخريج الجامعة.</div></div>
+    </div>
+    <div class="reveal" data-d="2" style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--color-line-night)">
+      <div class="num" style="font-size:13px;color:var(--color-accent);padding-top:3px">٠٣</div>
+      <div><div style="font-weight:700;font-size:16px">ترقيات ودرجات أعلى</div><div style="font-size:12.5px;line-height:1.75;color:var(--color-ink-mute);margin-top:4px">المؤهل بيفرق في الدرجة والترقية طول الشغل.</div></div>
+    </div>
+    <div class="reveal" data-d="3" style="display:flex;gap:14px;padding:16px 0">
+      <div class="num" style="font-size:13px;color:var(--color-accent);padding-top:3px">٠٤</div>
+      <div><div style="font-weight:700;font-size:16px">ماجستير ودراسات عليا</div><div style="font-size:12.5px;line-height:1.75;color:var(--color-ink-mute);margin-top:4px">البكالوريوس هو أول شرط لأي دراسات عليا بعد كده.</div></div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:6px">
+    <a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="svwl9x" data-tone="accent" data-doop-props="{&quot;cta&quot;:&quot;احجز مكانك قبل ما الفرصة تضيع&quot;}">احجز مكانك قبل ما الفرصة تضيع</a>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-mist);color:var(--color-ink);padding-bottom:44px">
+  <span class="eyebrow reveal" style="color:var(--color-brand-deep)"><i style="background:var(--color-brand-deep)"></i>إزاي تقدّم؟</span>
+  <h2 class="h2 reveal" style="margin-top:12px">٤ خطوات. إحنا ماشيين معاك في كل واحدة.</h2>
+  <div style="position:relative;margin-top:22px;padding-inline-start:30px">
+    <div aria-hidden="true" style="position:absolute;inset-block:10px 26px;inset-inline-start:11px;width:2px;background:linear-gradient(var(--color-brand),var(--color-line))"></div>
+    <div class="reveal" style="position:relative;padding-bottom:20px">
+      <div style="position:absolute;inset-inline-start:-30px;top:0;width:24px;height:24px;border-radius:50%;background:var(--color-ground);color:var(--color-accent);font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center">١</div>
+      <div style="font-weight:700;font-size:15px">اتأكد من مؤهلك</div>
+      <div style="font-size:12px;line-height:1.75;color:var(--color-ink-soft);margin-top:3px">دبلوم تجارة ولا معهد فني؟ إحنا بنقولك تنفع تقدّم ولا لأ قبل ما تدفع أي حاجة.</div>
+    </div>
+    <div class="reveal" data-d="1" style="position:relative;padding-bottom:20px">
+      <div style="position:absolute;inset-inline-start:-30px;top:0;width:24px;height:24px;border-radius:50%;background:var(--color-ground);color:var(--color-accent);font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center">٢</div>
+      <div style="font-weight:700;font-size:15px">جهّز أوراقك</div>
+      <div style="font-size:12px;line-height:1.75;color:var(--color-ink-soft);margin-top:3px">قائمة واضحة بالمطلوب، ومراجعة صورة صورة قبل يوم التقديم.</div>
+    </div>
+    <div class="reveal" data-d="2" style="position:relative;padding-bottom:20px">
+      <div style="position:absolute;inset-inline-start:-30px;top:0;width:24px;height:24px;border-radius:50%;background:var(--color-ground);color:var(--color-accent);font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center">٣</div>
+      <div style="font-weight:700;font-size:15px">سجّل في المواعيد الرسمية</div>
+      <div style="font-size:12px;line-height:1.75;color:var(--color-ink-soft);margin-top:3px">المواعيد بتتغير كل سنة. إحنا بننبّهك قبلها، مش بعدها.</div>
+    </div>
+    <div class="reveal" data-d="3" style="position:relative">
+      <div style="position:absolute;inset-inline-start:-30px;top:0;width:24px;height:24px;border-radius:50%;background:var(--color-brand);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center">٤</div>
+      <div style="font-weight:700;font-size:15px">ذاكر وادخل الامتحان</div>
+      <div style="font-size:12px;line-height:1.75;color:var(--color-ink-soft);margin-top:3px">خطة على الشهور، مراجعات، وامتحانات تدريب على نفس النظام.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-ground);padding-bottom:42px">
+  <span class="eyebrow reveal"><i></i>خدمتنا</span>
+  <h2 class="h2 reveal" style="margin-top:12px">إحنا مش بنبيع مذكرات. إحنا بنمشّي الرحلة كلها.</h2>
+  <div style="display:grid;gap:10px;margin-top:20px">
+    <div class="card reveal" style="display:flex;gap:13px;align-items:flex-start">
+      <div style="flex:0 0 38px;height:38px;border-radius:12px;background:color-mix(in srgb,var(--color-accent) 16%,transparent);display:flex;align-items:center;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      </div>
+      <div><div style="font-weight:700;font-size:14.5px">تأسيس من الصفر</div><div style="font-size:12px;line-height:1.75;color:var(--color-ink-mute);margin-top:3px">شرح المواد الأربعة بالمصري، من أول درس لحد مستوى الامتحان.</div></div>
+    </div>
+    <div class="card reveal" data-d="1" style="display:flex;gap:13px;align-items:flex-start">
+      <div style="flex:0 0 38px;height:38px;border-radius:12px;background:color-mix(in srgb,var(--color-accent) 16%,transparent);display:flex;align-items:center;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+      </div>
+      <div><div style="font-weight:700;font-size:14.5px">مراجعات مركزة</div><div style="font-size:12px;line-height:1.75;color:var(--color-ink-mute);margin-top:3px">بنعيد اللي بيتكرر في الامتحان كل سنة، ونقطّع المنهج لمكعبات صغيرة.</div></div>
+    </div>
+    <div class="card reveal" data-d="2" style="display:flex;gap:13px;align-items:flex-start">
+      <div style="flex:0 0 38px;height:38px;border-radius:12px;background:color-mix(in srgb,var(--color-accent) 16%,transparent);display:flex;align-items:center;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <div><div style="font-weight:700;font-size:14.5px">امتحانات على نظام المعادلة</div><div style="font-size:12px;line-height:1.75;color:var(--color-ink-mute);margin-top:3px">وقت، ورق، وتصحيح — عشان يوم الامتحان يبقى يوم عادي.</div></div>
+    </div>
+    <div class="card reveal" data-d="3" style="display:flex;gap:13px;align-items:flex-start">
+      <div style="flex:0 0 38px;height:38px;border-radius:12px;background:color-mix(in srgb,var(--color-accent) 16%,transparent);display:flex;align-items:center;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 0 1 4 11.5 8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+      </div>
+      <div><div style="font-weight:700;font-size:14.5px">متابعة أسبوعية على واتساب</div><div style="font-size:12px;line-height:1.75;color:var(--color-ink-mute);margin-top:3px">تعرف إنت فين في الخطة، وإيه اللي متأخر — قبل ما يتأخر.</div></div>
+    </div>
+  </div>
+  <div class="reveal" style="margin-top:18px;display:flex;align-items:center;gap:12px;background:linear-gradient(100deg,color-mix(in srgb,var(--color-brand) 22%,var(--color-surface)),var(--color-surface));border:1px solid var(--color-line-night);border-radius:16px;padding:13px 14px">
+    <img src="https://doop.design/a/WSd15VzELa.png" alt="P2S" style="height:30px;width:auto;opacity:.95">
+    <div style="font-size:11.5px;line-height:1.6;color:var(--color-mist)">كل ده <b style="color:var(--color-accent)">مع مستر أحمد علي</b> — صاحب ٢٨ نموذج نجاح في المعادلة.</div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-paper);color:var(--color-ink);padding-top:46px">
+  <span class="eyebrow reveal" style="color:var(--color-brand-deep)"><i style="background:var(--color-brand-deep)"></i>الباقات</span>
+  <h2 class="h2 reveal" style="margin-top:12px">اختار على قد اللي محتاجه. البداية أهم من الباقة.</h2>
+  <div style="display:grid;gap:12px;margin-top:20px">
+
+    <div class="reveal" style="border:1px solid var(--color-line);border-radius:20px;padding:16px;background:var(--color-paper)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <div style="font-weight:700;font-size:15px">البداية</div>
+        <div style="font-size:10px;color:var(--color-ink-soft)">مناسبة لو بتبدأ لوحدك</div>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:6px;margin-top:10px">
+        <div class="num" style="font-size:34px;line-height:1;color:var(--color-ink)">١٢٠٠</div>
+        <div style="font-size:11px;color:var(--color-ink-soft);padding-bottom:4px">ج.م</div>
+      </div>
+      <div style="margin-top:12px;display:grid;gap:6px;font-size:12px;color:var(--color-ink-soft)">
+        <div>✓ محاضرات مسجّلة للمواد الأربعة</div>
+        <div>✓ مذكرات وملخصات</div>
+        <div>✓ امتحانات تدريب بتصحيح</div>
+      </div>
+      <div style="margin-top:14px"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="l08rs1" data-tone="line" data-doop-props="{&quot;cta&quot;:&quot;ابدأ بالباقة دي&quot;,&quot;tone&quot;:&quot;line&quot;}">ابدأ بالباقة دي</a></div>
+    </div>
+
+    <div class="reveal" data-d="1" style="border:1.5px solid var(--color-accent);border-radius:20px;padding:16px;background:var(--color-ground);color:var(--color-paper);position:relative;overflow:hidden">
+      <div style="position:absolute;top:0;inset-inline-end:0;background:var(--color-accent);color:var(--color-ink);font-size:10px;font-weight:900;padding:5px 12px;border-end-start-radius:12px">الأنسب</div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-inline-end:52px">
+        <div style="font-weight:700;font-size:15px">المتكاملة</div>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:6px;margin-top:10px">
+        <div class="num" style="font-size:38px;line-height:1;color:var(--color-accent)">٢٠٠٠</div>
+        <div style="font-size:11px;color:var(--color-ink-mute);padding-bottom:4px">ج.م</div>
+      </div>
+      <div style="margin-top:12px;display:grid;gap:6px;font-size:12px;color:var(--color-mist)">
+        <div>✓ كل اللي في البداية</div>
+        <div>✓ مراجعات مباشرة أونلاين</div>
+        <div>✓ خطة مذاكرة على الشهور</div>
+        <div>✓ متابعة أسبوعية على واتساب</div>
+      </div>
+      <div style="margin-top:14px"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="5vwv0x" data-tone="accent" data-doop-props="{&quot;cta&quot;:&quot;احجز في المتكاملة&quot;}">احجز في المتكاملة</a></div>
+    </div>
+
+    <div class="reveal" data-d="2" style="border:1px solid var(--color-line);border-radius:20px;padding:16px;background:var(--color-mist)">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+        <div style="font-weight:700;font-size:15px">الفردية</div>
+        <div style="font-size:10px;color:var(--color-ink-soft)">متابعة ١:١</div>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:6px;margin-top:10px">
+        <div class="num" style="font-size:34px;line-height:1;color:var(--color-ink)">٣٥٠٠</div>
+        <div style="font-size:11px;color:var(--color-ink-soft);padding-bottom:4px">ج.م</div>
+      </div>
+      <div style="margin-top:12px;display:grid;gap:6px;font-size:12px;color:var(--color-ink-soft)">
+        <div>✓ كل اللي في المتكاملة</div>
+        <div>✓ متابعة فردية وتصحيح شخصي</div>
+        <div>✓ أولوية في الأسئلة</div>
+      </div>
+      <div style="margin-top:14px"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="mbzuh7" data-tone="line" data-doop-props="{&quot;cta&quot;:&quot;اسأل عن الفردية&quot;,&quot;tone&quot;:&quot;line&quot;}">اسأل عن الفردية</a></div>
+    </div>
+  </div>
+  <div class="reveal" style="font-size:10px;line-height:1.7;color:var(--color-ink-soft);margin-top:12px">الأسعار شاملة المحاضرات والمذكرات. رسوم التقديم الرسمية للجامعة مش داخلة. الأسعار والمواعيد النهائية بتتأكد من الأكاديمية.</div>
+</section>
+
+<section class="sec" style="background:var(--color-ground)">
+  <span class="eyebrow reveal"><i></i>نتميز</span>
+  <h2 class="h2 reveal" style="margin-top:12px">ليه P2S بالتحديد؟</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px">
+    <div class="card reveal" style="padding:14px">
+      <div style="font-size:19px;color:var(--color-accent)">◆</div>
+      <div style="font-weight:700;font-size:13.5px;margin-top:8px;line-height:1.5">مع مستر أحمد علي</div>
+      <div style="font-size:11.5px;line-height:1.7;color:var(--color-ink-mute);margin-top:4px">مش فيديوهات مجهولة.</div>
+    </div>
+    <div class="card reveal" data-d="1" style="padding:14px">
+      <div style="font-size:19px;color:var(--color-accent)">◆</div>
+      <div style="font-weight:700;font-size:13.5px;margin-top:8px;line-height:1.5">بنبدأ بدري</div>
+      <div style="font-size:11.5px;line-height:1.7;color:var(--color-ink-mute);margin-top:4px">قبل زحمة آخر السنة.</div>
+    </div>
+    <div class="card reveal" data-d="2" style="padding:14px">
+      <div style="font-size:19px;color:var(--color-accent)">◆</div>
+      <div style="font-weight:700;font-size:13.5px;margin-top:8px;line-height:1.5">٢٨ نموذج نجاح</div>
+      <div style="font-size:11.5px;line-height:1.7;color:var(--color-ink-mute);margin-top:4px">أسماء حقيقية من دفعات مختلفة.</div>
+    </div>
+    <div class="card reveal" data-d="3" style="padding:14px">
+      <div style="font-size:19px;color:var(--color-accent)">◆</div>
+      <div style="font-weight:700;font-size:13.5px;margin-top:8px;line-height:1.5">متابعة للآخر</div>
+      <div style="font-size:11.5px;line-height:1.7;color:var(--color-ink-mute);margin-top:4px">من أول ورقة لحد النتيجة.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-mist);color:var(--color-ink)">
+  <span class="eyebrow reveal" style="color:var(--color-brand-deep)"><i style="background:var(--color-brand-deep)"></i>الأخطاء اللي بتتكرر كل سنة</span>
+  <h2 class="h2 reveal" style="margin-top:12px">الغلط واحد، وبيتكرر مع كل دفعة.</h2>
+
+  <div class="reveal" style="margin-top:18px;background:var(--color-ground);color:var(--color-paper);border-radius:20px;padding:18px;position:relative;overflow:hidden">
+    <div aria-hidden="true" style="position:absolute;inset-inline-end:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:color-mix(in srgb,var(--color-brand) 28%,transparent);filter:blur(18px)"></div>
+    <div style="font-size:10px;letter-spacing:.14em;color:var(--color-brand-glow);font-weight:700">الخطأ رقم ١ — والأهم</div>
+    <div style="font-family:var(--font-display);font-weight:900;font-size:26px;line-height:1.3;margin-top:8px">البداية المتأخرة</div>
+    <div style="font-size:12.5px;line-height:1.8;color:var(--color-mist);margin-top:8px">المنهج كبير ومحتاج وقت. اللي بيبدأ متأخر بيلاقي نفسه بيجري ورا حاجات كتير في وقت صغير — وده أكبر سبب إن طلاب كتير بترسب، مش صعوبة المعادلة.</div>
+    <div style="margin-top:12px;display:inline-flex;align-items:center;gap:7px;background:color-mix(in srgb,var(--color-accent) 18%,transparent);border:1px solid color-mix(in srgb,var(--color-accent) 45%,transparent);color:var(--color-accent);padding:6px 11px;border-radius:999px;font-size:11px;font-weight:700">البداية بدري = نص النجاح</div>
+  </div>
+
+  <div style="margin-top:14px;border-top:1px solid var(--color-line)">
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">بيقدّم في آخر يوم<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary>
+      <div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">أي مشكلة في ورقة أو صورة بتقفل الباب. قدّم بدري وسيب مساحة للتصحيح.</div>
+    </details>
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">ورقة ناقصة يوم التقديم<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary>
+      <div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">شيك ليست واحدة، ومراجعة قبل الخروج من البيت — مش بعد ما توصل.</div>
+    </details>
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">مذاكرة من جروبات ومصادر قديمة<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary>
+      <div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">النظام بيتغير. المصدر لازم يكون متخصص ومحدّث، مش رأي حد على فيسبوك.</div>
+    </details>
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0">
+      <summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">إهمال المواد "الساهلة"<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary>
+      <div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">المجموع بيتجمع من الأربعة. مادة واحدة سايبة بتسحب النتيجة كلها لتحت.</div>
+    </details>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-ground)">
+  <span class="eyebrow reveal"><i></i>نماذج نجاح</span>
+  <h2 class="h2 reveal" style="margin-top:12px">دول كانوا زيكم بالظبط.</h2>
+  <p class="lead reveal" data-d="1" style="margin-top:10px">نفس الشهادة، نفس الحيرة، ونفس السؤال: "أنا أعمل إيه دلوقتي؟" — الفرق إنهم استغلوا الفرصة صح.</p>
+
+  <div class="reveal" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:18px">
+    <span class="pill" style="font-size:11px">فارس ع.</span><span class="pill" style="font-size:11px">حنين ر.</span><span class="pill" style="font-size:11px">رنا أ.</span><span class="pill" style="font-size:11px">إسلام م.</span><span class="pill" style="font-size:11px">ساره م.</span><span class="pill" style="font-size:11px">نهى و.</span><span class="pill" style="font-size:11px">معاذ ع.</span><span class="pill" style="font-size:11px">هدى ي.</span><span class="pill" style="font-size:11px">منه ن.</span><span class="pill" style="font-size:11px">أسماء ج.</span><span class="pill" style="font-size:11px">فاطمة م.</span><span class="pill" style="font-size:11px">ملك ف.</span><span class="pill" style="font-size:11px">محمود م.</span><span class="pill" style="font-size:11px">إبراهيم م.</span><span class="pill" style="font-size:11px">يارا م.</span><span class="pill" style="font-size:11px">محمد ص.</span><span class="pill" style="font-size:11px">أمل ص.</span><span class="pill" style="font-size:11px;border-color:var(--color-accent);color:var(--color-accent)">+ ١١ كمان</span>
+  </div>
+
+  <div class="reveal" data-d="2" style="margin-top:20px;border-inline-start:3px solid var(--color-accent);padding-inline-start:14px">
+    <div style="font-family:var(--font-display);font-weight:900;font-size:21px;line-height:1.45">«دول كانوا زيكم، الفرق إنهم استغلوا الفرصة صح.»</div>
+    <div style="font-size:11px;color:var(--color-ink-mute);margin-top:8px">من ملف الأكاديمية — دفعات مختلفة</div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--color-paper);color:var(--color-ink);padding-bottom:34px">
+  <span class="eyebrow reveal" style="color:var(--color-brand-deep)"><i style="background:var(--color-brand-deep)"></i>أسئلة بتتكرر</span>
+  <h2 class="h2 reveal" style="margin-top:12px">اسأل براحتك — الإجابة مجانية.</h2>
+  <div style="margin-top:16px;border-top:1px solid var(--color-line)">
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0"><summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">المعادلة بتاخد قد إيه؟<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary><div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">التجهيز بيبدأ من بدري ويمشي على شهور، مش أسابيع. إحنا بنحددلك خطة على قد وقتك.</div></details>
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0"><summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">أنا دبلوم ٣ سنين — ينفع؟<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary><div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">قولنا نوع شهادتك وسنة تخرجك، وهنقولك تنفع تقدّم ولا لأ قبل أي حاجة.</div></details>
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0"><summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">أونلاين ولا سنتر؟<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary><div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">فيه الاتنين — حسب محافظتك والباقة اللي تختارها.</div></details>
+    <details class="reveal" style="border-bottom:1px solid var(--color-line);padding:13px 0"><summary style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:700;font-size:13.5px">بكام؟<span class="plus" style="color:var(--color-brand-deep);font-size:18px;transition:transform .2s">+</span></summary><div style="font-size:12px;line-height:1.8;color:var(--color-ink-soft);margin-top:7px">الباقات فوق من ١٢٠٠ ج.م. لو مش عارف تختار، كلّمنا وقولنا وضعك وهنرشّحلك.</div></details>
+  </div>
+</section>
+
+<section id="book" class="sec" style="background:var(--color-ground);padding-top:44px;padding-bottom:110px">
+  <div class="reveal">
+    <span class="eyebrow"><i></i>الخطوة الجاية</span>
+    <h2 style="font-family:var(--font-display);font-weight:900;font-size:36px;line-height:1.25;margin-top:12px">النجاح اختيارك، <span style="color:var(--color-accent)">مش صدفة</span>.</h2>
+    <p class="lead" style="margin-top:10px">سيب رقمك وهنكلّمك نسألك عن شهادتك، ونقولك تنفع تقدّم ولا لأ — من غير أي التزام.</p>
+  </div>
+  <form class="reveal" data-d="1" style="display:grid;gap:9px;margin-top:18px" onsubmit="return false">
+    <input class="field" placeholder="الاسم" aria-label="الاسم">
+    <input class="field" placeholder="رقم الموبايل / واتساب" inputmode="tel" aria-label="رقم الموبايل">
+    <input class="field" placeholder="نوع الدبلوم / سنة التخرج" aria-label="نوع الدبلوم">
+    <button type="button" style="margin-top:4px;min-height:54px;border:0;border-radius:999px;background:var(--color-accent);color:var(--color-ink);font-family:var(--font-sans);font-weight:900;font-size:16px">ابعت وهنكلّمك</button>
+  </form>
+  <div class="reveal" data-d="2" style="display:flex;align-items:center;gap:10px;margin-top:12px;font-size:10.5px;color:var(--color-ink-mute);line-height:1.6">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-mist)" stroke-width="2" stroke-linecap="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg>
+    رقمك مش بيتنشر ولا بيتبعت لحد.
+  </div>
+</section>
+
+<footer style="background:var(--color-ground);padding:0 20px 96px;border-top:1px solid var(--color-line-night)">
+  <div style="display:flex;align-items:center;gap:12px;padding-top:22px">
+    <img src="https://doop.design/a/WSd15VzELa.png" alt="P2S — طريقك لكلية التجارة" style="height:64px;width:auto">
+    <div style="font-size:11px;line-height:1.7;color:var(--color-ink-mute)">أكاديمية P2S<br>طريقك لكلية التجارة</div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:16px;font-size:11.5px">
+    <a href="#top" style="color:var(--color-mist);text-decoration:none">الرئيسية</a>
+    <a href="#book" style="color:var(--color-mist);text-decoration:none">الباقات</a>
+    <a href="#book" style="color:var(--color-mist);text-decoration:none">الأوراق</a>
+    <a href="#book" style="color:var(--color-mist);text-decoration:none">أسئلة شائعة</a>
+    <a href="#book" style="color:var(--color-mist);text-decoration:none">تواصل</a>
+  </div>
+  <div style="font-size:10px;line-height:1.7;color:var(--color-ink-mute);margin-top:14px">© ٢٠٢٦ P2S Academy · الأسعار والمواعيد بتتأكد من الأكاديمية · الشروط والخصوصية</div>
+</footer>
+</div>
+
+<div class="bar">
+  <a class="ghost" href="#book">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 0 1 4 11.5 8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+    واتساب
+  </a>
+  <div style="flex:1"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="lyt5d7" data-tone="accent">احجز مكانك</a></div>
+</div>
+
+<script>
+(function(){
+  var s=document.getElementById('screen'),fill=document.getElementById('railfill'),ghost=document.getElementById('ghost'),hin=document.getElementById('heroin');
+  function onScroll(){
+    var max=s.scrollHeight-s.clientHeight;
+    var p=max>0?s.scrollTop/max:0;
+    fill.style.transform='scaleY('+p.toFixed(3)+')';
+    var h=Math.min(1,s.scrollTop/540);
+    ghost.style.transform='translateY('+(h*46).toFixed(1)+'px) scale('+(1+h*0.3).toFixed(3)+')';
+    ghost.style.opacity=(0.75-h*0.62).toFixed(2);
+    hin.style.transform='translateY('+(-h*24).toFixed(1)+'px)';
+    hin.style.opacity=(1-h*0.5).toFixed(2);
+  }
+  s.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{root:s,threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    Array.prototype.forEach.call(document.querySelectorAll('.reveal'),function(el){io.observe(el)});
+  } else {
+    Array.prototype.forEach.call(document.querySelectorAll('.reveal'),function(el){el.classList.add('in')});
+  }
+})();
+</script>
+</body></html>

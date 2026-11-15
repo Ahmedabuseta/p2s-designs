@@ -1,0 +1,433 @@
+<style data-doop-component-css="cy80n9scuz">
+:where([data-doop-instance="cy80n9scuz"]) .cta, .cta:where([data-doop-instance="cy80n9scuz"]) {display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:14px 22px;border-radius:999px;font-family:var(--font-sans);font-weight:700;font-size:16px;line-height:1.2;text-align:center;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+:where([data-doop-instance="cy80n9scuz"]) .cta:active, .cta:where([data-doop-instance="cy80n9scuz"]):active {transform:scale(.975)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="accent"], .cta[data-tone="accent"]:where([data-doop-instance="cy80n9scuz"]) {background:var(--color-accent);color:var(--color-ink);border:1px solid var(--color-accent)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="accent"]:hover, .cta[data-tone="accent"]:where([data-doop-instance="cy80n9scuz"]):hover {background:var(--color-accent-deep);border-color:var(--color-accent-deep)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="ghost"], .cta[data-tone="ghost"]:where([data-doop-instance="cy80n9scuz"]) {background:color-mix(in srgb,var(--color-paper) 6%,transparent);color:var(--color-paper);border:1px solid var(--color-line-night)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="ghost"]:hover, .cta[data-tone="ghost"]:where([data-doop-instance="cy80n9scuz"]):hover {background:color-mix(in srgb,var(--color-paper) 12%,transparent)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="dark"], .cta[data-tone="dark"]:where([data-doop-instance="cy80n9scuz"]) {background:var(--color-ground);color:var(--color-paper);border:1px solid var(--color-ground)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="line"], .cta[data-tone="line"]:where([data-doop-instance="cy80n9scuz"]) {background:transparent;color:var(--color-ink);border:1px solid var(--color-line)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="line"]:hover, .cta[data-tone="line"]:where([data-doop-instance="cy80n9scuz"]):hover {border-color:var(--color-ink)}
+</style>
+<link rel="stylesheet" data-doop-webfonts href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;display=swap"><style data-doop-fonts>
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/TGLdaTyvOx.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/l1HcTBJNrv.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/4MZwBBBvJk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/_Sp0bFQust.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/SAPcWl-d4Y.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/Cb9I8TF8sP.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+</style><style data-doop-tokens>:root{--color-ground:#0C1020;--color-paper:#FFFFFF;--color-mist:#EAEDEF;--color-ink:#0C1020;--color-ink-mute:#8C93A4;--color-line:#DCE1E5;--color-line-night:#2A3453;--color-accent:#FBC701;--color-accent-deep:#E0AF00;--color-brand:#FB0045;--color-brand-deep:#C40035;--color-stage:#06080F;--color-stage-2:#0E1424;--radius-sm:10px;--radius-md:18px;--font-display:"thmanyah serif display", serif;--font-sans:"thmanyah sans", sans-serif;--tracking-hud:0.22em}</style><style>
+*{margin:0;box-sizing:border-box}
+html,body{height:100%;direction:rtl}
+html{--e-out:cubic-bezier(.16,.84,.24,1);--e-soft:cubic-bezier(.4,0,.2,1)}
+body{background:var(--color-stage);color:var(--color-mist);font-family:var(--font-sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+#screen{position:relative;height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;overscroll-behavior:contain}
+#screen::-webkit-scrollbar{width:0;display:none}
+.disp{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;line-height:1.2;letter-spacing:-.015em}
+.h2{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:29px;line-height:1.38;letter-spacing:-.01em}
+.lead{font-size:14px;line-height:1.9;color:color-mix(in srgb,var(--color-mist) 76%,transparent)}
+.hud{font-family:"Geist Mono",ui-monospace,monospace;font-size:9px;letter-spacing:var(--tracking-hud,.22em);color:var(--color-ink-mute)}
+.scene{position:relative;padding:36px 20px 40px 34px;border-top:1px solid color-mix(in srgb,var(--color-line-night) 65%,transparent)}
+.scene-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.tag{font-family:"Geist Mono",ui-monospace,monospace;font-size:9.5px;letter-spacing:var(--tracking-hud,.22em);color:var(--color-accent)}
+.tc{font-family:"Geist Mono",ui-monospace,monospace;font-size:9px;letter-spacing:.1em;color:color-mix(in srgb,var(--color-ink-mute) 85%,transparent);font-variant-numeric:tabular-nums}
+.beam{position:absolute;left:-30px;right:-30px;top:-60px;height:430px;pointer-events:none;background:radial-gradient(58% 52% at 72% 22%,color-mix(in srgb,var(--color-brand) 46%,transparent),transparent 72%);filter:blur(20px);opacity:.5;animation:breathe 9s var(--e-soft) infinite}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s var(--e-out),transform .7s var(--e-out);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.line{display:block;overflow:hidden;padding-bottom:.08em}
+.line>i{display:block;font-style:normal;transform:translateY(112%);transition:transform .95s var(--e-out);transition-delay:var(--d,0s)}
+.lines.in .line>i{transform:none}
+.hud-nav{position:sticky;top:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px;background:color-mix(in srgb,var(--color-stage) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 60%,transparent)}
+.mq{display:flex;overflow:hidden;user-select:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.mq-track{display:flex;flex:0 0 auto;align-items:center;gap:8px;padding-inline-end:8px;animation:slide 26s linear infinite}
+.mq-track.rev{animation:slide-rev 32s linear infinite}
+.mq-item{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-size:11.5px;color:color-mix(in srgb,var(--color-mist) 82%,transparent)}
+.mq-item b{width:4px;height:4px;border-radius:50%;background:var(--color-brand);display:block}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:color-mix(in srgb,var(--color-line-night) 55%,transparent);border-block:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)}
+.stat>div{background:var(--color-stage);padding:11px 6px 12px}
+.stat b{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:25px;display:block;line-height:1.1}
+.stat span{font-size:9px;color:var(--color-ink-mute);display:block;margin-top:3px}
+.sig{display:flex;align-items:flex-end;gap:2px;height:13px}
+.sig i{width:2.5px;background:var(--color-brand);border-radius:1px;transform-origin:bottom;display:block;animation:eq 1.15s var(--e-soft) infinite}
+.sig i:nth-child(2){animation-delay:.12s}.sig i:nth-child(3){animation-delay:.24s}.sig i:nth-child(4){animation-delay:.36s}.sig i:nth-child(5){animation-delay:.48s}
+.rail{position:fixed;left:0;top:0;bottom:0;width:2px;z-index:55;background:color-mix(in srgb,var(--color-line-night) 45%,transparent)}
+.rail-fill{position:absolute;inset:0;transform-origin:top;transform:scaleY(0);background:linear-gradient(var(--color-accent),var(--color-brand))}
+.cue{display:inline-flex;align-items:center;gap:8px;font-family:"Geist Mono",ui-monospace,monospace;font-size:9px;letter-spacing:var(--tracking-hud,.22em);color:var(--color-ink-mute)}
+.cue i{width:1px;height:20px;background:var(--color-accent);display:block;animation:bob 1.9s var(--e-soft) infinite}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:9px;align-items:center;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--color-stage) 88%,transparent);backdrop-filter:blur(16px);border-top:1px solid color-mix(in srgb,var(--color-line-night) 60%,transparent)}
+.bar .wa{flex:0 0 44%;display:flex;align-items:center;justify-content:center;gap:7px;min-height:50px;border-radius:999px;border:1px solid var(--color-line-night);color:var(--color-paper);font-size:13.5px;font-weight:700;text-decoration:none}
+.track-draw{stroke-dasharray:1;stroke-dashoffset:1}
+.pkg{position:relative;background:var(--color-stage-2);border:1px solid color-mix(in srgb,var(--color-line-night) 80%,transparent);border-radius:var(--radius-md,18px);padding:15px;transition:transform .35s var(--e-out),border-color .35s,background .35s}
+.pkg:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--color-accent) 55%,transparent)}
+.pkg.feat::after{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.4px;background:linear-gradient(115deg,var(--color-accent),color-mix(in srgb,var(--color-brand) 62%,var(--color-accent)),var(--color-accent));background-size:250% 100%;animation:pan 5.5s linear infinite;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;list-style:none;padding:13px 0;font-weight:700;font-size:13.5px}
+.faq summary::-webkit-details-marker{display:none}
+.faq .plus{transition:transform .35s var(--e-out);color:var(--color-accent);flex:0 0 auto}
+.faq details[open] .plus{transform:rotate(45deg)}
+.faq .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--e-out)}
+.faq details[open] .body{grid-template-rows:1fr}
+.faq .body>div{overflow:hidden;min-height:0}
+.faq .body p{font-size:12px;line-height:1.85;color:color-mix(in srgb,var(--color-mist) 70%,transparent);padding-bottom:12px}
+.field{width:100%;background:color-mix(in srgb,var(--color-paper) 6%,transparent);border:1px solid var(--color-line-night);border-radius:var(--radius-sm,10px);padding:13px;color:var(--color-paper);font-family:var(--font-sans);font-size:14px;transition:border-color .25s,box-shadow .25s}
+.field::placeholder{color:color-mix(in srgb,var(--color-ink-mute) 92%,transparent)}
+.field:focus{outline:none;border-color:var(--color-accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-accent) 24%,transparent)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@keyframes slide-rev{from{transform:translateX(50%)}to{transform:translateX(0)}}
+@keyframes breathe{0%,100%{opacity:.42;transform:translate3d(0,0,0) scale(1)}50%{opacity:.66;transform:translate3d(-7px,12px,0) scale(1.07)}}
+@keyframes bob{0%,100%{transform:translateY(-2px);opacity:.4}50%{transform:translateY(3px);opacity:1}}
+@keyframes eq{0%,100%{transform:scaleY(.32)}50%{transform:scaleY(1)}}
+@keyframes pan{from{background-position:0% 50%}to{background-position:250% 50%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.line>i{transform:none;transition:none}.mq-track,.beam,.sig i,.cue i,.pkg.feat::after{animation:none}.pkg.feat::after{background:var(--color-accent)}}
+</style>
+<div id="screen" dir="rtl" lang="ar">
+<div id="page">
+<div class="rail" aria-hidden="true"><div class="rail-fill" id="railFill"></div></div>
+
+<nav class="hud-nav">
+  <div style="display:flex;align-items:center;gap:8px">
+    <span style="display:inline-flex;align-items:center;justify-content:center;background:var(--color-paper);border-radius:7px;padding:4px 6px"><img src="https://doop.design/a/WSd15VzELa.png" alt="P2S" style="height:19px;width:auto;display:block"></span>
+    <span class="hud" style="color:var(--color-mist)">P2S · MOTION CUT</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <span class="tc" id="tc">00:00:00:00</span>
+    <span class="tc" id="scNum" style="color:var(--color-accent);letter-spacing:.16em">SC ٠١</span>
+  </div>
+</nav>
+
+<section id="top" style="position:relative;overflow:hidden;padding:20px 20px 26px 34px">
+  <div class="beam"></div>
+  <div style="position:relative;z-index:2">
+    <div class="hud rv" style="display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 60%,transparent);padding-bottom:9px">
+      <span>دفعة ٢٠٢٧ · كفر الزيات</span>
+      <span style="color:var(--color-accent)">CUT ٠١ — MASK UP</span>
+    </div>
+
+    <div style="margin-top:22px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+      <h1 class="disp lines" style="font-size:40px;flex:1">
+        <span class="line"><i>محاولة واحدة.</i></span>
+        <span class="line" style="--d:.09s"><i>أربع مواد.</i></span>
+        <span class="line" style="--d:.18s"><i style="color:var(--color-accent)">وسنة مستنياك.</i></span>
+      </h1>
+      <span class="rv" style="--d:.34s;position:relative;flex:0 0 auto;margin-top:6px;width:62px;height:62px;display:grid;place-items:center">
+        <svg width="62" height="62" viewBox="0 0 62 62" style="position:absolute;inset:0" aria-hidden="true"><circle cx="31" cy="31" r="30" fill="none" stroke="var(--color-brand)" stroke-width="1.4" stroke-dasharray="6 5" style="transform-origin:31px 31px;animation:spin 14s linear infinite"/></svg>
+        <span class="disp" style="font-size:11px;color:var(--color-brand);text-align:center;line-height:1.35">محاولة<br>واحدة</span>
+      </span>
+    </div>
+
+    <p class="lead rv" style="--d:.26s;margin-top:16px;max-width:290px">معادلة كلية التجارة مسابقة رسمية من المجلس الأعلى للجامعات. بنمشّي معاك المشهد من أول ورقة لحد النتيجة — بميعاد، وخطوة بخطوة.</p>
+
+    <div class="mq rv" style="--d:.32s;margin-top:18px">
+      <div class="mq-track">
+        <span class="mq-item"><b></b>إنجليزي</span><span class="mq-item"><b></b>رياضيات</span><span class="mq-item"><b></b>جغرافيا</span><span class="mq-item"><b></b>فرنساوي</span><span class="mq-item"><b></b>مراجعات مركزة</span><span class="mq-item"><b></b>امتحانات بتصحيح</span>
+        <span class="mq-item"><b></b>إنجليزي</span><span class="mq-item"><b></b>رياضيات</span><span class="mq-item"><b></b>جغرافيا</span><span class="mq-item"><b></b>فرنساوي</span><span class="mq-item"><b></b>مراجعات مركزة</span><span class="mq-item"><b></b>امتحانات بتصحيح</span>
+      </div>
+    </div>
+
+    <div class="rv" style="--d:.38s;display:grid;gap:8px;margin-top:20px">
+      <div class="stat" style="border:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)">
+        <div><b>٤</b><span>مواد</span></div>
+        <div><b>١</b><span>محاولة</span></div>
+        <div><b data-count="28">٢٨</b><span>نموذج نجاح</span></div>
+      </div>
+    </div>
+
+    <div style="display:grid;gap:8px;margin-top:16px">
+      <a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="ppobgo" data-tone="accent" data-doop-props="{&quot;cta&quot;:&quot;احجز مكانك — الأماكن محدودة&quot;}">احجز مكانك — الأماكن محدودة</a>
+      <a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="cez0xm" data-tone="ghost" data-doop-props="{&quot;cta&quot;:&quot;شوف إنت مؤهل ولا لأ&quot;,&quot;tone&quot;:&quot;ghost&quot;}">شوف إنت مؤهل ولا لأ</a>
+    </div>
+
+    <div class="rv" style="--d:.44s;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:18px">
+      <span class="cue"><i></i>SCROLL · المشهد الأول تحت</span>
+      <span class="sig" aria-hidden="true"><i style="height:6px"></i><i style="height:11px"></i><i style="height:8px"></i><i style="height:13px"></i><i style="height:5px"></i></span>
+    </div>
+  </div>
+</section><section class="scene" id="s1">
+  <div class="scene-head rv"><span class="tag">SC ٠٢ — الحقيقة</span><span class="tc">00:04:12</span></div>
+  <div class="rv" style="display:flex;align-items:flex-end;gap:12px">
+    <div class="disp" style="font-size:72px;line-height:.95;color:var(--color-brand);letter-spacing:-.03em"><span id="c98" data-count="98">٩٨</span><span style="font-size:40px">٪</span></div>
+    <div style="font-size:9.5px;line-height:1.65;color:var(--color-ink-mute);padding-bottom:9px">التنسيق اللي<br>بيقفل الباب</div>
+  </div>
+  <p class="lead rv" style="--d:.08s;margin-top:14px">السنة اللي فاتت، <b style="color:var(--color-paper)">ولا طالب</b> دخل كلية تجارة بالتنسيق في كفر الزيات. اللي بيستنى، بيدفع سنة كاملة من عمره.</p>
+  <div class="rv" style="--d:.14s;margin-top:16px;border-inline-start:2px solid var(--color-accent);padding-inline-start:12px;font-size:12px;line-height:1.8;color:color-mix(in srgb,var(--color-mist) 72%,transparent)">أخطر حاجة مش الامتحان — الوقت اللي بيضيع وأنت مستني.</div>
+</section>
+
+<section class="scene" id="s2" style="background:var(--color-stage-2)">
+  <div class="scene-head rv"><span class="tag">SC ٠٣ — المعادلة</span><span class="tc">00:11:40</span></div>
+  <h2 class="h2 rv" style="max-width:300px">مسابقة رسمية بتخليك طالب جامعي <span style="background:linear-gradient(transparent 62%,color-mix(in srgb,var(--color-accent) 85%,transparent) 62%)">زي طالب الثانوية</span> بالظبط.</h2>
+  <p class="lead rv" style="--d:.07s;margin-top:10px">بتمتحن في أربع مواد. لو نجحت، بتدخل كلية التجارة رسمي.</p>
+
+  <div class="rv" style="--d:.12s;margin-top:18px;border-top:1px solid color-mix(in srgb,var(--color-line-night) 80%,transparent)">
+    <div style="display:flex;align-items:center;gap:11px;padding:13px 0;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)">
+      <span class="disp" style="font-size:11px;color:var(--color-accent);width:22px">٠١</span>
+      <span style="font-weight:700;font-size:14.5px;flex:1">إنجليزي</span>
+      <span class="sig" aria-hidden="true"><i style="height:7px"></i><i style="height:12px"></i><i style="height:9px"></i><i style="height:13px"></i><i style="height:6px"></i></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:11px;padding:13px 0;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)">
+      <span class="disp" style="font-size:11px;color:var(--color-accent);width:22px">٠٢</span>
+      <span style="font-weight:700;font-size:14.5px;flex:1">رياضيات</span>
+      <span class="sig" aria-hidden="true"><i style="height:12px"></i><i style="height:7px"></i><i style="height:13px"></i><i style="height:9px"></i><i style="height:6px"></i></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:11px;padding:13px 0;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)">
+      <span class="disp" style="font-size:11px;color:var(--color-accent);width:22px">٠٣</span>
+      <span style="font-weight:700;font-size:14.5px;flex:1">جغرافيا</span>
+      <span class="sig" aria-hidden="true"><i style="height:8px"></i><i style="height:13px"></i><i style="height:6px"></i><i style="height:11px"></i><i style="height:9px"></i></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:11px;padding:13px 0">
+      <span class="disp" style="font-size:11px;color:var(--color-accent);width:22px">٠٤</span>
+      <span style="font-weight:700;font-size:14.5px;flex:1">فرنساوي</span>
+      <span class="sig" aria-hidden="true"><i style="height:11px"></i><i style="height:6px"></i><i style="height:9px"></i><i style="height:12px"></i><i style="height:7px"></i></span>
+    </div>
+  </div>
+  <div class="rv" style="--d:.18s;margin-top:12px;font-size:11px;color:var(--color-ink-mute)">المعادلة مش صعبة — محتاجة مجهود وترتيب وبداية بدري.</div>
+</section><section class="scene" id="s3">
+  <div class="scene-head rv"><span class="tag">SC ٠٤ — ليه؟</span><span class="tc">00:19:05</span></div>
+  <h2 class="h2 rv" style="max-width:290px">الفرق بين دبلوم وبكالوريوس مش ورقة.</h2>
+  <div class="rv" style="--d:.1s;margin-top:16px;border-top:1px solid color-mix(in srgb,var(--color-line-night) 80%,transparent)">
+    <div style="display:flex;gap:11px;padding:13px 0;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+      <div><div style="font-weight:700;font-size:14px">شهادة بكالوريوس معتمدة</div><div style="font-size:11.5px;line-height:1.8;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">بتتخرج من كلية التجارة بشهادة جامعية.</div></div>
+    </div>
+    <div style="display:flex;gap:11px;padding:13px 0;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px" aria-hidden="true"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+      <div><div style="font-weight:700;font-size:14px">شغل أوسع</div><div style="font-size:11.5px;line-height:1.8;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">بنوك، شركات، محاسبة، تسويق.</div></div>
+    </div>
+    <div style="display:flex;gap:11px;padding:13px 0;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px" aria-hidden="true"><path d="M3 20V9"/><path d="M10 20V4"/><path d="M17 20v-7"/><path d="M2 20h20"/></svg>
+      <div><div style="font-weight:700;font-size:14px">ترقيات ودرجات أعلى</div><div style="font-size:11.5px;line-height:1.8;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">المؤهل بيفرق طول الشغل.</div></div>
+    </div>
+    <div style="display:flex;gap:11px;padding:13px 0">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px" aria-hidden="true"><path d="M2 8l10-5 10 5-10 5L2 8z"/><path d="M6 11v6c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-6"/></svg>
+      <div><div style="font-weight:700;font-size:14px">ماجستير ودراسات عليا</div><div style="font-size:11.5px;line-height:1.8;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">أول شرط لأي دراسات بعد كده.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="scene" id="s4" style="background:var(--color-stage-2)">
+  <div class="scene-head rv"><span class="tag">SC ٠٥ — الطريق</span><span class="tc">00:26:31</span></div>
+  <h2 class="h2 rv" style="max-width:300px">٤ خطوات، وإحنا ماشيين معاك في كل واحدة.</h2>
+
+  <div class="steps rv" style="--d:.1s;position:relative;margin-top:20px;padding-inline-start:32px">
+    <svg style="position:absolute;inset-inline-start:6px;top:4px;width:12px;height:calc(100% - 8px)" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M6 0 V100" fill="none" stroke="color-mix(in srgb,var(--color-line-night) 90%,transparent)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+      <path id="routePath" class="track-draw" pathLength="1" d="M6 0 V100" fill="none" stroke="var(--color-accent)" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <div style="position:relative;padding-bottom:18px">
+      <span style="position:absolute;inset-inline-start:-30px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--color-accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--color-accent) 16%,transparent)"></span>
+      <div class="disp" style="font-size:11px;color:var(--color-accent)">١ — ابدأ</div>
+      <div style="font-weight:700;font-size:14px;margin-top:3px">اتأكد من مؤهلك</div>
+      <div style="font-size:11.5px;line-height:1.75;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">نقولك تنفع تقدّم ولا لأ قبل أي دفع.</div>
+    </div>
+    <div style="position:relative;padding-bottom:18px">
+      <span style="position:absolute;inset-inline-start:-30px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--color-stage);border:2px solid color-mix(in srgb,var(--color-accent) 60%,transparent)"></span>
+      <div class="disp" style="font-size:11px;color:var(--color-ink-mute)">٢ — جهّز</div>
+      <div style="font-weight:700;font-size:14px;margin-top:3px">جهّز أوراقك</div>
+      <div style="font-size:11.5px;line-height:1.75;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">قائمة واضحة ومراجعة قبل التقديم.</div>
+    </div>
+    <div style="position:relative;padding-bottom:18px">
+      <span style="position:absolute;inset-inline-start:-30px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--color-stage);border:2px solid color-mix(in srgb,var(--color-accent) 40%,transparent)"></span>
+      <div class="disp" style="font-size:11px;color:var(--color-ink-mute)">٣ — سجّل</div>
+      <div style="font-weight:700;font-size:14px;margin-top:3px">سجّل في المواعيد</div>
+      <div style="font-size:11.5px;line-height:1.75;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">بننبّهك قبل الموعد، مش بعده.</div>
+    </div>
+    <div style="position:relative">
+      <span style="position:absolute;inset-inline-start:-30px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--color-stage);border:2px solid color-mix(in srgb,var(--color-accent) 25%,transparent)"></span>
+      <div class="disp" style="font-size:11px;color:var(--color-ink-mute)">٤ — نفّذ</div>
+      <div style="font-weight:700;font-size:14px;margin-top:3px">ذاكر وامتحن</div>
+      <div style="font-size:11.5px;line-height:1.75;color:color-mix(in srgb,var(--color-mist) 68%,transparent);margin-top:3px">خطة، مراجعات، وامتحانات تدريب.</div>
+    </div>
+  </div>
+</section><section class="scene" id="s5">
+  <div class="scene-head rv"><span class="tag">SC ٠٦ — الباقات</span><span class="tc">00:34:08</span></div>
+  <h2 class="h2 rv" style="max-width:280px">اختار على قد اللي محتاجه.</h2>
+
+  <div class="rv" style="--d:.08s;margin-top:16px" >
+    <div class="pkg">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+        <span style="font-weight:700;font-size:14px">البداية</span>
+        <span class="disp" style="font-size:22px">١٢٠٠ <span style="font-size:9.5px;font-family:var(--font-sans);color:var(--color-ink-mute)">ج.م</span></span>
+      </div>
+      <div style="font-size:11px;color:var(--color-ink-mute);margin-top:5px;line-height:1.7">محاضرات مسجّلة · مذكرات · امتحانات بتصحيح</div>
+      <div style="margin-top:11px"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="6dyv75" data-tone="ghost" data-doop-props="{&quot;cta&quot;:&quot;ابدأ بالباقة دي&quot;,&quot;tone&quot;:&quot;ghost&quot;}">ابدأ بالباقة دي</a></div>
+    </div>
+  </div>
+
+  <div class="rv" style="--d:.14s;margin-top:12px">
+    <div class="pkg feat">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+        <span style="font-weight:700;font-size:14px">المتكاملة <span style="font-size:8.5px;background:var(--color-accent);color:var(--color-ink);padding:3px 6px;border-radius:3px;margin-inline-start:4px;font-weight:700">الأنسب</span></span>
+        <span class="disp" style="font-size:26px;color:var(--color-accent)">٢٠٠٠ <span style="font-size:9.5px;font-family:var(--font-sans);color:var(--color-ink-mute)">ج.م</span></span>
+      </div>
+      <div style="font-size:11px;color:color-mix(in srgb,var(--color-mist) 80%,transparent);margin-top:5px;line-height:1.7">كل اللي في البداية · مراجعات مباشرة · خطة على الشهور · متابعة أسبوعية</div>
+      <div style="margin-top:11px"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="rzr80o" data-tone="accent" data-doop-props="{&quot;cta&quot;:&quot;احجز في المتكاملة&quot;}">احجز في المتكاملة</a></div>
+    </div>
+  </div>
+
+  <div class="rv" style="--d:.2s;margin-top:12px">
+    <div class="pkg">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+        <span style="font-weight:700;font-size:14px">الفردية</span>
+        <span class="disp" style="font-size:22px">٣٥٠٠ <span style="font-size:9.5px;font-family:var(--font-sans);color:var(--color-ink-mute)">ج.م</span></span>
+      </div>
+      <div style="font-size:11px;color:var(--color-ink-mute);margin-top:5px;line-height:1.7">متابعة ١:١ · تصحيح شخصي · أولوية أسئلة</div>
+      <div style="margin-top:11px"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="0bpgij" data-tone="ghost" data-doop-props="{&quot;cta&quot;:&quot;اسأل عن الفردية&quot;,&quot;tone&quot;:&quot;ghost&quot;}">اسأل عن الفردية</a></div>
+    </div>
+  </div>
+
+  <div class="rv" style="--d:.24s;margin-top:12px;font-size:9.5px;color:var(--color-ink-mute);line-height:1.75">الأسعار شاملة المحاضرات والمذكرات · رسوم التقديم الرسمية للجامعة مش داخلة.</div>
+</section><section class="scene" id="s6" style="background:var(--color-stage-2)">
+  <div class="scene-head rv"><span class="tag">SC ٠٧ — النماذج</span><span class="tc">00:41:55</span></div>
+  <h2 class="h2 rv" style="max-width:280px">دول كانوا زيكم بالظبط.</h2>
+
+  <div class="rv" style="--d:.1s;margin-top:16px;border-block:1px solid color-mix(in srgb,var(--color-line-night) 60%,transparent);padding:11px 0;display:grid;gap:8px">
+    <div class="mq">
+      <div class="mq-track">
+        <span class="mq-item">فارس ع.</span><span class="mq-item">حنين ر.</span><span class="mq-item">رنا أ.</span><span class="mq-item">إسلام م.</span><span class="mq-item">ساره م.</span><span class="mq-item">نهى و.</span><span class="mq-item">معاذ ع.</span><span class="mq-item">هدى ي.</span>
+        <span class="mq-item">فارس ع.</span><span class="mq-item">حنين ر.</span><span class="mq-item">رنا أ.</span><span class="mq-item">إسلام م.</span><span class="mq-item">ساره م.</span><span class="mq-item">نهى و.</span><span class="mq-item">معاذ ع.</span><span class="mq-item">هدى ي.</span>
+      </div>
+    </div>
+    <div class="mq">
+      <div class="mq-track rev">
+        <span class="mq-item">منه ن.</span><span class="mq-item">أسماء ج.</span><span class="mq-item">فاطمة م.</span><span class="mq-item">ملك ف.</span><span class="mq-item">محمود م.</span><span class="mq-item">إبراهيم م.</span><span class="mq-item">يارا م.</span><span class="mq-item">محمد ص.</span>
+        <span class="mq-item">منه ن.</span><span class="mq-item">أسماء ج.</span><span class="mq-item">فاطمة م.</span><span class="mq-item">ملك ف.</span><span class="mq-item">محمود م.</span><span class="mq-item">إبراهيم م.</span><span class="mq-item">يارا م.</span><span class="mq-item">محمد ص.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rv" style="--d:.16s;margin-top:14px;border-inline-start:2px solid var(--color-accent);padding-inline-start:12px;font-size:12.5px;line-height:1.85">«دول كانوا زيكم، الفرق إنهم استغلوا الفرصة صح.»</div>
+</section>
+
+<section class="scene" id="s7">
+  <div class="scene-head rv"><span class="tag">SC ٠٨ — أسئلة</span><span class="tc">00:48:20</span></div>
+  <h2 class="h2 rv" style="max-width:280px">أسئلة بتتكرر مع كل دفعة.</h2>
+
+  <div class="faq rv" style="--d:.1s;margin-top:14px;border-top:1px solid color-mix(in srgb,var(--color-line-night) 80%,transparent)">
+    <details>
+      <summary>المعادلة بتاخد قد إيه؟<span class="plus">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </span></summary>
+      <div class="body"><div><p>التجهيز من بدري وعلى شهور. إحنا بنحدد الخطة على قد وقتك.</p></div></div>
+    </details>
+    <details>
+      <summary>دبلوم ٣ سنين ينفع؟<span class="plus">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </span></summary>
+      <div class="body"><div><p>قولنا شهادتك وسنة تخرجك، وهنقولك قبل أي حاجة.</p></div></div>
+    </details>
+    <details>
+      <summary>بكام وأونلاين ولا سنتر؟<span class="plus">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </span></summary>
+      <div class="body"><div><p>الباقات فوق من ١٢٠٠ ج.م، وفيه أونلاين وسنتر حسب محافظتك.</p></div></div>
+    </details>
+    <details>
+      <summary>وأنا عندي شغل ووقتي ضيق؟<span class="plus">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </span></summary>
+      <div class="body"><div><p>كل حاجة مسجّلة ومقسّمة على أسابيع، فبتلحق اللي فاتك في أي وقت.</p></div></div>
+    </details>
+  </div>
+</section><section class="scene lead-in" id="s8" style="background:var(--color-accent);border-top:0;padding-bottom:34px">
+  <div class="scene-head rv"><span class="tag" style="color:var(--color-brand-deep)">SC ٠٩ — الخطوة الجاية</span><span class="tc" style="color:color-mix(in srgb,var(--color-ink) 55%,transparent)">00:52:00</span></div>
+  <h2 class="disp rv" style="font-size:33px;line-height:1.26;color:var(--color-ink);max-width:290px">النجاح اختيارك، مش صدفة.</h2>
+  <p class="rv" style="--d:.07s;margin-top:9px;font-size:12.5px;line-height:1.85;max-width:300px;color:color-mix(in srgb,var(--color-ink) 76%,transparent)">سيب رقمك، وهنكلّمك نسألك عن شهادتك ونقولك تنفع تقدّم ولا لأ — من غير أي التزام.</p>
+  <form class="rv" style="--d:.12s;display:grid;gap:8px;margin-top:14px" onsubmit="return false">
+    <input class="field" placeholder="الاسم" aria-label="الاسم">
+    <input class="field" placeholder="رقم الموبايل / واتساب" inputmode="tel" aria-label="رقم الموبايل">
+    <input class="field" placeholder="نوع الدبلوم / سنة التخرج" aria-label="نوع الدبلوم">
+    <button type="button" style="min-height:52px;border:0;border-radius:999px;background:var(--color-ground);color:var(--color-paper);font-family:var(--font-sans);font-weight:900;font-size:15px;transition:transform .18s var(--e-out)">ابعت وهنكلّمك</button>
+  </form>
+  <div class="rv" style="--d:.16s;margin-top:11px;font-size:9.5px;line-height:1.75;color:color-mix(in srgb,var(--color-ink) 62%,transparent)">أو ابعتلنا على واتساب الأكاديمية، وهنرد عليك في نفس اليوم.</div>
+</section>
+
+<footer style="background:var(--color-stage);padding:20px 20px 92px">
+  <div style="display:flex;align-items:center;gap:10px">
+    <span style="display:inline-flex;align-items:center;justify-content:center;background:var(--color-paper);border-radius:8px;padding:5px 7px"><img src="https://doop.design/a/WSd15VzELa.png" alt="P2S" style="height:26px;width:auto;display:block"></span>
+    <div style="font-size:10px;line-height:1.7;color:var(--color-ink-mute)">أكاديمية P2S<br>طريقك لكلية التجارة</div>
+  </div>
+  <div class="hud" style="margin-top:14px;font-size:8px;line-height:1.9">© ٢٠٢٦ P2S ACADEMY · MOTION CUT V4 · الأسعار والمواعيد بتتأكد من الأكاديمية</div>
+</footer>
+</div>
+</div>
+
+<div class="bar">
+  <a class="wa" href="#s8">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 0 1 4 11.5 8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5z"/></svg>
+    واتساب
+  </a>
+  <div style="flex:1"><a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="kvrzs4" data-tone="accent">احجز مكانك</a></div>
+</div>
+
+<style>
+.lead-in .field{background:color-mix(in srgb,var(--color-ground) 94%,transparent);border-color:color-mix(in srgb,var(--color-ground) 55%,transparent);color:var(--color-paper)}
+.lead-in .field::placeholder{color:color-mix(in srgb,var(--color-paper) 58%,transparent)}
+.lead-in .field:focus{border-color:var(--color-ground);box-shadow:0 0 0 3px color-mix(in srgb,var(--color-ground) 20%,transparent)}
+.lead-in button:active{transform:scale(.975)}
+</style>
+
+<script>
+(function(){
+  var s=document.getElementById('screen');
+  var tcEl=document.getElementById('tc'), rail=document.getElementById('railFill'), scEl=document.getElementById('scNum');
+  var route=document.getElementById('routePath'), steps=document.getElementById('s4');
+  var counter=document.getElementById('c98');
+  var scenes=[].slice.call(document.querySelectorAll('#top, .scene'));
+  var D='٠١٢٣٤٥٦٧٨٩';
+  function ar(v){return String(v).replace(/[0-9]/g,function(d){return D[+d]})}
+  function pad(n){return (n<10?'0':'')+n}
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{root:s,threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+    [].forEach.call(document.querySelectorAll('.rv, .lines'),function(el){io.observe(el)});
+  } else {
+    [].forEach.call(document.querySelectorAll('.rv, .lines'),function(el){el.classList.add('in')});
+  }
+
+  if(counter){
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        cio.unobserve(counter);
+        var target=+counter.getAttribute('data-count'), t0=null;
+        function step(ts){
+          if(t0===null) t0=ts;
+          var p=Math.min(1,(ts-t0)/1100), e=1-Math.pow(1-p,3);
+          counter.textContent=ar(Math.round(target*e));
+          if(p<1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    },{root:s,threshold:0.4});
+    cio.observe(counter);
+  }
+
+  var queued=false;
+  function frame(){
+    queued=false;
+    var max=s.scrollHeight-s.clientHeight, p=max>0?s.scrollTop/max:0;
+    var total=52, t=p*total, sec=Math.floor(t), fr=Math.floor((t-sec)*24);
+    if(tcEl) tcEl.textContent='00:'+pad(Math.floor(sec/60))+':'+pad(sec%60)+':'+pad(fr);
+    if(rail) rail.style.transform='scaleY('+p.toFixed(4)+')';
+
+    var idx=0;
+    for(var i=0;i<scenes.length;i++){
+      if(scenes[i].getBoundingClientRect().top - s.getBoundingClientRect().top <= 150) idx=i;
+    }
+    if(scEl) scEl.textContent='SC '+ar(idx+1);
+
+    if(route && steps){
+      var r=steps.getBoundingClientRect(), sr=s.getBoundingClientRect();
+      var prog=(sr.top + sr.height*0.72 - r.top)/(r.height*0.85);
+      prog=Math.max(0,Math.min(1,prog));
+      route.style.strokeDashoffset=(1-prog).toFixed(4);
+    }
+  }
+  function onScroll(){ if(!queued){ queued=true; requestAnimationFrame(frame); } }
+  s.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  frame();
+})();
+</script>
+</body></html>

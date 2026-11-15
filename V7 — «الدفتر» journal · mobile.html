@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><link rel="stylesheet" data-doop-webfonts href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;display=swap"><style data-doop-fonts>
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/TGLdaTyvOx.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/l1HcTBJNrv.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/4MZwBBBvJk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/_Sp0bFQust.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/SAPcWl-d4Y.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/Cb9I8TF8sP.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+</style><style data-doop-tokens>:root{--color-ink:#0C1020;--color-brand-deep:#C40035;--color-cream:#FFFFFF;--font-display:"thmanyah serif display", serif;--font-sans:"thmanyah sans", sans-serif}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2S Academy — الدفتر</title>
+<style>
+*{margin:0;box-sizing:border-box}
+html,body{height:100%}
+html{--e-out:cubic-bezier(.16,.84,.24,1);--e-soft:cubic-bezier(.4,0,.2,1)}
+body{background:var(--color-cream);color:var(--color-ink);font-family:var(--font-sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+#screen{height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+#screen::-webkit-scrollbar{width:0;display:none}
+.disp{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;line-height:1.32}
+.date{font-family:"Geist Mono",ui-monospace,monospace;font-size:8.5px;letter-spacing:.16em;color:#6B6353}
+.page{padding:0 18px 30px 46px;position:relative;background-image:repeating-linear-gradient(to bottom,transparent 0 31px,rgba(12,16,32,.055) 31px 32px)}
+.margin{position:fixed;inset-inline-start:26px;top:0;bottom:0;width:1px;background:rgba(196,0,53,.22);z-index:40}
+.margin i{display:block;width:100%;height:100%;background:var(--color-brand-deep);transform:scaleY(0);transform-origin:top}
+.holes{position:fixed;inset-inline-end:9px;top:150px;width:12px;height:460px;z-index:30;background-image:radial-gradient(circle at 50% 50%,rgba(12,16,32,.16) 0 3.6px,transparent 4.2px);background-size:12px 92px;background-repeat:repeat-y;pointer-events:none}
+.masthead{padding:24px 0 14px;border-bottom:3px double rgba(12,16,32,.4)}
+.masthead .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.masthead h1{font-size:31px;letter-spacing:-.01em}
+.masthead .sub{margin-top:6px;font-size:10.5px;letter-spacing:.04em;color:#6B6353}
+.entry{position:relative;padding:20px 0 18px;border-bottom:1px solid rgba(12,16,32,.16)}
+.entry .date{display:flex;align-items:center;gap:8px}
+.entry .date i{display:block;width:14px;height:1px;background:var(--color-brand-deep);flex:0 0 auto}
+.entry h2{font-size:24px;margin-top:9px}
+.entry p{margin-top:8px;font-size:12.5px;line-height:1.95;max-width:34ch;color:#2A2E3A}
+.draw{height:2px;background:var(--color-brand-deep);transform:scaleX(var(--q,0));transform-origin:right;margin-top:14px;max-width:96px}
+.photo{position:relative;background:#FFFDF6;padding:7px 7px 30px;box-shadow:0 16px 28px -20px rgba(12,16,32,.75),0 1px 0 rgba(12,16,32,.08);transform:rotate(var(--rot,-2deg)) scale(calc(.94 + var(--q,0) * .06)) translateY(calc((1 - var(--q,0)) * 18px))}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;filter:sepia(.2) saturate(.9) contrast(1.04)}
+.photo .cap{position:absolute;bottom:8px;inset-inline:9px;font-family:var(--font-display,"thmanyah serif display",serif);font-size:10px;color:#4A4436}
+.tape{position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-4deg);width:76px;height:20px;background:rgba(226,214,180,.7);border-left:1px dashed rgba(12,16,32,.14);border-right:1px dashed rgba(12,16,32,.14);box-shadow:0 1px 2px rgba(12,16,32,.08)}
+.card{position:relative;background:#FFFDF6;border:1px solid rgba(12,16,32,.2);padding:14px;margin-top:18px;box-shadow:0 14px 26px -22px rgba(12,16,32,.8);transform:rotate(.7deg)}
+.card .ttl{font-size:15px;font-weight:700;padding-bottom:8px;border-bottom:1px solid rgba(12,16,32,.18)}
+.card .item{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px dashed rgba(12,16,32,.2);font-size:12px}
+.card .item:last-child{border-bottom:0}
+.card .box{width:12px;height:12px;border:1.5px solid var(--color-ink);flex:0 0 auto;position:relative}
+.card .item.done .box::after{content:"";position:absolute;inset:-1px;background:linear-gradient(transparent 42%,var(--color-brand-deep) 42% 55%,transparent 55%)}
+.stamp{position:absolute;inset-inline-end:10px;bottom:12px;width:92px;height:92px;border:2.5px solid var(--color-brand-deep);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--color-brand-deep);font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:11.5px;line-height:1.35;transform:rotate(-13deg) scale(calc(1.42 - var(--q,0) * .42))}
+.stamp span{display:block;font-family:"Geist Mono",ui-monospace,monospace;font-size:6.5px;letter-spacing:.18em;font-weight:400;margin-top:2px}
+.clips{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.sign{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:23px;color:var(--color-brand-deep);transform:rotate(-4deg);margin-top:16px}
+.close{font-size:12.5px;line-height:1.95;color:#2A2E3A;max-width:34ch;margin-top:8px}
+footer{margin-top:22px;padding-top:12px;border-top:1px solid rgba(12,16,32,.2);display:flex;align-items:center;justify-content:space-between;gap:10px}
+footer .pg{font-family:"Geist Mono",ui-monospace,monospace;font-size:8.5px;letter-spacing:.16em;color:#6B6353}
+.vign{position:fixed;inset:0;pointer-events:none;z-index:50;box-shadow:inset 0 0 84px rgba(120,100,60,.16),inset 0 0 0 1px rgba(12,16,32,.05)}
+</style></head>
+<body>
+<div id="screen">
+<div id="page">
+  <div class="margin" aria-hidden="true"><i id="marginFill"></i></div>
+  <div class="holes" aria-hidden="true"></div>
+  <div class="vign" aria-hidden="true"></div>
+
+  <div class="page">
+
+    <header class="masthead">
+      <div class="top">
+        <h1 class="disp">دفتر الدفعة</h1>
+        <span class="date">٢٠٢٦ / ٢٠٢٧</span>
+      </div>
+      <div class="sub">أكاديمية P2S · كفر الزيات — أربع مواد، ومحاولة واحدة.</div>
+    </header>
+
+    <article class="entry">
+      <div class="date" data-fx><i></i>السبت ٥ أكتوبر</div>
+      <h2 class="disp" data-fx>أول يوم</h2>
+      <p data-fx>٢٨ طالب في القاعة، وأغلبهم بيسأل نفس السؤال: الدبلوم هينفع ولا لأ؟ بدأنا من أول ورقة في المنهج، وقعدنا على مكتب واحد لحد ما الرسمة تبان.</p>
+      <div class="draw" data-fx></div>
+
+      <figure class="photo" data-fx style="--rot:-2.2deg;margin-top:18px;width:78%">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="https://doop.design/photos/pexels/36608621.jpeg?h=650&w=940" alt="طالب يمسك كراسة في أول يوم" style="height:210px">
+        <figcaption class="cap">أول يوم — تسكين الأوراق</figcaption>
+      </figure>
+    </article>
+
+    <div class="card" data-fx>
+      <div class="ttl">اللي محتاجه يوم الامتحان</div>
+      <div class="item done"><span class="box"></span>صورة الشهادة</div>
+      <div class="item done"><span class="box"></span>رقم الجلوس مطبوع</div>
+      <div class="item"><span class="box"></span>المذكرات الأربعة</div>
+      <div class="item"><span class="box"></span>قلم، ووقت كفاية</div>
+    </div>
+
+    <article class="entry" style="margin-top:22px">
+      <div class="date" data-fx><i></i>الخميس ٣٠ أكتوبر</div>
+      <h2 class="disp" data-fx>النتيجة</h2>
+      <p data-fx>أول دفعة تخلص. ٢٨ طالب، ٢٨ نتيجة، وأغلبهم دخلوا كلية التجارة. الورقة اللي كانت في الأول مستحيلة، بقت شهادة بكالوريوس.</p>
+      <div class="draw" data-fx></div>
+
+      <div style="position:relative;margin-top:18px">
+        <figure class="photo" data-fx style="--rot:1.6deg;width:84%">
+          <span class="tape" aria-hidden="true"></span>
+          <img src="https://doop.design/photos/pexels/38611358.jpeg?h=650&w=940" alt="تخرج طالب من الدفعة" style="height:236px">
+          <figcaption class="cap">دفعة ٢٠٢٦ — يوم النتيجة</figcaption>
+        </figure>
+        <div class="stamp" data-fx>مقبول<span>P2S · 2026</span></div>
+      </div>
+    </article>
+
+    <div class="clips">
+      <figure class="photo" data-fx style="--rot:-3deg">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="https://doop.design/photos/pexels/18699972.jpeg?h=650&w=940" alt="طالب في قاعة المراجعة" style="height:130px">
+        <figcaption class="cap">قاعة المراجعة</figcaption>
+      </figure>
+      <figure class="photo" data-fx style="--rot:2.4deg;margin-top:14px">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="https://doop.design/photos/pexels/14180701.jpeg?h=650&w=940" alt="سبورة المراجعة النهائية" style="height:130px">
+        <figcaption class="cap">المراجعة الأخيرة</figcaption>
+      </figure>
+    </div>
+
+    <p class="close" data-fx>الدفتر بيتقفل لما الأماكن تكمّل. لو عايز تكتب أول سطر، قولنا.</p>
+    <div class="sign" data-fx>أحمد علي</div>
+
+    <footer>
+      <span class="pg">صفحة ٧ / ٢٤</span>
+      <span class="pg">P2S · ٢٠٢٦</span>
+    </footer>
+
+  </div>
+</div>
+</div>
+
+<script>
+(function(){
+  var screen=document.getElementById('screen');
+  var fx=[].slice.call(document.querySelectorAll('[data-fx]'));
+  var marginFill=document.getElementById('marginFill');
+  var queued=false;
+
+  function frame(){
+    var sr=screen.getBoundingClientRect(), H=sr.height;
+    for(var i=0;i<fx.length;i++){
+      var el=fx[i], r=el.getBoundingClientRect();
+      var p=(sr.bottom-r.top)/(H+r.height);
+      p=p<0?0:p>1?1:p;
+      var q=(p-0.12)/0.34; q=q<0?0:q>1?1:q;
+      el.style.setProperty('--q', q.toFixed(4));
+    }
+    var max=screen.scrollHeight-screen.clientHeight;
+    var sp=max>0?screen.scrollTop/max:0;
+    if(marginFill) marginFill.style.transform='scaleY('+sp.toFixed(4)+')';
+  }
+
+  screen.addEventListener('scroll', function(){
+    if(!queued){ queued=true; requestAnimationFrame(function(){ queued=false; frame(); }); }
+  }, {passive:true});
+  window.addEventListener('resize', frame);
+  frame();
+})();
+</script>
+</body></html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><link rel="stylesheet" data-doop-webfonts href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;display=swap"><style data-doop-fonts>
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/TGLdaTyvOx.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/l1HcTBJNrv.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/4MZwBBBvJk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/_Sp0bFQust.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/SAPcWl-d4Y.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/Cb9I8TF8sP.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+</style><style data-doop-tokens>:root{--color-paper:#FFFFFF;--color-mist:#EAEDEF;--color-ink-mute:#8C93A4;--color-line-night:#2A3453;--color-accent:#FBC701;--color-brand:#FB0045;--color-stage:#06080F;--font-display:"thmanyah serif display", serif;--font-sans:"thmanyah sans", sans-serif;--tracking-hud:0.22em}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2S — Motion system V4</title>
+<style>
+*{margin:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--color-stage);color:var(--color-mist);font-family:var(--font-sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+.hud{font-family:"Geist Mono",ui-monospace,monospace;font-size:8.5px;letter-spacing:var(--tracking-hud);color:var(--color-ink-mute)}
+.disp{font-family:var(--font-display);font-weight:900;line-height:1.2;letter-spacing:-.015em}
+.mono{font-family:"Geist Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.wrap{height:100%;display:flex;flex-direction:column;padding:16px 20px 16px 26px;gap:0}
+.head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 70%,transparent);padding-bottom:10px}
+.sect{padding:9px 0;border-bottom:1px solid color-mix(in srgb,var(--color-line-night) 55%,transparent)}
+.sect-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:7px}
+.sect-t{font-family:"Geist Mono",ui-monospace,monospace;font-size:9px;letter-spacing:var(--tracking-hud);color:var(--color-accent)}
+.curve{display:flex;align-items:center;gap:10px;padding:3px 0}
+.curve .nm{flex:1}
+.curve .nm b{display:block;font-size:12px}
+.curve .nm span{display:block;font-size:9.5px;color:var(--color-ink-mute);margin-top:1px}
+.dur{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:10px;color:var(--color-ink-mute)}
+.dur .track{flex:1;height:3px;background:color-mix(in srgb,var(--color-line-night) 70%,transparent);border-radius:2px;overflow:hidden}
+.dur .fill{height:100%;background:var(--color-accent);border-radius:2px;transform-origin:right;animation:grow 1.1s var(--e-out) both}
+.dur .fill.b{background:var(--color-brand)}
+.row{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed color-mix(in srgb,var(--color-line-night) 45%,transparent);font-size:10.5px}
+.row:last-child{border-bottom:0}
+.row .sc{font-family:"Geist Mono",ui-monospace,monospace;font-size:8.5px;color:var(--color-accent);width:34px;flex:0 0 auto}
+.row .nm{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .mv{font-size:9px;color:var(--color-ink-mute);white-space:nowrap}
+.rule{display:flex;gap:8px;padding:4px 0;font-size:10.5px;line-height:1.6;color:color-mix(in srgb,var(--color-mist) 80%,transparent)}
+.rule i{flex:0 0 auto;width:4px;height:4px;border-radius:50%;background:var(--color-brand);margin-top:6px}
+.foot{margin-top:auto;padding-top:10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.dur .fill{animation:none}}
+</style></head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span style="display:inline-flex;align-items:center;justify-content:center;background:var(--color-paper);border-radius:6px;padding:4px 5px"><img src="https://doop.design/a/WSd15VzELa.png" alt="P2S" style="height:17px;width:auto;display:block"></span>
+      <span class="hud" style="color:var(--color-mist)">MOTION SYSTEM · V4</span>
+    </div>
+    <span class="hud mono">390×844 · 60FPS</span>
+  </div>
+
+  <div style="padding:14px 0 6px">
+    <h1 class="disp" style="font-size:27px">قواعد الحركة</h1>
+    <p style="font-size:11px;line-height:1.75;color:var(--color-ink-mute);margin-top:5px;max-width:290px">تسع مشاهد، ٣ منحنيات، ومدد محسوبة. مفيش حاجة بتتحرك من غير سبب.</p>
+  </div>
+
+  <div class="sect">
+    <div class="sect-h"><span class="sect-t">٠١ — المنحنيات</span><span class="hud mono">EASING</span></div>
+
+    <div class="curve">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x=".5" y=".5" width="39" height="39" rx="6" fill="none" stroke="var(--color-line-night)"/><path d="M6 34 C 10 10, 22 6, 34 6" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="nm"><b>out-expo</b><span>دخول المشاهد · ٩٥٠–٧٠٠ms</span></div>
+      <span class="hud mono">C .16 .84 .24 1</span>
+    </div>
+
+    <div class="curve">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x=".5" y=".5" width="39" height="39" rx="6" fill="none" stroke="var(--color-line-night)"/><path d="M6 34 C 16 34, 20 10, 34 10" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="nm"><b>soft</b><span>الحالة والـ hover · ٣٥٠–٢٥٠ms</span></div>
+      <span class="hud mono">C .4 0 .2 1</span>
+    </div>
+
+    <div class="curve">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x=".5" y=".5" width="39" height="39" rx="6" fill="none" stroke="var(--color-line-night)"/><path d="M6 34 C 14 34, 18 4, 26 8 S 32 20, 34 21" fill="none" stroke="var(--color-mist)" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="nm"><b>spring</b><span>الضغط والقصاص · ٣٥٠ms</span></div>
+      <span class="hud mono">C .22 1.14 .32 1</span>
+    </div>
+  </div>
+
+  <div class="sect">
+    <div class="sect-h"><span class="sect-t">٠٢ — المدة</span><span class="hud mono">DURATION</span></div>
+    <div class="dur"><span class="mono" style="width:42px">150ms</span><span class="track"><span class="fill" style="display:block;width:16%"></span></span><span style="width:60px">لون وحدود</span></div>
+    <div class="dur"><span class="mono" style="width:42px">350ms</span><span class="track"><span class="fill" style="display:block;width:37%"></span></span><span style="width:60px">حالة وضغط</span></div>
+    <div class="dur"><span class="mono" style="width:42px">700ms</span><span class="track"><span class="fill b" style="display:block;width:74%"></span></span><span style="width:60px">صعود مشهد</span></div>
+    <div class="dur"><span class="mono" style="width:42px">1100ms</span><span class="track"><span class="fill b" style="display:block;width:100%"></span></span><span style="width:60px">عدّاد</span></div>
+  </div>
+
+  <div class="sect">
+    <div class="sect-h"><span class="sect-t">٠٣ — المشاهد</span><span class="hud mono">SCENES</span></div>
+    <div class="row"><span class="sc">SC ٠١</span><span class="nm">الهوك</span><span class="mv mono">00:00 · mask up</span></div>
+    <div class="row"><span class="sc">SC ٠٢</span><span class="nm">الحقيقة</span><span class="mv mono">00:04 · counter</span></div>
+    <div class="row"><span class="sc">SC ٠٣</span><span class="nm">المعادلة</span><span class="mv mono">00:11 · stagger</span></div>
+    <div class="row"><span class="sc">SC ٠٤</span><span class="nm">ليه؟</span><span class="mv mono">00:19 · rise</span></div>
+    <div class="row"><span class="sc">SC ٠٥</span><span class="nm">الطريق</span><span class="mv mono">00:26 · scroll draw</span></div>
+    <div class="row"><span class="sc">SC ٠٦</span><span class="nm">الباقات</span><span class="mv mono">00:34 · glow pan</span></div>
+    <div class="row"><span class="sc">SC ٠٧</span><span class="nm">النماذج</span><span class="mv mono">00:41 · marquee</span></div>
+    <div class="row"><span class="sc">SC ٠٨</span><span class="nm">أسئلة</span><span class="mv mono">00:48 · grid rows</span></div>
+    <div class="row"><span class="sc">SC ٠٩</span><span class="nm">الخطوة الجاية</span><span class="mv mono">00:52 · rise</span></div>
+  </div>
+
+  <div class="sect" style="border-bottom:0">
+    <div class="sect-h"><span class="sect-t">٠٤ — قواعد</span><span class="hud mono">RULES</span></div>
+    <div class="rule"><i></i><span>كل مشهد ليه حركة <b style="color:var(--color-paper)">واحدة بطل</b>، والباقي مساعد.</span></div>
+    <div class="rule"><i></i><span>الدخول من تحت ٢٠px بس — من الجنب بيكسر إيقاع القراءة العربي.</span></div>
+    <div class="rule"><i></i><span>المسافة بتحدد المدة: ٢٠px = ٧٠٠ms، الحالة واللون = ٢٥٠–٣٥٠ms.</span></div>
+    <div class="rule"><i></i><span> الحركة بتتوقف بالكامل مع <span class="mono" style="color:var(--color-accent)">prefers-reduced-motion</span>.</span></div>
+  </div>
+
+  <div class="foot">
+    <span class="hud">P2S ACADEMY · MOTION CUT V4</span>
+    <span class="hud mono" style="color:var(--color-accent)">٩ مشاهد · ٣ منحنيات</span>
+  </div>
+</div>
+</body></html>

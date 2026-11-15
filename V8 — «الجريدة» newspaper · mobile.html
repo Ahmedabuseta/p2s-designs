@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><link rel="stylesheet" data-doop-webfonts href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;display=swap"><style data-doop-fonts>
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/TGLdaTyvOx.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/l1HcTBJNrv.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/4MZwBBBvJk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/_Sp0bFQust.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/SAPcWl-d4Y.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/Cb9I8TF8sP.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+</style><style data-doop-tokens>:root{--color-brand-deep:#C40035;--color-newsprint:#EFEBE0;--color-press-ink:#15171C;--font-display:"thmanyah serif display", serif;--font-sans:"thmanyah sans", sans-serif}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2S — الجريدة</title>
+<style>
+*{margin:0;box-sizing:border-box}
+html,body{height:100%}
+html{--e-out:cubic-bezier(.16,.84,.24,1)}
+body{background:var(--color-newsprint);color:var(--color-press-ink);font-family:var(--font-sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+#screen{height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+#screen::-webkit-scrollbar{width:0;display:none}
+.disp{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;line-height:1.16;letter-spacing:-.01em}
+.serif{font-family:var(--font-display,"thmanyah serif display",serif)}
+.mono{font-family:"Geist Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.wrap{padding:0 16px}
+.mast{padding:18px 0 0;text-align:center}
+.mast .dateline{display:flex;justify-content:space-between;gap:8px;font-size:8px;letter-spacing:.1em;color:rgba(21,23,28,.7);border-bottom:1px solid rgba(21,23,28,.5);padding-bottom:5px}
+.nameplate{font-size:44px;line-height:1;margin-top:10px;letter-spacing:-.02em}
+.nameplate small{display:block;font-family:var(--font-sans);font-weight:700;font-size:10px;letter-spacing:.34em;margin-top:6px;color:rgba(21,23,28,.75)}
+.rule-thick{border-top:3px double var(--color-press-ink);margin-top:10px;transform:scaleX(var(--q,0));transform-origin:right}
+.rule-thin{border-top:1px solid rgba(21,23,28,.55);margin-top:3px}
+.mast .strap{display:flex;justify-content:space-between;gap:8px;font-size:8.5px;letter-spacing:.08em;color:rgba(21,23,28,.72);padding-top:6px}
+.ticker{display:flex;align-items:center;gap:8px;margin-top:12px;border-block:1px solid var(--color-press-ink);padding:5px 0;overflow:hidden}
+.ticker .lab{flex:0 0 auto;background:var(--color-brand-deep);color:var(--color-newsprint);font-size:8.5px;font-weight:700;letter-spacing:.1em;padding:3px 6px}
+.mq{display:flex;overflow:hidden;flex:1}
+.mq .track{display:flex;gap:20px;white-space:nowrap;animation:slide 26s linear infinite;font-size:10px;letter-spacing:.02em}
+.mq .track b{color:var(--color-brand-deep)}
+.lead{padding:16px 0 14px;border-bottom:2px solid var(--color-press-ink);perspective:900px}
+.kick{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.18em;color:var(--color-brand-deep);border:1px solid var(--color-brand-deep);padding:2px 6px}
+.hl{font-size:33px;margin-top:10px;max-width:14ch}
+.deck{margin-top:10px;font-size:12.5px;line-height:1.85;color:rgba(21,23,28,.82);max-width:36ch}
+.byline{margin-top:9px;padding-top:6px;border-top:1px solid rgba(21,23,28,.35);font-size:8.5px;letter-spacing:.12em;color:rgba(21,23,28,.66);display:flex;justify-content:space-between;gap:8px}
+.unfold{transform-origin:top;transform:rotateX(calc((1 - var(--q,0)) * -34deg))}
+.halftone{position:relative;margin-top:12px;background:var(--color-press-ink);overflow:hidden}
+.halftone img{display:block;width:100%;height:206px;object-fit:cover;filter:grayscale(1) contrast(1.22) brightness(1.04);clip-path:inset(0 0 calc((1 - var(--q,0)) * 100%) 0)}
+.halftone::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(21,23,28,.62) .8px,transparent 1px);background-size:3px 3px;mix-blend-mode:multiply;opacity:.5}
+.halftone figcaption{position:absolute;inset-inline:0;bottom:0;padding:5px 7px;font-size:8px;line-height:1.5;color:var(--color-newsprint);background:linear-gradient(transparent,rgba(21,23,28,.85))}
+.cols{margin-top:12px;column-count:2;column-gap:16px;column-rule:1px solid rgba(21,23,28,.35)}
+.cols p{font-size:11px;line-height:1.9;text-align:justify;margin-bottom:8px;color:rgba(21,23,28,.92)}
+.cols p:first-child::first-letter{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:30px;line-height:.9;float:right;margin-inline-start:4px;margin-top:3px}
+.band{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:2px solid var(--color-press-ink)}
+.box{padding:12px 12px 14px}
+.box+.box{border-inline-start:1px solid rgba(21,23,28,.4)}
+.box .bt{font-size:8.5px;font-weight:700;letter-spacing:.2em;color:var(--color-brand-deep);border-bottom:1px solid rgba(21,23,28,.4);padding-bottom:5px}
+.box .num{display:flex;align-items:baseline;gap:6px;margin-top:8px}
+.box .num b{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:30px;line-height:1}
+.box .num span{font-size:9px;color:rgba(21,23,28,.7)}
+.box .rowline{display:flex;justify-content:space-between;gap:8px;font-size:10px;padding:4px 0;border-bottom:1px dotted rgba(21,23,28,.4)}
+.box .rowline:last-child{border-bottom:0}
+.brief{padding:12px 0;border-bottom:1px solid rgba(21,23,28,.45)}
+.brief h3{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:15px;line-height:1.35;margin-top:4px}
+.brief p{font-size:10.5px;line-height:1.8;color:rgba(21,23,28,.8);margin-top:4px}
+.brief .k{font-size:8px;letter-spacing:.2em;color:var(--color-brand-deep)}
+.quote{padding:16px 0;border-bottom:2px solid var(--color-press-ink)}
+.quote blockquote{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:700;font-size:19px;line-height:1.6}
+.quote .who{margin-top:8px;font-size:9px;letter-spacing:.12em;color:rgba(21,23,28,.66)}
+.ads{padding:14px 0 6px}
+.ads .adt{font-size:8.5px;font-weight:700;letter-spacing:.24em;color:rgba(21,23,28,.6);text-align:center;margin-bottom:8px}
+.ad{border:1px dashed rgba(21,23,28,.55);padding:9px 10px;display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
+.ad b{font-size:12px}
+.ad span{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-size:15px}
+footer{border-top:3px double var(--color-press-ink);margin-top:10px;padding:10px 0 26px;display:flex;justify-content:space-between;gap:8px;font-size:8px;letter-spacing:.12em;color:rgba(21,23,28,.66)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@media (prefers-reduced-motion:reduce){.unfold{transform:none}.halftone img{clip-path:none}.mq .track{animation:none}}
+</style></head>
+<body>
+<div id="screen">
+<div id="page">
+<div class="wrap">
+
+  <header class="mast">
+    <div class="dateline"><span>الأحد ١٥ نوفمبر ٢٠٢٦</span><span>العدد ٠٧</span><span>السعر: مجانًا</span></div>
+    <h1 class="nameplate disp">P2S<small>جريدة الأكاديمية</small></h1>
+    <div class="rule-thick" data-fx></div>
+    <div class="rule-thin"></div>
+    <div class="strap"><span>أربع مواد · محاولة واحدة</span><span>كفر الزيات</span></div>
+  </header>
+
+  <div class="ticker">
+    <span class="lab">عاجل</span>
+    <div class="mq">
+      <div class="track">
+        <span>الدفعة الجديدة <b>بتتقفل لما الأماكن تكتمل</b></span>
+        <span>الامتحان التجريبي الأول <b>الخميس</b></span>
+        <span>المراجعات مفتوحة <b>حتى التاسعة</b></span>
+        <span>الدفعة الجديدة <b>بتتقفل لما الأماكن تكتمل</b></span>
+        <span>الامتحان التجريبي الأول <b>الخميس</b></span>
+        <span>المراجعات مفتوحة <b>حتى التاسعة</b></span>
+      </div>
+    </div>
+  </div>
+
+  <article class="lead">
+    <div class="unfold" data-fx>
+      <span class="kick">تحقيق</span>
+      <h2 class="hl disp">٢٨ طالبًا يعبرون المعادلة إلى كلية التجارة</h2>
+      <p class="deck">الورقة اللي كانت مستحيلة في أكتوبر، بقت كارنيه طالب جامعي في نوفمبر. إزاي؟</p>
+      <div class="byline"><span>بقلم أحمد علي</span><span>كفر الزيات</span></div>
+
+      <figure class="halftone" data-fx>
+        <img src="https://doop.design/photos/pexels/38611358.jpeg?h=650&w=940" alt="تخرج دفعة ٢٠٢٦">
+        <figcaption>دفعة ٢٠٢٦ في يوم النتيجة — تصوير الأكاديمية</figcaption>
+      </figure>
+
+      <div class="cols">
+        <p>بدأ الطريق في قاعة صغيرة في كفر الزيات، بـ٢٨ طالبًا أغلبهم يحملون دبلوم تجارة. السؤال اللي اتكرر في أول يوم كان واحد: هل الشهادة بتكفي لدخول الكلية؟</p>
+        <p>الإجابة باختصار: المعادلة مسابقة رسمية من المجلس الأعلى للجامعات، بتُعقد في أربع مواد، وبتمنح فرصة الالتحاق بكلية التجارة بنظام البكالوريوس.</p>
+        <p>النتيجة بتتحسب على المجموع، مش على مادة واحدة. وده اللي بيخلي توزيع المجهود أهم من أي حاجة تانية.</p>
+      </div>
+    </div>
+  </article>
+
+  <div class="band">
+    <div class="box">
+      <div class="bt">أرقام</div>
+      <div class="num"><b class="count" data-count="28">٢٨</b><span>طالبًا في الدفعة</span></div>
+      <div class="num"><b class="count" data-count="4">٤</b><span>مواد في المعادلة</span></div>
+      <div class="num" style="margin-bottom:2px"><b class="count" data-count="1">١</b><span>محاولة واحدة</span></div>
+    </div>
+    <div class="box">
+      <div class="bt">مختصرات</div>
+      <div class="brief" style="border-bottom:1px dotted rgba(21,23,28,.4);padding:8px 0 6px">
+        <div class="k">التقديم</div>
+        <h3 style="font-size:12.5px">الورق قبل أي دفع</h3>
+        <p style="font-size:9.5px">الشهادة وسنة التخرج بيتأكدوا في أول خطوة.</p>
+      </div>
+      <div class="brief" style="border-bottom:0;padding:6px 0 0">
+        <div class="k">المذاكرة</div>
+        <h3 style="font-size:12.5px">القاعة بتفتح متأخر</h3>
+        <p style="font-size:9.5px">مراجعات جماعية لحد التاسعة كل خميس.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="brief">
+    <div class="k">ملف</div>
+    <h3>أربع مواد، وامتحان واحد بيحسم الترتيب</h3>
+    <p>الإنجليزية والرياضيات والجغرافيا والفرنساوي — كل مادة ليها نمط أسئلة بيتكرر، والتأسيس بيبدأ من مستوى الطالب مش من الصفر الافتراضي.</p>
+  </div>
+
+  <div class="quote">
+    <blockquote>«الورقة اللي مشيت بيها من الدبلوم للكلية، أول ما أشوفها في الكلية هتكون أغلى حاجة عندي.»</blockquote>
+    <div class="who">محمود السيد · دفعة ٢٠٢٦</div>
+  </div>
+
+  <div class="ads">
+    <div class="adt">إعلانات</div>
+    <div class="ad"><b>الباقة المتكاملة — مراجعات ومتابعة</b><span>٢٠٠٠ ج.م</span></div>
+    <div class="ad"><b>الباقة الفردية — متابعة ١:١</b><span>٣٥٠٠ ج.م</span></div>
+    <div class="ad"><b>البداية — تسجيل ومذكرات</b><span>١٢٠٠ ج.م</span></div>
+  </div>
+
+  <footer>
+    <span>الصفحة الأولى · P2S</span>
+    <span>تُطبع في كفر الزيات</span>
+  </footer>
+
+</div>
+</div>
+</div>
+
+<script>
+(function(){
+  var screen=document.getElementById('screen');
+  var fx=[].slice.call(document.querySelectorAll('[data-fx]'));
+  var counts=[].slice.call(document.querySelectorAll('[data-count]'));
+  var D='٠١٢٣٤٥٦٧٨٩';
+  function ar(v){ return String(v).replace(/[0-9]/g,function(d){ return D[+d]; }); }
+  var queued=false;
+
+  function frame(){
+    var sr=screen.getBoundingClientRect(), H=sr.height;
+    for(var i=0;i<fx.length;i++){
+      var el=fx[i], r=el.getBoundingClientRect();
+      var p=(sr.bottom-r.top)/(H+r.height);
+      p=p<0?0:p>1?1:p;
+      var q=(p-0.1)/0.32; q=q<0?0:q>1?1:q;
+      el.style.setProperty('--q', q.toFixed(4));
+    }
+    for(var k=0;k<counts.length;k++){
+      var c=counts[k], cr=c.getBoundingClientRect();
+      var cp=(sr.bottom-cr.top)/(H*0.95);
+      cp=cp<0?0:cp>1?1:cp;
+      c.textContent=ar(Math.round((+c.getAttribute('data-count'))*cp));
+    }
+  }
+
+  screen.addEventListener('scroll', function(){
+    if(!queued){ queued=true; requestAnimationFrame(function(){ queued=false; frame(); }); }
+  }, {passive:true});
+  window.addEventListener('resize', frame);
+  frame();
+})();
+</script>
+</body></html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><link rel="stylesheet" data-doop-webfonts href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&amp;display=swap"><style data-doop-fonts>
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/TGLdaTyvOx.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/l1HcTBJNrv.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/4MZwBBBvJk.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah sans";src:url("https://doop.design/a/_Sp0bFQust.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/SAPcWl-d4Y.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"thmanyah serif display";src:url("https://doop.design/a/Cb9I8TF8sP.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+</style><style data-doop-tokens>:root{--color-ground:#0C1020;--color-surface-2:#1F2946;--color-paper:#FFFFFF;--color-mist:#EAEDEF;--color-ink:#0C1020;--color-ink-soft:#5A6379;--color-ink-mute:#8C93A4;--color-line:#DCE1E5;--color-line-night:#2A3453;--color-accent:#FBC701;--color-accent-deep:#E0AF00;--color-brand-deep:#C40035;--color-stage:#06080F;--radius-md:18px;--font-display:"thmanyah serif display", serif;--font-sans:"thmanyah sans", sans-serif;--tracking-hud:0.22em}</style><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2S Academy — الدفعة</title>
+<style>
+*{margin:0;box-sizing:border-box}
+html,body{height:100%}
+html{--e-out:cubic-bezier(.16,.84,.24,1);--e-soft:cubic-bezier(.4,0,.2,1)}
+body{background:var(--color-paper);color:var(--color-ink);font-family:var(--font-sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+#screen{height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+#screen::-webkit-scrollbar{width:0;display:none}
+.disp{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;line-height:1.18;letter-spacing:-.015em}
+.mono{font-family:"Geist Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 18px;background:color-mix(in srgb,var(--color-paper) 88%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-line)}
+.brand{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700}
+.logo{display:inline-flex;align-items:center;justify-content:center;background:var(--color-ground);border-radius:8px;padding:4px 6px}
+.chip{font-size:10px;font-weight:700;color:var(--color-ink);background:var(--color-accent);padding:5px 9px;border-radius:999px;white-space:nowrap}
+.hero{position:relative;overflow:hidden;background:var(--color-ground);color:var(--color-paper);padding:22px 20px 26px 26px}
+.hero .glow{position:absolute;inset:-80px -40px auto -40px;height:360px;pointer-events:none;background:radial-gradient(52% 50% at 78% 18%,color-mix(in srgb,var(--color-accent) 26%,transparent),transparent 72%);filter:blur(16px)}
+.hudline{position:relative;display:flex;justify-content:space-between;gap:10px;font-family:"Geist Mono",ui-monospace,monospace;font-size:9px;letter-spacing:var(--tracking-hud,.22em);color:var(--color-ink-mute);border-bottom:1px solid var(--color-line-night);padding-bottom:9px}
+.hero-h{position:relative;font-size:44px;color:var(--color-paper);margin-top:18px}
+.hero-h em{font-style:normal;color:var(--color-accent)}
+.hero .lead{position:relative;font-size:13.5px;line-height:1.9;color:color-mix(in srgb,var(--color-paper) 74%,transparent);margin-top:10px;max-width:300px}
+.hero-odo{position:relative;display:flex;align-items:flex-end;gap:14px;margin-top:20px;border-top:1px solid var(--color-line-night);padding-top:14px}
+.hero-odo .odo{font-size:82px;color:var(--color-accent)}
+.hero-odo-t{font-size:11px;line-height:1.7;color:color-mix(in srgb,var(--color-paper) 84%,transparent);padding-bottom:9px}
+.hero-odo-t span{display:block;font-size:9.5px;color:var(--color-ink-mute)}
+.odo{display:inline-flex;overflow:hidden;line-height:1;font-family:var(--font-display,"thmanyah serif display",serif);font-weight:900;font-variant-numeric:tabular-nums}
+.odo .d{display:block;height:1em;overflow:hidden;width:.62em}
+.odo .strip{display:block;transform:translateY(0)}
+.odo.go .strip{transition:transform 1.5s var(--e-out);transition-delay:var(--dl,0s);transform:translateY(var(--to,0em))}
+.deck-sec{background:var(--color-paper);padding:24px 0 20px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:0 20px}
+.sec-head h2{font-size:25px}
+.sec-head p{font-size:10.5px;color:var(--color-ink-soft);margin-top:4px}
+.deck-tools{display:flex;align-items:center;gap:5px;flex:0 0 auto}
+.counter{font-size:10px;color:var(--color-ink-soft);letter-spacing:.1em;margin-inline-end:2px}
+.arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--color-line);background:var(--color-paper);display:grid;place-items:center;color:var(--color-ink);transition:background .25s,border-color .25s,transform .2s}
+.arrow:hover{background:var(--color-mist);border-color:var(--color-ink)}
+.arrow:active{transform:scale(.93)}
+.deck{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 20px 4px;scrollbar-width:none;overscroll-behavior-x:contain}
+.deck::-webkit-scrollbar{display:none}
+.deck .scard{transform:scale(var(--s,1));opacity:var(--o,1)}
+.prog{margin:8px 20px 0;height:2px;background:var(--color-line);border-radius:2px;overflow:hidden}
+.prog span{display:block;height:100%;background:var(--color-ink);transform-origin:right;transform:scaleX(.14);transition:transform .2s linear}
+.hint{display:flex;align-items:center;gap:7px;padding:11px 20px 0;font-size:10px;color:var(--color-ink-soft)}
+.hint svg{animation:nudge 1.9s var(--e-soft) infinite;will-change:transform}
+.band{background:var(--color-mist);padding:22px 20px 24px}
+.band-t{font-size:9.5px;font-weight:700;letter-spacing:.2em;color:var(--color-brand-deep)}
+.band-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.band-cell .odo{font-size:38px}
+.band-cell span{display:block;font-size:9.5px;color:var(--color-ink-soft);margin-top:3px;line-height:1.5}
+.quote{padding:26px 20px 24px;background:var(--color-paper)}
+.quote blockquote{font-family:var(--font-display,"thmanyah serif display",serif);font-weight:700;font-size:21px;line-height:1.6}
+.quote-by{display:flex;align-items:center;gap:9px;margin-top:14px}
+.quote-by img{width:34px;height:34px;border-radius:50%;object-fit:cover;display:block}
+.quote-by b{display:block;font-size:11.5px}
+.quote-by span{display:block;font-size:9.5px;color:var(--color-ink-soft);margin-top:1px}
+.cta{background:var(--color-accent);color:var(--color-ink);padding:26px 20px 28px}
+.cta h2{font-size:30px;line-height:1.3}
+.cta p{font-size:11.5px;line-height:1.8;color:color-mix(in srgb,var(--color-ink) 74%,transparent);margin-top:7px;max-width:300px}
+footer{background:var(--color-ground);color:var(--color-paper);padding:20px 20px 30px}
+.rv{opacity:0;transform:translateY(22px) scale(.986);filter:blur(5px);transition:opacity .8s var(--e-out),transform .8s var(--e-out),filter .8s var(--e-out);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none;filter:none}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(-4px)}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none;transition:none}.hint svg{animation:none}.odo .strip{transition:none;transform:translateY(var(--to,0em))}}
+</style><style data-doop-component-css="cjx0vv4f6x">
+:where([data-doop-instance="cjx0vv4f6x"]) .scard, .scard:where([data-doop-instance="cjx0vv4f6x"]) {position:relative;flex:0 0 auto;width:230px;height:320px;border-radius:var(--radius-md,18px);overflow:hidden;background:var(--color-surface-2);scroll-snap-align:center;transition:transform .5s var(--e-out),opacity .5s var(--e-out)}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .ph, .scard:where([data-doop-instance="cjx0vv4f6x"]) .ph {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .scrim, .scard:where([data-doop-instance="cjx0vv4f6x"]) .scrim {position:absolute;inset:0;background:linear-gradient(to top,color-mix(in srgb,var(--color-stage) 94%,transparent) 2%,color-mix(in srgb,var(--color-stage) 52%,transparent) 32%,transparent 60%)}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .num, .scard:where([data-doop-instance="cjx0vv4f6x"]) .num {position:absolute;top:12px;inset-inline-start:12px;display:flex;align-items:center;gap:5px;background:var(--color-accent);color:var(--color-ink);padding:4px 10px;border-radius:999px}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .num .v, .scard:where([data-doop-instance="cjx0vv4f6x"]) .num .v {font-family:var(--font-display);font-weight:900;font-size:17px;line-height:1}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .num .k, .scard:where([data-doop-instance="cjx0vv4f6x"]) .num .k {font-size:8.5px;font-weight:700;opacity:.68}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .who, .scard:where([data-doop-instance="cjx0vv4f6x"]) .who {position:absolute;inset-inline:12px;bottom:12px}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .who .nm, .scard:where([data-doop-instance="cjx0vv4f6x"]) .who .nm {color:var(--color-paper);font-weight:700;font-size:15px;line-height:1.3}
+:where([data-doop-instance="cjx0vv4f6x"]) .scard .who .nt, .scard:where([data-doop-instance="cjx0vv4f6x"]) .who .nt {color:color-mix(in srgb,var(--color-paper) 66%,transparent);font-size:10px;margin-top:2px}
+</style>
+<style data-doop-component-css="cy80n9scuz">
+:where([data-doop-instance="cy80n9scuz"]) .cta, .cta:where([data-doop-instance="cy80n9scuz"]) {display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:14px 22px;border-radius:999px;font-family:var(--font-sans);font-weight:700;font-size:16px;line-height:1.2;text-align:center;text-decoration:none;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+:where([data-doop-instance="cy80n9scuz"]) .cta:active, .cta:where([data-doop-instance="cy80n9scuz"]):active {transform:scale(.975)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="accent"], .cta[data-tone="accent"]:where([data-doop-instance="cy80n9scuz"]) {background:var(--color-accent);color:var(--color-ink);border:1px solid var(--color-accent)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="accent"]:hover, .cta[data-tone="accent"]:where([data-doop-instance="cy80n9scuz"]):hover {background:var(--color-accent-deep);border-color:var(--color-accent-deep)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="ghost"], .cta[data-tone="ghost"]:where([data-doop-instance="cy80n9scuz"]) {background:color-mix(in srgb,var(--color-paper) 6%,transparent);color:var(--color-paper);border:1px solid var(--color-line-night)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="ghost"]:hover, .cta[data-tone="ghost"]:where([data-doop-instance="cy80n9scuz"]):hover {background:color-mix(in srgb,var(--color-paper) 12%,transparent)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="dark"], .cta[data-tone="dark"]:where([data-doop-instance="cy80n9scuz"]) {background:var(--color-ground);color:var(--color-paper);border:1px solid var(--color-ground)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="line"], .cta[data-tone="line"]:where([data-doop-instance="cy80n9scuz"]) {background:transparent;color:var(--color-ink);border:1px solid var(--color-line)}
+:where([data-doop-instance="cy80n9scuz"]) .cta[data-tone="line"]:hover, .cta[data-tone="line"]:where([data-doop-instance="cy80n9scuz"]):hover {border-color:var(--color-ink)}
+</style>
+</head>
+<body>
+<div id="screen">
+<div id="page">
+
+<nav class="nav">
+  <div class="brand">
+    <span class="logo"><img src="https://doop.design/a/WSd15VzELa.png" alt="P2S" style="height:18px;width:auto;display:block"></span>
+    <span>P2S Academy</span>
+  </div>
+  <span class="chip">الدفعة ٢٠٢٦</span>
+</nav>
+
+<section class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="hudline"><span>قصص نجاح</span><span>٢٨ نموذج</span></div>
+  <h1 class="disp hero-h rv">النتيجة<br><em>بتتكلم.</em></h1>
+  <p class="lead rv" style="--d:.08s">٢٨ طالب دخلوا كلية التجارة من معادلة الدبلوم. دول أرقامهم، وأسماءهم، ووجوههم.</p>
+  <div class="hero-odo rv" style="--d:.14s">
+    <span class="odo" data-value="28">٢٨</span>
+    <div class="hero-odo-t">طالب في دفعة ٢٠٢٦<span>كلهم بدأوا من دبلوم تجارة</span></div>
+  </div>
+</section>
+
+<section class="deck-sec">
+  <div class="sec-head">
+    <div class="rv">
+      <h2 class="disp">دول اللي عدّوا.</h2>
+      <p>كل كارت = طالب، مجموعه، ومدينته.</p>
+    </div>
+    <div class="deck-tools rv" style="--d:.08s">
+      <span class="counter mono" id="counter">٠١ / ٠٨</span>
+      <button class="arrow" id="prev" type="button" aria-label="الكارت السابق">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <button class="arrow" id="next" type="button" aria-label="الكارت التالي">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="deck" id="deck" tabindex="0" aria-label="شريط قصص النجاح">
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="uetfg5">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/36608621.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٥٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">أحمد محمود</div>
+    <div class="nt" data-doop-part="myir">كفر الزيات · ٢٠٢٦</div>
+  </div>
+</article>
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="zqn9kt" data-doop-props="{&quot;name&quot;:&quot;حنين رفعت&quot;,&quot;note&quot;:&quot;بسيون · ٢٠٢٦&quot;,&quot;photo&quot;:&quot;https://doop.design/photos/pexels/5538020.jpeg?h=650&amp;w=940&quot;,&quot;score&quot;:&quot;٩٧٪&quot;}">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/5538020.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٧٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">حنين رفعت</div>
+    <div class="nt" data-doop-part="myir">بسيون · ٢٠٢٦</div>
+  </div>
+</article>
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="qlt5l1" data-doop-props="{&quot;name&quot;:&quot;سارة منير&quot;,&quot;note&quot;:&quot;طنطا · ٢٠٢٦&quot;,&quot;photo&quot;:&quot;https://doop.design/photos/pexels/3776193.jpeg?h=650&amp;w=940&quot;,&quot;score&quot;:&quot;٩٣٪&quot;}">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/3776193.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٣٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">سارة منير</div>
+    <div class="nt" data-doop-part="myir">طنطا · ٢٠٢٦</div>
+  </div>
+</article>
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="02v9ik" data-doop-props="{&quot;name&quot;:&quot;محمود السيد&quot;,&quot;photo&quot;:&quot;https://doop.design/photos/pexels/18699972.jpeg?h=650&amp;w=940&quot;,&quot;score&quot;:&quot;٩٦٪&quot;}">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/18699972.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٦٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">محمود السيد</div>
+    <div class="nt" data-doop-part="myir">كفر الزيات · ٢٠٢٦</div>
+  </div>
+</article>
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="v0ljk0" data-doop-props="{&quot;name&quot;:&quot;معاذ عادل&quot;,&quot;note&quot;:&quot;زفتى · ٢٠٢٦&quot;,&quot;photo&quot;:&quot;https://doop.design/photos/pexels/6238089.jpeg?h=650&amp;w=940&quot;,&quot;score&quot;:&quot;٩٨٪&quot;}">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/6238089.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٨٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">معاذ عادل</div>
+    <div class="nt" data-doop-part="myir">زفتى · ٢٠٢٦</div>
+  </div>
+</article>
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="w4ozwo" data-doop-props="{&quot;name&quot;:&quot;فارس عبد الله&quot;,&quot;note&quot;:&quot;أجا · ٢٠٢٦&quot;,&quot;photo&quot;:&quot;https://doop.design/photos/pexels/14180701.jpeg?h=650&amp;w=940&quot;,&quot;score&quot;:&quot;٩٢٪&quot;}">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/14180701.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٢٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">فارس عبد الله</div>
+    <div class="nt" data-doop-part="myir">أجا · ٢٠٢٦</div>
+  </div>
+</article>
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="f1bnks" data-doop-props="{&quot;name&quot;:&quot;يارا مجدي&quot;,&quot;note&quot;:&quot;المحلة · ٢٠٢٦&quot;,&quot;photo&quot;:&quot;https://doop.design/photos/pexels/9568826.jpeg?h=650&amp;w=940&quot;,&quot;score&quot;:&quot;٩٩٪&quot;}">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/9568826.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٩٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">يارا مجدي</div>
+    <div class="nt" data-doop-part="myir">المحلة · ٢٠٢٦</div>
+  </div>
+</article>
+    <article class="scard" data-doop-instance="cjx0vv4f6x" data-doop-rev="1" data-doop-id="yv9y3c" data-doop-props="{&quot;name&quot;:&quot;إسلام مصطفى&quot;,&quot;photo&quot;:&quot;https://doop.design/photos/pexels/38611358.jpeg?h=650&amp;w=940&quot;,&quot;score&quot;:&quot;٩٤٪&quot;}">
+  <img class="ph" alt="طالب من نماذج نجاح كلية التجارة" src="https://doop.design/photos/pexels/38611358.jpeg?h=650&amp;w=940" data-doop-part="cdrb">
+  <span class="scrim" aria-hidden="true" data-doop-part="wqfn"></span>
+  <div class="num" data-doop-part="num"><span class="v" data-doop-part="upbd">٩٤٪</span><span class="k" data-doop-part="bqfm">المجموع</span></div>
+  <div class="who" data-doop-part="pnhh">
+    <div class="nm" data-doop-part="fujv">إسلام مصطفى</div>
+    <div class="nt" data-doop-part="myir">كفر الزيات · ٢٠٢٦</div>
+  </div>
+</article>
+  </div>
+
+  <div class="prog"><span id="progFill"></span></div>
+  <div class="hint rv" style="--d:.1s">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--color-ink-soft)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+    اسحب، أو استخدم الأسهم
+  </div>
+</section>
+
+<section class="band">
+  <div class="band-t rv">الفرق في الأرقام</div>
+  <div class="band-grid">
+    <div class="band-cell rv" style="--d:.06s"><span class="odo" data-value="28">٢٨</span><span>نموذج نجاح في الدفعة</span></div>
+    <div class="band-cell rv" style="--d:.12s"><span class="odo" data-value="4">٤</span><span>مواد في المعادلة</span></div>
+    <div class="band-cell rv" style="--d:.18s"><span class="odo" data-value="1">١</span><span>محاولة واحدة بس</span></div>
+  </div>
+</section>
+
+<section class="quote">
+  <blockquote class="rv">«أنا دخلت من دبلوم تجارة، ودلوقتي في كلية التجارة. أول سنة كنت فاكر إنها مستحيلة.»</blockquote>
+  <div class="quote-by rv" style="--d:.08s">
+    <img src="https://doop.design/photos/pexels/18699972.jpeg?h=650&w=940" alt="محمود السيد">
+    <div><b>محمود السيد</b><span>دفعة ٢٠٢٦ · كفر الزيات</span></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="rv">
+    <h2 class="disp">خلي اسمك<br>في الدفعة الجاية.</h2>
+    <p>الأماكن بتتقفل لما تكتمل. احجز مكانك وهنقولك على اللي محتاجه بالظبط.</p>
+  </div>
+  <div class="rv" style="--d:.08s;margin-top:14px;max-width:280px">
+    <a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="v5cta1" data-tone="dark" data-doop-props="{&quot;cta&quot;:&quot;احجز مكانك — الأماكن محدودة&quot;,&quot;tone&quot;:&quot;dark&quot;}">احجز مكانك — الأماكن محدودة</a>
+  </div>
+  <div class="rv" style="--d:.14s;margin-top:10px;max-width:280px">
+    <a class="cta" href="#book" data-doop-instance="cy80n9scuz" data-doop-rev="1" data-doop-id="v5cta2" data-tone="line" data-doop-props="{&quot;cta&quot;:&quot;شوف الباقات&quot;,&quot;tone&quot;:&quot;line&quot;}">شوف الباقات</a>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span class="logo" style="background:var(--color-paper)"><img src="https://doop.design/a/WSd15VzELa.png" alt="P2S" style="height:22px;width:auto;display:block"></span>
+    <div style="font-size:10px;line-height:1.7;color:var(--color-ink-mute)">أكاديمية P2S<br>طريقك لكلية التجارة</div>
+  </div>
+  <div class="mono" style="font-size:8.5px;color:var(--color-ink-mute);margin-top:12px;line-height:1.9">© ٢٠٢٦ P2S ACADEMY · SUCCESS DECK V5 · الصور والنتائج للعرض بس</div>
+</footer>
+</div>
+</div>
+
+<script>
+(function(){
+  var s=document.getElementById('screen');
+  var D='٠١٢٣٤٥٦٧٨٩';
+  function ar(v){return String(v).replace(/[0-9]/g,function(d){return D[+d]})}
+
+  [].forEach.call(document.querySelectorAll('.odo'),function(el){
+    var val=el.getAttribute('data-value');
+    if(!val) return;
+    el.textContent='';
+    val.split('').forEach(function(ch,i){
+      var col=document.createElement('span'); col.className='d';
+      var strip=document.createElement('span'); strip.className='strip';
+      for(var n=0;n<10;n++){ var g=document.createElement('span'); g.textContent=D[n]; strip.appendChild(g); }
+      strip.style.setProperty('--to',(-(+ch))+'em');
+      strip.style.setProperty('--dl',(i*0.09)+'s');
+      col.appendChild(strip); el.appendChild(col);
+    });
+  });
+
+  var revealAll=function(){
+    [].forEach.call(document.querySelectorAll('.rv'),function(el){el.classList.add('in')});
+    [].forEach.call(document.querySelectorAll('.odo'),function(el){el.classList.add('go')});
+  };
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{root:s,threshold:.15,rootMargin:'0px 0px -5% 0px'});
+    [].forEach.call(document.querySelectorAll('.rv'),function(el){io.observe(el)});
+
+    var oo=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('go'); oo.unobserve(e.target); } });
+    },{root:s,threshold:.35});
+    [].forEach.call(document.querySelectorAll('.odo'),function(el){oo.observe(el)});
+  } else { revealAll(); }
+
+  var deck=document.getElementById('deck');
+  var counter=document.getElementById('counter');
+  var prog=document.getElementById('progFill');
+  var prev=document.getElementById('prev');
+  var next=document.getElementById('next');
+  var cards=[].slice.call(deck.querySelectorAll('.scard'));
+  var queued=false, best=0;
+
+  function measure(){
+    var dr=deck.getBoundingClientRect();
+    var refX=dr.right-140, bd=1e9;
+    cards.forEach(function(c,i){
+      var r=c.getBoundingClientRect();
+      var d=Math.abs((r.left+r.width/2)-refX);
+      var t=Math.min(d/400,1);
+      c.style.setProperty('--s',(1-t*0.07).toFixed(3));
+      c.style.setProperty('--o',(1-t*0.5).toFixed(3));
+      if(d<bd){bd=d;best=i;}
+    });
+    if(counter){
+      var cur=('0'+(best+1)).slice(-2), tot=('0'+cards.length).slice(-2);
+      counter.textContent=ar(cur)+' / '+ar(tot);
+    }
+    if(prog){
+      var max=deck.scrollWidth-deck.clientWidth;
+      var p=max>0?Math.abs(deck.scrollLeft)/max:0;
+      prog.style.transform='scaleX('+Math.max(.14,Math.min(1,p||.14)).toFixed(3)+')';
+    }
+  }
+  function center(i){
+    var card=cards[Math.max(0,Math.min(cards.length-1,i))];
+    if(!card) return;
+    var cr=card.getBoundingClientRect(), dr=deck.getBoundingClientRect();
+    deck.scrollBy({left:(cr.left+cr.width/2)-(dr.left+dr.width/2),behavior:'smooth'});
+  }
+  deck.addEventListener('scroll',function(){ if(!queued){queued=true;requestAnimationFrame(function(){queued=false;measure();});} },{passive:true});
+  window.addEventListener('resize',measure);
+  if(prev) prev.addEventListener('click',function(){ center(best-1); });
+  if(next) next.addEventListener('click',function(){ center(best+1); });
+  deck.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){ e.preventDefault(); center(best+1); }
+    if(e.key==='ArrowRight'){ e.preventDefault(); center(best-1); }
+  });
+  measure();
+})();
+</script>
+</body></html>
