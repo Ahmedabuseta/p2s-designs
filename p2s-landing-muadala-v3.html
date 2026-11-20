@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P2S Academy — معادلة كلية التجارة</title>
+  <meta name="description" content="معادلة كلية التجارة مع P2S Academy: اعرف الشروط، نظام الامتحان، المواد، التوزيع الجغرافي، وابدأ طريقك لكلية التجارة." />
+  <meta name="theme-color" content="#0C1120" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0C1120;
+      --ink-2: #17203A;
+      --ink-soft: #5B6478;
+      --ink-mute: #8892A8;
+      --paper: #F7F4EF;
+      --paper-2: #FBFAF7;
+      --white: #FFFFFF;
+      --line: #E4DDD1;
+      --line-dark: #28304A;
+      --brand: #E4113F;
+      --brand-deep: #B90D32;
+      --brand-soft: #FDE7EC;
+      --brand-soft-2: #FFE6EB;
+      --on-dark: #EAF0FA;
+      --on-dark-soft: #A9B0C4;
+      --radius-sm: 12px;
+      --radius: 18px;
+      --radius-lg: 26px;
+      --shadow: 0 12px 30px rgba(12,17,32,.08);
+      --container: 1180px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Cairo", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .skip-link {
+      position: absolute; top: 8px; right: 8px; transform: translateY(-150%);
+      background: var(--brand); color: #fff; padding: 10px 14px; border-radius: 10px; z-index: 1000; text-decoration: none; font-weight: 700;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .container { width: min(100% - 40px, var(--container)); margin-inline: auto; }
+    @media (min-width: 900px) { .container { width: min(100% - 80px, var(--container)); } }
+
+    /* Nav */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(12,17,32,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(40,48,74,.8);
+    }
+    .nav-bar {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 12px 0;
+    }
+    .brand img { height: 48px; width: auto; }
+    @media (min-width: 900px) { .brand img { height: 54px; } }
+    .nav-links { display: none; list-style: none; margin: 0; padding: 0; gap: 22px; align-items: center; }
+    .nav-links a {
+      color: #CBD2E3; text-decoration: none; font-weight: 600; font-size: 14px;
+      padding: 6px 2px; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s;
+    }
+    .nav-links a:hover, .nav-links a:focus-visible { color: #fff; border-color: var(--brand); outline: none; }
+    .nav-actions { display: flex; gap: 10px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 20px; border-radius: 999px; font-weight: 800; font-size: 15px;
+      text-decoration: none; border: 1px solid transparent; cursor: pointer;
+      transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      line-height: 1.2; text-align: center;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:focus-visible { outline: 3px solid var(--brand-soft-2); outline-offset: 2px; }
+    .btn-primary { background: var(--brand); color: #fff; }
+    .btn-primary:hover { background: var(--brand-deep); }
+    .btn-ghost { background: #1A2440; color: #fff; border-color: #2A3552; }
+    .btn-ghost:hover { background: #223056; }
+    .btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); }
+    .btn-outline-light:hover { background: rgba(255,255,255,.08); }
+    .btn-light { background: #fff; color: var(--brand); }
+    .btn-light:hover { background: var(--brand-soft); }
+    .btn-dark { background: var(--ink); color: #fff; }
+    .btn-sm { padding: 10px 16px; font-size: 14px; }
+    .hide-mobile { display: none; }
+    @media (min-width: 900px) {
+      .nav-links { display: flex; }
+      .hide-mobile { display: inline-flex; }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden;
+      background: radial-gradient(1200px 500px at 10% -10%, rgba(228,17,63,.35), transparent 60%),
+                  radial-gradient(800px 400px at 100% 0%, rgba(40,48,74,.6), transparent 60%),
+                  var(--ink);
+      color: #fff;
+      padding: 56px 0 64px;
+    }
+    .hero-grid { display: grid; gap: 28px; align-items: center; }
+    @media (min-width: 960px) {
+      .hero { padding: 80px 0 96px; }
+      .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 48px; }
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 14px; border-radius: 999px;
+      background: rgba(228,17,63,.12); border: 1px solid rgba(228,17,63,.4);
+      color: #FF9DB2; font-weight: 700; font-size: 13px;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); }
+    .hero h1 {
+      margin: 18px 0 0;
+      font-size: clamp(34px, 6vw, 62px);
+      line-height: 1.18;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 .accent { color: var(--brand); display: block; }
+    .hero-lead {
+      margin: 18px 0 0;
+      color: var(--on-dark-soft);
+      font-size: clamp(16px, 2.2vw, 19px);
+      line-height: 1.9;
+      max-width: 62ch;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-ctas .btn { padding: 15px 24px; font-size: 16px; }
+    .trust-row {
+      display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 28px; padding: 0; list-style: none;
+    }
+    .trust-row li {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: #9AA6C3; font-weight: 600; font-size: 14px;
+    }
+    .trust-row svg { width: 16px; height: 16px; color: var(--brand); flex-shrink: 0; }
+    .hero-panel {
+      background: linear-gradient(180deg, #17203A 0%, #121A31 100%);
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+    .panel-head {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+      margin-bottom: 18px;
+    }
+    .panel-head h2 { margin: 0; font-size: 20px; font-weight: 800; }
+    .panel-head p { margin: 4px 0 0; color: var(--on-dark-soft); font-size: 13px; }
+    .stat-badge {
+      background: rgba(228,17,63,.15); color: #FF8FA6; border: 1px solid rgba(228,17,63,.35);
+      padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; white-space: nowrap;
+    }
+    .mini-stats { display: grid; gap: 10px; }
+    .mini-stat {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      background: #141C31; border: 1px solid var(--line-dark); border-radius: 14px; padding: 12px 14px;
+    }
+    .mini-stat strong { font-size: 15px; color: #fff; }
+    .mini-stat span { color: var(--on-dark-soft); font-size: 12px; }
+    .mini-stat .val { color: var(--brand); font-weight: 900; font-size: 18px; }
+
+    /* Sections */
+    section { scroll-margin-top: 90px; }
+    .section { padding: 64px 0; }
+    @media (min-width: 900px) { .section { padding: 96px 0; } }
+    .section-alt { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .section-dark { background: var(--ink); color: #fff; }
+    .section-head {
+      display: grid; gap: 14px; margin-bottom: 32px;
+    }
+    @media (min-width: 900px) {
+      .section-head.split { grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+    }
+    .kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--brand); font-weight: 800; font-size: 13px; letter-spacing: .04em;
+    }
+    .kicker::before { content: ""; width: 26px; height: 2px; background: var(--brand); border-radius: 2px; }
+    .section-dark .kicker { color: #FF8FA6; }
+    .section-title {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.3;
+      font-weight: 900;
+    }
+    .section-lead { margin: 0; color: var(--ink-soft); font-size: 17px; line-height: 1.9; }
+    .section-dark .section-lead { color: var(--on-dark-soft); }
+
+    /* Cards grid */
+    .grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-4 { grid-template-columns: 1fr; }
+    @media (min-width: 700px) { .grid-2 { grid-template-columns: repeat(2,1fr); } .grid-3 { grid-template-columns: repeat(2,1fr); } .grid-4 { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 1000px) { .grid-3 { grid-template-columns: repeat(3,1fr); } .grid-4 { grid-template-columns: repeat(4,1fr); } }
+    .card {
+      background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px;
+    }
+    .card-num {
+      width: 38px; height: 38px; border-radius: 12px; background: var(--brand-soft); color: var(--brand);
+      display: inline-flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; margin-bottom: 10px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 19px; font-weight: 800; line-height: 1.5; }
+    .card p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.85; }
+
+    /* Exam/subjects */
+    .exam-wrap { display: grid; gap: 20px; }
+    @media (min-width: 960px) { .exam-wrap { grid-template-columns: 1.2fr .8fr; align-items: start; } }
+    .subjects {
+      background: var(--ink-2); border: 1px solid var(--line-dark); border-radius: var(--radius-lg); overflow: hidden;
+    }
+    .subject-row {
+      display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start;
+      padding: 20px; border-bottom: 1px solid var(--line-dark);
+    }
+    .subject-row:last-child { border-bottom: 0; }
+    .subject-main { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; }
+    .subject-icon {
+      width: 42px; height: 42px; border-radius: 13px; background: #141C31; border: 1px solid var(--line-dark);
+      display: inline-flex; align-items: center; justify-content: center; color: var(--brand); font-weight: 900;
+    }
+    .subject-row h3 { margin: 0; font-size: 20px; font-weight: 800; color: #fff; }
+    .subject-row p { margin: 4px 0 0; font-size: 14px; color: var(--on-dark-soft); }
+    .pill {
+      background: #1A2440; border: 1px solid #2A3552; color: #D8E0F2;
+      padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 800; white-space: nowrap; height: fit-content;
+    }
+    .facts { display: grid; gap: 10px; }
+    .fact {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: #141C31; border: 1px solid var(--line-dark); border-radius: 14px; padding: 14px 16px;
+    }
+    .fact svg { width: 20px; height: 20px; color: var(--brand); flex-shrink: 0; margin-top: 2px; }
+    .fact strong { display: block; color: #fff; font-size: 15px; }
+    .fact span { color: var(--on-dark-soft); font-size: 13px; }
+
+    /* Highlight band */
+    .highlight {
+      margin-top: 24px;
+      background: var(--ink); color: #fff; border-radius: var(--radius-lg);
+      padding: 26px; display: grid; gap: 16px; align-items: center;
+      border: 1px solid var(--line-dark);
+    }
+    @media (min-width: 900px) { .highlight { grid-template-columns: auto 1fr auto; padding: 30px 34px; } }
+    .highlight-icon {
+      width: 54px; height: 54px; border-radius: 16px; background: var(--brand);
+      display: inline-flex; align-items: center; justify-content: center; font-size: 26px;
+    }
+    .highlight h3 { margin: 0; font-size: clamp(22px, 3vw, 30px); font-weight: 900; }
+    .highlight p { margin: 4px 0 0; color: var(--on-dark-soft); }
+    .highlight .side { color: #D8E0F2; font-weight: 600; font-size: 14px; }
+
+    /* Services */
+    .service-list { display: grid; gap: 14px; }
+    @media (min-width: 700px) { .service-list { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 1050px) { .service-list { grid-template-columns: repeat(3,1fr); } }
+    .service {
+      background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px; display: grid; gap: 10px; align-content: start;
+    }
+    .service-top { display: flex; justify-content: space-between; align-items: center; }
+    .service-top .idx { color: #C9C1B4; font-weight: 900; font-size: 12px; }
+    .service-top .ico {
+      width: 40px; height: 40px; border-radius: 12px; background: var(--brand-soft); color: var(--brand);
+      display: inline-flex; align-items: center; justify-content: center; font-weight: 900;
+    }
+    .service h3 { margin: 0; font-size: 18px; font-weight: 800; }
+    .service p { margin: 0; color: var(--ink-soft); font-size: 14px; line-height: 1.8; }
+
+    /* Result band */
+    .result-band {
+      background: linear-gradient(135deg, #0C1120 0%, #17203A 100%);
+      color: #fff; border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--line-dark);
+      display: grid; gap: 20px;
+    }
+    @media (min-width: 900px) { .result-band { grid-template-columns: 1fr auto; align-items: center; padding: 34px 40px; } }
+    .years { display: flex; flex-wrap: wrap; gap: 10px; }
+    .year-chip {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px;
+      background: #141C31; border: 1px solid var(--line-dark); font-weight: 800;
+    }
+    .year-chip::before { content: "✓"; color: var(--brand); font-weight: 900; }
+
+    /* Universities */
+    .uni-grid { display: grid; gap: 14px; }
+    @media (min-width: 700px) { .uni-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 1050px) { .uni-grid { grid-template-columns: repeat(3,1fr); } }
+    .uni {
+      background: var(--paper-2); border: 1px solid var(--line); border-radius: 16px; padding: 18px 18px 16px;
+      display: grid; gap: 8px;
+    }
+    .uni-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .uni-count { font-size: 11px; font-weight: 800; color: var(--ink-soft); }
+    .uni-mark {
+      width: 30px; height: 30px; border-radius: 10px; background: #fff; border: 1px solid var(--line);
+      display: inline-flex; align-items: center; justify-content: center; color: var(--brand); font-size: 14px;
+    }
+    .uni h3 { margin: 0; font-size: 18px; font-weight: 800; }
+    .uni p { margin: 0; color: var(--ink-soft); font-size: 13.5px; line-height: 1.8; }
+    .uni-cta { background: var(--brand); color: #fff; border-color: var(--brand); }
+    .uni-cta h3, .uni-cta p, .uni-cta .uni-count { color: #fff; }
+    .uni-cta .uni-mark { background: rgba(0,0,0,.15); border-color: rgba(255,255,255,.2); color: #fff; }
+    .uni-cta p { color: var(--brand-soft-2); }
+
+    /* Start steps */
+    .steps { display: grid; gap: 14px; }
+    @media (min-width: 700px) { .steps { grid-template-columns: repeat(2,1fr); } }
+    @media (min-width: 1050px) { .steps { grid-template-columns: repeat(4,1fr); } }
+    .step {
+      background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 20px;
+      display: grid; gap: 10px; align-content: start;
+    }
+    .step-top { display: flex; justify-content: space-between; align-items: center; }
+    .step-num { font-size: 28px; font-weight: 900; color: #E3DDD2; line-height: 1; }
+    .tag { font-size: 11px; font-weight: 800; color: var(--brand); background: var(--brand-soft); padding: 4px 10px; border-radius: 999px; }
+    .step h3 { margin: 0; font-size: 17px; font-weight: 800; line-height: 1.5; }
+    .step p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+    .after {
+      margin-top: 16px; background: var(--ink); color: #fff; border-radius: var(--radius-lg);
+      padding: 24px; display: grid; gap: 14px; align-items: center; border: 1px solid var(--line-dark);
+    }
+    @media (min-width: 900px) { .after { grid-template-columns: 1fr auto; padding: 28px 32px; } }
+    .after p { margin: 4px 0 0; color: var(--on-dark-soft); font-size: 14px; }
+    .after h3 { margin: 0; font-size: 24px; font-weight: 900; }
+    .after .small { color: #9AA6C3; font-size: 13px; font-weight: 700; }
+
+    /* Mistakes */
+    .mistakes-wrap { display: grid; gap: 20px; }
+    @media (min-width: 960px) { .mistakes-wrap { grid-template-columns: 1fr 360px; align-items: start; } }
+    .mistake-list { display: grid; }
+    .mistake {
+      display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: start;
+      padding: 18px 0; border-bottom: 1px solid var(--line-dark);
+    }
+    .mistake:last-child { border-bottom: 0; }
+    .m-num { color: var(--brand); font-weight: 900; font-size: 13px; padding-top: 4px; }
+    .mistake h3 { margin: 0; font-size: 18px; font-weight: 800; color: #fff; }
+    .mistake p { margin: 4px 0 0; color: var(--on-dark-soft); font-size: 14px; }
+    .m-x {
+      width: 28px; height: 28px; border-radius: 50%; border: 1px solid #3A4566; color: #8C97B2;
+      display: inline-flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;
+    }
+    .advice {
+      background: var(--brand); color: #fff; border-radius: var(--radius-lg); padding: 28px;
+      position: sticky; top: 100px;
+    }
+    .advice .k { font-size: 12px; font-weight: 800; color: var(--brand-soft-2); letter-spacing: .04em; }
+    .advice h3 { margin: 10px 0 0; font-size: 28px; line-height: 1.4; font-weight: 900; }
+    .advice p { margin: 12px 0 0; color: var(--brand-soft-2); font-size: 15px; }
+    .advice .btn { margin-top: 22px; }
+
+    /* Contact / CTA */
+    .final-cta {
+      background: radial-gradient(900px 400px at 0% 0%, rgba(255,255,255,.18), transparent 60%), var(--brand);
+      color: #fff; overflow: hidden;
+    }
+    .cta-wrap { display: grid; gap: 28px; align-items: start; }
+    @media (min-width: 960px) { .cta-wrap { grid-template-columns: 1fr 420px; gap: 40px; } }
+    .final-cta h2 { margin: 10px 0 0; font-size: clamp(30px, 4.5vw, 46px); line-height: 1.25; font-weight: 900; }
+    .final-cta .lead { color: var(--brand-soft-2); font-size: 17px; margin: 14px 0 0; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .contact-card {
+      background: #fff; color: var(--ink); border-radius: var(--radius-lg); padding: 22px;
+      box-shadow: 0 18px 40px rgba(122,6,32,.25);
+    }
+    .contact-card .k { color: var(--brand); font-weight: 800; font-size: 12px; letter-spacing: .04em; }
+    .c-item {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 14px; margin-top: 12px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 14px;
+      text-decoration: none;
+    }
+    .c-item:hover { border-color: #d9cfd2; }
+    .c-text { text-align: right; }
+    .c-text strong { display: block; font-size: 20px; font-weight: 900; letter-spacing: .01em; direction: ltr; }
+    .c-text span { color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+    .c-ico {
+      width: 38px; height: 38px; border-radius: 12px; background: var(--brand-soft); color: var(--brand);
+      display: inline-flex; align-items: center; justify-content: center; font-weight: 900; flex-shrink: 0;
+    }
+    .c-item.dark { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .c-item.dark .c-text span { color: var(--on-dark-soft); }
+    .c-item.dark .c-ico { background: var(--brand); color: #fff; }
+
+    /* Footer */
+    .site-footer { background: #080C18; color: #fff; padding: 48px 0 110px; }
+    @media (min-width: 900px) { .site-footer { padding-bottom: 40px; } }
+    .footer-grid { display: grid; gap: 28px; }
+    @media (min-width: 900px) { .footer-grid { grid-template-columns: 1.2fr .8fr; gap: 40px; } }
+    .footer-msg .k { color: var(--brand); font-weight: 800; font-size: 12px; letter-spacing: .05em; }
+    .footer-msg p { color: var(--on-dark-soft); font-size: 16px; line-height: 1.9; margin: 10px 0 0; max-width: 60ch; }
+    .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; align-content: start; }
+    .footer-links a { color: #C8D0E4; text-decoration: none; font-weight: 600; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bar {
+      margin-top: 28px; padding-top: 18px; border-top: 1px solid #28304A;
+      display: flex; flex-wrap: wrap; gap: 14px 20px; justify-content: space-between; align-items: center;
+      color: #8C97B2; font-weight: 600; font-size: 13px;
+    }
+    .footer-bar .fbrand { display: inline-flex; align-items: center; gap: 10px; }
+    .footer-bar .fbrand img { height: 34px; width: auto; }
+
+    /* Mobile sticky CTA */
+    .mobile-cta {
+      position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60;
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 10px;
+      padding: 10px; border-radius: 18px;
+      background: rgba(12,17,32,.92); backdrop-filter: blur(10px); border: 1px solid var(--line-dark);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    @media (min-width: 900px) { .mobile-cta { display: none; } }
+    .mobile-cta .btn { padding: 12px 10px; font-size: 14px; }
+
+    /* Utilities */
+    .mt-0 { margin-top: 0; }
+    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="#top" aria-label="P2S Academy - طريقك لكلية التجارة">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTE4Mi4xNCA4ODMuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50LTIpOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmMGYwZjA7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZm9udC1mYW1pbHk6IE5lb1NhbnNBcmFiaWMtQmxhY2ssICdOZW8gU2FucyBBcmFiaWMnOwogICAgICAgIGZvbnQtc2l6ZTogMTM1LjQ0cHg7CiAgICAgICAgZm9udC13ZWlnaHQ6IDgwMDsKICAgICAgfQoKICAgICAgLmNscy00IHsKICAgICAgICBmb250LWZhbWlseTogTmVvU2Fuc0FyYWJpYy1Cb2xkLCAnTmVvIFNhbnMgQXJhYmljJzsKICAgICAgICBmb250LXNpemU6IDgzLjdweDsKICAgICAgICBmb250LXdlaWdodDogNzAwOwogICAgICB9CgogICAgICAuY2xzLTUgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50LTMpOwogICAgICB9CgogICAgICAuY2xzLTYgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50KTsKICAgICAgfQoKICAgICAgLmNscy03IHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudC00KTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMzc0LjUzIiB5MT0iMzQ0Ljg1IiB4Mj0iODAwLjM5IiB5Mj0iMzQ0Ljg1IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iLjA1IiBzdG9wLWNvbG9yPSIjZmUwMDM3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmMjY1NiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTIiIHgxPSI2ODUuNCIgeTE9IjQxLjc4IiB4Mj0iODkzLjg5IiB5Mj0iNDEuNzgiIHhsaW5rOmhyZWY9IiNsaW5lYXItZ3JhZGllbnQiLz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTMiIHgxPSI3MjguNTYiIHkxPSI5OS41MyIgeDI9Ijg1MC44MiIgeTI9Ijk5LjUzIiB4bGluazpocmVmPSIjbGluZWFyLWdyYWRpZW50Ii8+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudC00IiB4MT0iODYyLjUyIiB5MT0iNzguNTgiIHgyPSI4ODAuOSIgeTI9Ijc4LjU4IiB4bGluazpocmVmPSIjbGluZWFyLWdyYWRpZW50Ii8+CiAgPC9kZWZzPgogIDxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+CiAgICA8Zz4KICAgICAgPGc+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTYxLjEzLDQ4Ny43YzIuOTgsMzAuNjIsMTUuMiw0Mi4zOSw0NS44Myw0NC4yOSw0LjEuMjUsOC4zLjA4LDEyLjI4LjkyLDMuNTcuNzYsNi4wOCwzLjQxLDUuNiw3LjQ4LS40NSwzLjgzLTIuNzMsNi4yMS02LjcyLDYuNTQtMS43MS4xNC0zLjQzLjA1LTUuMTUuMDUtNjMuNTItLjA0LTEyNy4wMy0uMTEtMTkwLjU1LS4xLTUuNDYsMC0xMS4yOS0uMTEtMTEuMzktNy4wNy0uMS02Ljg2LDUuNzQtNy4yMywxMS4xNS03LjY3LDMzLjk2LTIuNzQsNDQuOTMtMTMuNDksNDUuNjgtNDcuODcuOS00MC44Mi40OS0zMTguMTQuMzctMzI0LjMxLS43Mi0zOC41NS0xMC43LTQ5LjA1LTQ5LjMxLTUxLjc3LTQuNjktLjMzLTkuMTYtLjM4LTkuMjUtNi44My0uMDktNi4zMywzLjk5LTcuMDgsOC45Mi03LjA1LDgwLjMzLjU0LDE2MC42Ny0xLjUxLDI0MC45OCwxLjA4LDE5LjU4LjYzLDM4Ljg1LDQuMzgsNTcuNjIsMTAuMjgsNDYuODgsMTQuNzIsNzQuNTQsNTAuNzYsNzYuNSw5OS43MiwyLjkxLDcyLjk0LTQxLDEyNy40NS0xMTUuMTcsMTQzLjMyLTIyLjcsNC44Ni00NS41Niw1Ljg4LTY4LjYxLDQuMTctMy4zNy0uMjUtNi43OC0xLjA4LTEwLTIuMTctNC4wNi0xLjM4LTUuODYtNC42Ni01LjQ3LTguODguNDUtNC45Miw0LjAyLTUuODEsOC4xMy01Ljg0LDkuOTYtLjA2LDE5Ljk1LS4wNiwyOS43NS0yLjA5LDM5LjY2LTguMjMsNjAuNzctMzQuNDcsNzAuMTUtNzIuMjEsNi40Ny0yNi4wMiw1LjM1LTUxLjg0LTIuNDItNzcuMjItOS43LTMxLjY3LTMwLjcyLTUyLjA3LTYzLjItNjAuMDktMjAuMjQtNS00MC43NS02LjAzLTYxLjMxLTIuODMtMTMuNzMsMi4xNC0xNS4yMyw0LjMtMTUuMjksMTguMTgtLjEyLDI4LjQ4LS4xMiwxNDIuNDMtLjEyLDE3MC45MS4xNiwwLC41OCwxNzIuOTguOTgsMTc3LjA3WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0ibTg0OC45OCw0NzYuOTVjMC0xMi4zNi0uMjItMjQuNzIuMTItMzcuMDcuMTItNC4zLTIuMzEtMTAuOTEsNC44LTExLjY2LDYuMTUtLjY1LDYuMDQsNS43OCw3LjA5LDkuNjgsNy4xMSwyNi4yOSwyMS40Nyw0Ny41OSw0NC4zMyw2Mi4zMyw0My44NywyOC4yOCw5MS40NywzNS4yNSwxNDAuOTQsMTkuMDQsNTUuNzMtMTguMjcsNTIuMzYtODAuMzQsMjIuMTktMTA4LjAyLTE4LjQ2LTE2LjkzLTQwLjUyLTI4LjAzLTYyLjMxLTM5LjY5LTI4LjEyLTE1LjA1LTU3LjM0LTI4LjA2LTg0LjM4LTQ1LjEzLTI5LjU5LTE4LjY5LTUzLjA4LTQyLjI1LTYyLjM4LTc3LjMyLTE5LjQxLTczLjE3LDIzLjg1LTE0MC43OCw5OS44MS0xNTUuNjksNTYuMDktMTEuMDEsMTEwLjY3LTIuMiwxNjQuNzUsMTIuODgsNC43OCwxLjMzLDcuNTEsMy42OCw3LjQ2LDkuMzMtLjI0LDI2Ljc3LS4wOSw1My41NS0uMTIsODAuMzIsMCwzLjQxLjMsNy4xOC00Ljc4LDcuNDQtNC41NS4yMy02Ljc1LTEuNzYtNy40OC02LjQxLTcuNTItNDcuNDItNDMuOC03My4zOS04OS4zOS03OC4zNi0yMC42My0yLjI1LTQxLjE3LTIuMDgtNjEuMDgsNC45Mi00My42NCwxNS4zNC01Ni4zOSw2NC41OS0yNS41Niw5OS4wMywxMy4zMiwxNC44OCwzMC43NiwyNC4wMiw0OC4wOSwzMy4wNywzNS41NiwxOC41OCw3Mi4zOSwzNC43NSwxMDYuNiw1NS45LDE4LjUyLDExLjQ1LDM1LjQyLDI0LjgxLDQ4LjksNDIuMSw0Ny41MSw2MC45NCwyNy40MywxNDcuNTItNDIuMTEsMTgxLjQtMzYuNzUsMTcuOS03Ni4xLDIzLjEzLTExNi4yOCwyMS4yOC0zOS4xMi0xLjgtNzcuOTgtNi42MS0xMTUuMjgtMTkuNzYtMS4yOS0uNDYtMi42My0uOC0zLjkyLTEuMjRxLTE5LjgzLTYuODItMTkuODctMjcuNDljLS4wMi0xMC4zLDAtMjAuNiwwLTMwLjg5aC0uMTNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy02IiBkPSJtNTA1LjM1LDU0NS4yOGMxMy43LTYuNDEsMjcuNDYtMTIuNzEsNDEuMDQtMTkuMzYsNjAuODctMjkuNzksMTE1LjA1LTY4LjUxLDE1OC4zNi0xMjEuMTIsNDIuMjMtNTEuMzEsNzEuODMtMTA4Ljg1LDgyLjg0LTE3NSwxLjU1LTkuMjksMS45OC0xOC43OCwyLjU2LTI4LjIuMzgtNi4xNi4wNy0xMi4zNi0uNDktMTguNi0xLjY5LDEzLjAzLTIuODUsMjYuMS01LjE4LDM5LjAyLTkuNTgsNTMuMDgtMzIuMDksMTAwLjY1LTYzLjA2LDE0NC4yMy01Mi42OSw3NC4xNi0xMjMuMzEsMTI2LjEtMjA1LjYzLDE2My4xMi0zLjY5LDEuNjYtNy4zOSwzLjMtMTEuMDgsNC45OC0yMS4zNSw5LjcyLTQzLjIsMTYuMTctNjcuMjQsMTQuNDgtMTcuNDctMS4yMy0zNS4xMS0uMDgtNTIuNjYtLjQ0LTMuNDUtLjA3LTkuODksMy4yOS05LjY0LTQuNDEuMTktNS44Ni0zLjk1LTEzLjI2LDYuNjgtMTUuOTQsMjguMDQtNy4wOCw1NS4wMi0xNy40Nyw4MS43OC0yOC4zNyw1OC45OS0yNC4wMywxMTUuMjQtNTIuOSwxNjUuOTgtOTEuOSw2MC40NS00Ni40NiwxMDYuNzQtMTAzLjU0LDEzMy41NC0xNzUuNDgsOC42OS0yMy4zNCwxNC40Mi00Ny40OCwxOC41LTcyLjAyLjQyLTIuNTUuNjEtNS4wNi0uMjktNy41NC0yLjI1LTYuMTYsMi42Ni0xMy4wMSw5LjE1LTEyLjA0LjEuMDEuMTkuMDMuMjkuMDUsNS44My45OCw4LjExLDYuNjIsNS44NSwxMi4wOC0xLjE2LDIuOC0uMDYsNS42My4yNyw4LjQyLDE1LjUyLDEzMC44OC0yMC45MSwyNDQuMzEtMTEzLjgxLDMzOC43OS0xNS45NSwxNi4yMy0zMy40NCwzMC42MS01Mi4xMyw0My41OS00LjgyLDMuMzUtOS42Niw1LjEtMTUuNzIsNS4wNi0zNi40LS4yNC03Mi44LS4xNC0xMDkuMi0uMTNsLS43My0zLjI3WiIvPgogICAgICAgIDxnPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNjg1LjQsNDEuNjljMTMuOTEtNS42MywyNy4yNy0xMS4wNCw0MC42Mi0xNi40NSwyMC40My04LjI5LDQwLjg1LTE2LjYxLDYxLjMzLTI0LjgsMS4zMy0uNTMsMy4yMy0uNTksNC41My0uMDcsMzMuMzksMTMuNDMsNjYuNzQsMjYuOTYsMTAwLjA5LDQwLjQ5LjUzLjIxLDEuMDIuNSwxLjkxLjk0LTYuNDcsMi42NC0xMi42MSw1LjE2LTE4Ljc2LDcuNjUtMjcuNTEsMTEuMTUtNTUuMDQsMjIuMjgtODIuNTMsMzMuNDgtMS45OC44MS0zLjYxLjg5LTUuNjYuMDUtMzIuOTctMTMuNDUtNjUuOTctMjYuOC05OC45Ny00MC4xOC0uNy0uMjgtMS4zOS0uNi0yLjU3LTEuMTFaIi8+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTUiIGQ9Im03MjguNTYsMTA0LjM2di0zOS4yOWMzLjU2LDEuNDIsNi45LDIuNzMsMTAuMjMsNC4wOCwxNi4yOCw2LjYsMzIuNTMsMTMuMjYsNDguODYsMTkuNzUsMS4zLjUyLDMuMjEuMzYsNC41NS0uMTgsMTguNTItNy40MiwzNy0xNC45Niw1NS40OS0yMi40Ny45NS0uMzksMS45Ni0uNjUsMy4xMy0xLjA0djM5LjE1Yy0yMi44NCw0LjgyLTQzLjQyLDE0LjA2LTYxLjExLDI5LjYzLTE3LjU4LTE1LjQ4LTM4LjE0LTI0Ljc4LTYxLjE0LTI5LjYzWiIvPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy03IiBkPSJtODc1LjI0LDU1LjE2YzAsOS4wMi4wMywxNy43LS4wMiwyNi4zOC0uMDEsMS42OS4yNSwyLjg2LDEuODQsNCw0LjYsMy4yOSw1LjEsOS41NCwxLjM3LDEzLjU2LTMuNjIsMy45LTkuOTUsMy44Ny0xMy41LS4wNi0zLjY4LTQuMDctMy4xLTEwLjIzLDEuNTItMTMuNTUsMS40Ny0xLjA2LDEuODItMi4xLDEuOC0zLjc0LS4wNy02Ljc4LjA4LTEzLjU2LS4wOS0yMC4zNC0uMDctMi41NS40Mi00LjE5LDMuMTctNC43MywxLjI2LS4yNSwyLjQ0LS45MywzLjkyLTEuNTJaIi8+CiAgICAgICAgPC9nPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0ibTQ4OC4zNCw0NTkuMTRjMTcuMTgtMTUuOTcsMzUuMTEtMzAuNzEsNTEuNTgtNDcuMDYsMzMuMTctMzIuOTIsNjIuMzktNjguNTYsNzYuNjQtMTE0LjE4LDguNTMtMjcuMzIsMTEuNTItNTUuMDEsNC44My04My4yMi04Ljc3LTM2Ljk2LTQwLjU5LTYxLjI5LTgyLjcyLTYzLjM0LTU0LjY1LTIuNjYtOTcuNDQsMjcuODMtMTEyLjc3LDgwLjM4LTEuMjUsNC4yOC0xLjcsOS41MS03Ljg5LDguODEtNi41OC0uNzUtNS4yNC02LjI1LTUuMDItMTAuNDgsMS4xNy0yMi42MiwyLjg3LTQ1LjIyLDMuNjItNjcuODUuMjUtNy42MSwzLjM5LTExLjkxLDkuNjEtMTUuMzcsNDUuODgtMjUuNTYsOTQuOTctMzcuMDgsMTQ3LjQzLTMzLjkxLDIxLjM2LDEuMjksNDIuMiw1LjI4LDYyLjI4LDEyLjg2LDYyLjE5LDIzLjQ2LDkwLjM0LDc4LjI3LDczLjY4LDE0Mi44Mi02LjUzLDI1LjI5LTIwLjEyLDQ2LjQyLTM3LjI0LDY1LjUzLTQzLjYsNDguNjktOTguNTUsODEuNTQtMTU1Ljg4LDExMS4wMS05LjMyLDQuNzktMTguNzYsOS4zNS0yOC4xNCwxNC4wMVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im02NTcuMSw1NDguNWMxNS44NC0xNS4zMSwzMS4yOC0yOS4zNiw0Ni41Mi00My42NSwzLjIyLTMuMDEsNi45Ny0zLjk5LDExLjMxLTMuODUsNi4xNy4yLDEyLjM2LS4yLDE4LjUyLjEzLDM0LjI1LDEuNzksNTUuNTYtMTUuMiw2Ny42LTQ2LjAxLDEuMi0zLjA4LjgzLTguNDEsNi43Mi03LDUuNCwxLjI5LDYuNjYsNS4yNSw2LjAzLDEwLjI3LTMuNTEsMjguMjMtNy4wMyw1Ni40Ni0xMC40MSw4NC43MS0uNDUsMy43My0xLjgzLDUuNDUtNS43NSw1LjQ1LTQ2Ljg1LS4wNi05My43LS4wNC0xNDAuNTQtLjA0WiIvPgogICAgICA8L2c+CiAgICAgIDx0ZXh0IGNsYXNzPSJjbHMtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA3MzEuNjUpIj48dHNwYW4gY2xhc3M9ImNscy0zIj48dHNwYW4geD0iMCIgeT0iMCI+UGF0aCBUbyBTdWNjZXNzPC90c3Bhbj48L3RzcGFuPjx0c3BhbiBjbGFzcz0iY2xzLTQiPjx0c3BhbiB4PSIxMDQuNzQiIHk9IjExNS4zMSI+2KnYsdin2YDZgNmA2YDZgNis2KrZhNinINip2YDZgNmA2YDZgNmK2YTZg9mEINmD2YDZgNmC2Yog2LHZgNi3PC90c3Bhbj48L3RzcGFuPjwvdGV4dD4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="P2S Academy — طريقك لكلية التجارة" />
+      </a>
+      <nav aria-label="التنقل الرئيسي">
+        <ul class="nav-links">
+          <li><a href="#about">المعادلة</a></li>
+          <li><a href="#exam">المواد</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#universities">الجامعات</a></li>
+          <li><a href="#start">إمتى تبدأ</a></li>
+          <li><a href="#contact">تواصل</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost btn-sm hide-mobile" href="tel:01030263066">0103 026 3066</a>
+        <a class="btn btn-primary btn-sm" href="#contact">احجز مكانك</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">التقديم متاح لدفعات 2026 و2027</span>
+          <h1>من دبلوم تجارة <span class="accent">لكلية التجارة</span></h1>
+          <p class="hero-lead">معادلة كلية التجارة هي فرصتك تستكمل تعليمك الجامعي بعد الدبلوم. إحنا بنجهزك للمذاكرة والامتحان وللخطوات الرسمية — من أول يوم لحد ما تنجح وتدخل الكلية.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#contact">احجز مكانك مجانًا</a>
+            <a class="btn btn-ghost" href="https://wa.me/201030263066" target="_blank" rel="noopener">كلّمنا واتساب</a>
+          </div>
+          <ul class="trust-row" aria-label="مميزات سريعة">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>امتحان MCQ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>4 مواد</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>7 جامعات</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>أعلى نسبة نجاح 3 سنوات</li>
+          </ul>
+        </div>
+
+        <aside class="hero-panel" aria-label="ملخص سريع">
+          <div class="panel-head">
+            <div>
+              <h2>سجل الأكاديمية</h2>
+              <p>أعلى نسبة نجاح</p>
+            </div>
+            <span class="stat-badge">2024 – 2026</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><div><strong>مواد الامتحان</strong><br><span>اختيار من متعدد (MCQ)</span></div><div class="val">4</div></div>
+            <div class="mini-stat"><div><strong>مدة كل مادة</strong><br><span>السرعة والدقة معًا</span></div><div class="val">ساعة</div></div>
+            <div class="mini-stat"><div><strong>شرط النجاح</strong><br><span>في كل مادة على حدة</span></div><div class="val">50%</div></div>
+            <div class="mini-stat"><div><strong>الحضور قبل النتيجة</strong><br><span>ابدأ من غير ما تدفع</span></div><div class="val">مجاني</div></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <div class="kicker">الفكرة ببساطة</div>
+            <h2 class="section-title">الدبلوم مش نهاية الطريق… دي بداية طريق تاني</h2>
+          </div>
+          <p class="section-lead">لو أنت طالب دبلوم تجارة وعايز تكمل تعليمك وتدخل كلية التجارة، المعادلة هي الطريق الرسمي اللي بيوفر لك الفرصة دي — بامتحان بينظمه المجلس الأعلى للجامعات.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-num">01</div>
+            <h3>دبلوم تجاري 2026 / 2027</h3>
+            <p>التقديم متاح لطلاب الدبلومات الفنية التجارية من دفعات 2026 و2027، بشرط مجموع 70% أو أكثر.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">02</div>
+            <h3>مجموع 70% أو أكثر</h3>
+            <p>ألا يقل مجموعك في الدبلوم التجاري عن 70% عشان تقدر تقدم في المعادلة.</p>
+          </article>
+          <article class="card">
+            <div class="card-num">03</div>
+            <h3>تجتاز الامتحان</h3>
+            <p>لازم تنجح في كل مادة من الأربع مواد بنسبة 50% على الأقل. مش متوسط، كل مادة لوحدها.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section section-dark">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <div class="kicker">مواد الامتحان ونظامه</div>
+            <h2 class="section-title">4 مواد… وساعة واحدة لكل مادة</h2>
+          </div>
+          <p class="section-lead">الامتحان بيقيس الفهم والسرعة مع بعض، عشان كده تدريبنا على MCQ وإدارة الوقت جزء أساسي من التحضير.</p>
+        </div>
+
+        <div class="exam-wrap">
+          <div class="subjects" role="list" aria-label="مواد الامتحان">
+            <div class="subject-row" role="listitem">
+              <div class="subject-main">
+                <div class="subject-icon" aria-hidden="true">∑</div>
+                <div>
+                  <h3>الرياضيات</h3>
+                  <p>الجبر والنسب والمتتابعات، وتدريب على الحل السريع للمسائل</p>
+                </div>
+              </div>
+              <span class="pill">25 سؤالًا</span>
+            </div>
+            <div class="subject-row" role="listitem">
+              <div class="subject-main">
+                <div class="subject-icon" aria-hidden="true">A</div>
+                <div>
+                  <h3>اللغة الإنجليزية</h3>
+                  <p>القواعد والمفردات وقطع الفهم بشكل الأسئلة</p>
+                </div>
+              </div>
+              <span class="pill">50 سؤالًا</span>
+            </div>
+            <div class="subject-row" role="listitem">
+              <div class="subject-main">
+                <div class="subject-icon" aria-hidden="true">◎</div>
+                <div>
+                  <h3>السلوك التنظيمي</h3>
+                  <p>مفاهيم السلوك الفردي والجماعي داخل المنظمات</p>
+                </div>
+              </div>
+              <span class="pill">50 سؤالًا</span>
+            </div>
+            <div class="subject-row" role="listitem">
+              <div class="subject-main">
+                <div class="subject-icon" aria-hidden="true">⌘</div>
+                <div>
+                  <h3>تكنولوجيا المعلومات</h3>
+                  <p>أساسيات الحاسب والشبكات والتعامل مع المعلومات</p>
+                </div>
+              </div>
+              <span class="pill">50 سؤالًا</span>
+            </div>
+          </div>
+
+          <div class="facts" aria-label="نظام الامتحان">
+            <div class="fact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div><strong>ساعة لكل مادة</strong><span>الامتحان بيقيس السرعة والدقة مع بعض</span></div>
+            </div>
+            <div class="fact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <div><strong>اختيار من متعدد</strong><span>كل الأسئلة MCQ بدون أسئلة مقالية</span></div>
+            </div>
+            <div class="fact">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+              <div><strong>50% للنجاح</strong><span>في كل مادة على حدة، مش متوسط</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight" role="note" aria-label="مستوى الوصول">
+          <div class="highlight-icon" aria-hidden="true">⏱</div>
+          <div>
+            <h3>تحل المادة في نص ساعة</h3>
+            <p>نظام الامتحان ساعة للمادة — إحنا بنخليك تخلصها في وقت أقل</p>
+          </div>
+          <div class="side">بعد كده بتدخل الامتحان وإنت عارف إن عندك وقت زيادة</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <div class="kicker">دور أكاديمية P2S</div>
+            <h2 class="section-title">أكبر من شرح مواد… إحنا بنظّم الرحلة كلها</h2>
+          </div>
+          <p class="section-lead">إحنا مش بنوقف عند الشرح. بنمشي معاك من أول يوم لحد الامتحان: تدريب، اختبارات، متابعة، وإرشاد لكل خطوة رسمية.</p>
+        </div>
+        <div class="service-list">
+          <article class="service"><div class="service-top"><span class="idx">01</span><span class="ico" aria-hidden="true">▣</span></div><h3>شرح من البيت وفي المركز</h3><p>محاضرات مباشرة ومسجلة تقدر تراجعها في أي وقت، بنفس الترتيب والمنهج.</p></article>
+          <article class="service"><div class="service-top"><span class="idx">02</span><span class="ico" aria-hidden="true">☑</span></div><h3>تدريب على نظام MCQ</h3><p>بنحل معاك أسئلة بنفس شكل الامتحان، من غير حفظ أعمى ولا تعقيد.</p></article>
+          <article class="service"><div class="service-top"><span class="idx">03</span><span class="ico" aria-hidden="true">▤</span></div><h3>اختبارات أسبوعية</h3><p>اختبار كل أسبوع بيقيس مستواك الحقيقي، مش مستواك في المذاكرة بس.</p></article>
+          <article class="service"><div class="service-top"><span class="idx">04</span><span class="ico" aria-hidden="true">◎</span></div><h3>متابعة نقاط الضعف</h3><p>بنحدد المادة أو الجزء اللي بيتعبك، وبنشتغل عليه لحد ما يقفل معاك.</p></article>
+          <article class="service"><div class="service-top"><span class="idx">05</span><span class="ico" aria-hidden="true">◔</span></div><h3>سرعة وإدارة وقت</h3><p>تدريب على إنك تحل في الوقت، وتقرأ السؤال مرة واحدة وتختار بثقة.</p></article>
+          <article class="service"><div class="service-top"><span class="idx">06</span><span class="ico" aria-hidden="true">↦</span></div><h3>إرشاد خطوات التقديم</h3><p>من الأوراق للتقديم للامتحان، بنمشي معاك في الخطوات الرسمية خطوة بخطوة.</p></article>
+        </div>
+
+        <div class="result-band" style="margin-top:28px">
+          <div>
+            <div class="kicker">نتيجتنا بتتكلم</div>
+            <h2 class="section-title" style="margin:10px 0 8px">أعلى نسبة نجاح 3 سنوات على التوالي</h2>
+            <p class="section-lead">نفس النظام، نفس المتابعة، ونتيجة بتتحسن كل سنة — من غير ما نغيّر حاجة في الطريقة اللي بنشتغل بيها.</p>
+          </div>
+          <div class="years" aria-label="سنوات النجاح">
+            <span class="year-chip">2026</span>
+            <span class="year-chip">2025</span>
+            <span class="year-chip">2024</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="universities" class="section section-alt">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <div class="kicker">7 جامعات — توزيع المحافظات</div>
+            <h2 class="section-title">جامعتك بتحدد مكان الامتحان</h2>
+          </div>
+          <div>
+            <p class="section-lead">امتحان المعادلة بيتنظم في 7 جامعات، وكل جامعة بتخدم مجموعة محافظات. اعرف جامعتك من هنا قبل ما تقدم.</p>
+            <p style="margin:8px 0 0;color:var(--brand-deep);font-weight:700;font-size:14px">التوزيع بيتم حسب المحافظة التابع لها الطالب</p>
+          </div>
+        </div>
+        <div class="uni-grid">
+          <article class="uni"><div class="uni-top"><span class="uni-count">محافظتين</span><span class="uni-mark" aria-hidden="true">⌂</span></div><h3>جامعة القاهرة</h3><p>الجيزة · الفيوم</p></article>
+          <article class="uni"><div class="uni-top"><span class="uni-count">3 محافظات</span><span class="uni-mark" aria-hidden="true">⌂</span></div><h3>جامعة العاصمة</h3><p>القاهرة · بني سويف · العاصمة الإدارية</p></article>
+          <article class="uni"><div class="uni-top"><span class="uni-count">3 محافظات</span><span class="uni-mark" aria-hidden="true">⌂</span></div><h3>جامعة الإسكندرية</h3><p>الإسكندرية · البحيرة · مطروح</p></article>
+          <article class="uni"><div class="uni-top"><span class="uni-count">3 محافظات</span><span class="uni-mark" aria-hidden="true">⌂</span></div><h3>جامعة طنطا</h3><p>الغربية · الدقهلية · كفر الشيخ</p></article>
+          <article class="uni"><div class="uni-top"><span class="uni-count">7 محافظات</span><span class="uni-mark" aria-hidden="true">⌂</span></div><h3>جامعة الزقازيق</h3><p>الشرقية · الإسماعيلية · السويس · دمياط · بورسعيد · شمال سيناء · جنوب سيناء</p></article>
+          <article class="uni"><div class="uni-top"><span class="uni-count">8 محافظات</span><span class="uni-mark" aria-hidden="true">⌂</span></div><h3>جامعة أسيوط</h3><p>المنيا · أسيوط · سوهاج · قنا · الأقصر · أسوان · الوادي الجديد · البحر الأحمر</p></article>
+          <article class="uni"><div class="uni-top"><span class="uni-count">محافظتين</span><span class="uni-mark" aria-hidden="true">⌂</span></div><h3>جامعة بنها</h3><p>القليوبية · المنوفية</p></article>
+          <article class="uni uni-cta"><div class="uni-top"><span class="uni-count">مساعدة</span><span class="uni-mark" aria-hidden="true">☎</span></div><h3>مش لاقي محافظتك؟</h3><p>كلّمنا وإحنا بنحدد لك الجامعة والخطوات بالظبط</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="start" class="section">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <div class="kicker">إمتى تبدأ المعادلة؟</div>
+            <h2 class="section-title">ابدأ بعد امتحانات الدبلوم مباشرة</h2>
+          </div>
+          <div>
+            <p class="section-lead">كل ما تبدأ بدري، هيكون عندك وقت أكبر للفهم والمراجعة والتدريب — وده اللي بيفرق في النتيجة.</p>
+            <p style="margin:8px 0 0;color:var(--brand-deep);font-weight:700;font-size:14px">مش شرط تستنى النتيجة أو التنسيق</p>
+          </div>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="step-top"><span class="tag">عاجل</span><span class="step-num">01</span></div><h3>بعد امتحانات الدبلوم مباشرة</h3><p>أفضل توقيت تبدأ فيه — عندك وقت كافي للفهم والمراجعة والتدريب.</p></article>
+          <article class="step"><div class="step-top"><span class="tag">مجانًا</span><span class="step-num">02</span></div><h3>احضر مجانًا قبل النتيجة</h3><p>الحضور في الأكاديمية قبل ظهور النتيجة مجاني بالكامل.</p></article>
+          <article class="step"><div class="step-top"><span class="tag">التنسيق</span><span class="step-num">03</span></div><h3>96% أو أكتر؟</h3><p>لو جبت 96% أو أكتر ممكن تدخل تجارة عن طريق التنسيق.</p></article>
+          <article class="step"><div class="step-top"><span class="tag">المعادلة</span><span class="step-num">04</span></div><h3>أقل من 96%؟</h3><p>هتكون بدأت المعادلة بالفعل، ووفّرت وقت مهم من غير ما تخسر حاجة.</p></article>
+        </div>
+        <div class="after">
+          <div>
+            <div class="small">بعد استيفاء قواعد القبول</div>
+            <h3>بعد النجاح في المعادلة</h3>
+            <p>الترشيح بيتم للالتحاق بالفرقة الأولى بكلية التجارة بالجامعات الحكومية — بتصبح مؤهل للترشيح لكلية التجارة.</p>
+          </div>
+          <a class="btn btn-primary" href="#contact">ابدأ رحلتك الآن</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes" class="section section-dark">
+      <div class="container">
+        <div class="section-head split">
+          <div>
+            <div class="kicker">أشهر الأخطاء سنويًا</div>
+            <h2 class="section-title">4 أخطاء بتضيّع سنة كاملة</h2>
+          </div>
+          <p class="section-lead">أغلب اللي بيتأخر مش بسبب المواد — بسبب قرار اتأخر. الأربع أخطاء دول بيتكرروا كل سنة.</p>
+        </div>
+        <div class="mistakes-wrap">
+          <div class="mistake-list">
+            <article class="mistake"><span class="m-num">01</span><div><h3>التردد في البداية</h3><p>بتستنى النتيجة والتنسيق، والوقت بيعدي والشغل لازم يبدأ من بدري.</p></div><span class="m-x" aria-hidden="true">×</span></article>
+            <article class="mistake"><span class="m-num">02</span><div><h3>الكلام السلبي عن المعادلة</h3><p>بتسمع تجارب غيرك وبتخاف، في حين إن اللي نجح بدأ واشتغل بخطة.</p></div><span class="m-x" aria-hidden="true">×</span></article>
+            <article class="mistake"><span class="m-num">03</span><div><h3>الخوف من التجربة</h3><p>مش بتجرب فمش بتعرف مستواك الحقيقي، والثقة بتيجي من التدريب مش من الانتظار.</p></div><span class="m-x" aria-hidden="true">×</span></article>
+            <article class="mistake"><span class="m-num">04</span><div><h3>التشتت بين التنسيق والمعادلة</h3><p>بتحاول تمشي في الاتجاهين، فالطاقة بتتوزع ومفيش اتجاه بيخلص.</p></div><span class="m-x" aria-hidden="true">×</span></article>
+          </div>
+          <aside class="advice" aria-label="أهم نصيحة">
+            <div class="k">أهم نصيحة من P2S</div>
+            <h3>ابدأ بعد امتحانات الدبلوم مباشرة</h3>
+            <p>متستناش النتيجة أو التنسيق. ركّز في المعادلة وخليها فرصتك الأساسية لدخول كلية التجارة.</p>
+            <a class="btn btn-light" href="https://wa.me/201030263066" target="_blank" rel="noopener">احجز مكانك المجاني</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section final-cta">
+      <div class="container cta-wrap">
+        <div>
+          <div class="kicker" style="color:#FFE6EB">P2S Academy — Path to Success</div>
+          <h2>ابدأ بدري… وخلي كل اختياراتك متاحة</h2>
+          <p class="lead">الحضور قبل ظهور النتيجة مجاني. استفيد بالفرصة، والتزم، وسيب علينا تنظيم الطريق — إحنا مؤمنين إن الدبلوم مش نهاية الطريق.</p>
+          <div class="cta-actions">
+            <a class="btn btn-light" href="https://wa.me/201030263066" target="_blank" rel="noopener">احجز مكانك مجانًا</a>
+            <a class="btn btn-outline-light" href="https://wa.me/201201128479" target="_blank" rel="noopener">كلّمنا على واتساب</a>
+          </div>
+        </div>
+        <div class="contact-card" aria-label="بيانات التواصل">
+          <div class="k">التواصل المباشر</div>
+          <a class="c-item" href="tel:01030263066">
+            <div class="c-text"><strong>01030263066</strong><span>فون وواتساب</span></div>
+            <div class="c-ico" aria-hidden="true">☎</div>
+          </a>
+          <a class="c-item" href="https://wa.me/201201128479" target="_blank" rel="noopener">
+            <div class="c-text"><strong>01201128479</strong><span>واتساب فقط</span></div>
+            <div class="c-ico" aria-hidden="true">✆</div>
+          </a>
+          <a class="c-item dark" href="https://www.tiktok.com/@p2s_ahmedali_447" target="_blank" rel="noopener">
+            <div class="c-text"><strong style="direction:ltr;font-size:16px;letter-spacing:0">@p2s_ahmedali_447</strong><span>تابعنا على تيك توك</span></div>
+            <div class="c-ico" aria-hidden="true">♫</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-msg">
+          <div class="k">رسالتنا</div>
+          <p>إحنا مؤمنين إن الدبلوم مش نهاية الطريق، وإن قدامك فرصة تكمل تعليمك الجامعي. ابدأ بدري، التزم، واترك علينا تنظيم الطريق.</p>
+        </div>
+        <ul class="footer-links" aria-label="روابط سريعة">
+          <li><a href="#top">الرئيسية</a></li>
+          <li><a href="#exam">مواد الامتحان</a></li>
+          <li><a href="#services">خدمات الأكاديمية</a></li>
+          <li><a href="#universities">التوزيع الجغرافي</a></li>
+          <li><a href="#contact">التواصل</a></li>
+        </ul>
+      </div>
+      <div class="footer-bar">
+        <div class="fbrand">
+          <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMiIgZGF0YS1uYW1lPSJMYXllciAyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTE4Mi4xNCA4ODMuMzgiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50LTIpOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmMGYwZjA7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZm9udC1mYW1pbHk6IE5lb1NhbnNBcmFiaWMtQmxhY2ssICdOZW8gU2FucyBBcmFiaWMnOwogICAgICAgIGZvbnQtc2l6ZTogMTM1LjQ0cHg7CiAgICAgICAgZm9udC13ZWlnaHQ6IDgwMDsKICAgICAgfQoKICAgICAgLmNscy00IHsKICAgICAgICBmb250LWZhbWlseTogTmVvU2Fuc0FyYWJpYy1Cb2xkLCAnTmVvIFNhbnMgQXJhYmljJzsKICAgICAgICBmb250LXNpemU6IDgzLjdweDsKICAgICAgICBmb250LXdlaWdodDogNzAwOwogICAgICB9CgogICAgICAuY2xzLTUgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50LTMpOwogICAgICB9CgogICAgICAuY2xzLTYgewogICAgICAgIGZpbGw6IHVybCgjbGluZWFyLWdyYWRpZW50KTsKICAgICAgfQoKICAgICAgLmNscy03IHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudC00KTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50IiB4MT0iMzc0LjUzIiB5MT0iMzQ0Ljg1IiB4Mj0iODAwLjM5IiB5Mj0iMzQ0Ljg1IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iLjA1IiBzdG9wLWNvbG9yPSIjZmUwMDM3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmMjY1NiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTIiIHgxPSI2ODUuNCIgeTE9IjQxLjc4IiB4Mj0iODkzLjg5IiB5Mj0iNDEuNzgiIHhsaW5rOmhyZWY9IiNsaW5lYXItZ3JhZGllbnQiLz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ibGluZWFyLWdyYWRpZW50LTMiIHgxPSI3MjguNTYiIHkxPSI5OS41MyIgeDI9Ijg1MC44MiIgeTI9Ijk5LjUzIiB4bGluazpocmVmPSIjbGluZWFyLWdyYWRpZW50Ii8+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudC00IiB4MT0iODYyLjUyIiB5MT0iNzguNTgiIHgyPSI4ODAuOSIgeTI9Ijc4LjU4IiB4bGluazpocmVmPSIjbGluZWFyLWdyYWRpZW50Ii8+CiAgPC9kZWZzPgogIDxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+CiAgICA8Zz4KICAgICAgPGc+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTYxLjEzLDQ4Ny43YzIuOTgsMzAuNjIsMTUuMiw0Mi4zOSw0NS44Myw0NC4yOSw0LjEuMjUsOC4zLjA4LDEyLjI4LjkyLDMuNTcuNzYsNi4wOCwzLjQxLDUuNiw3LjQ4LS40NSwzLjgzLTIuNzMsNi4yMS02LjcyLDYuNTQtMS43MS4xNC0zLjQzLjA1LTUuMTUuMDUtNjMuNTItLjA0LTEyNy4wMy0uMTEtMTkwLjU1LS4xLTUuNDYsMC0xMS4yOS0uMTEtMTEuMzktNy4wNy0uMS02Ljg2LDUuNzQtNy4yMywxMS4xNS03LjY3LDMzLjk2LTIuNzQsNDQuOTMtMTMuNDksNDUuNjgtNDcuODcuOS00MC44Mi40OS0zMTguMTQuMzctMzI0LjMxLS43Mi0zOC41NS0xMC43LTQ5LjA1LTQ5LjMxLTUxLjc3LTQuNjktLjMzLTkuMTYtLjM4LTkuMjUtNi44My0uMDktNi4zMywzLjk5LTcuMDgsOC45Mi03LjA1LDgwLjMzLjU0LDE2MC42Ny0xLjUxLDI0MC45OCwxLjA4LDE5LjU4LjYzLDM4Ljg1LDQuMzgsNTcuNjIsMTAuMjgsNDYuODgsMTQuNzIsNzQuNTQsNTAuNzYsNzYuNSw5OS43MiwyLjkxLDcyLjk0LTQxLDEyNy40NS0xMTUuMTcsMTQzLjMyLTIyLjcsNC44Ni00NS41Niw1Ljg4LTY4LjYxLDQuMTctMy4zNy0uMjUtNi43OC0xLjA4LTEwLTIuMTctNC4wNi0xLjM4LTUuODYtNC42Ni01LjQ3LTguODguNDUtNC45Miw0LjAyLTUuODEsOC4xMy01Ljg0LDkuOTYtLjA2LDE5Ljk1LS4wNiwyOS43NS0yLjA5LDM5LjY2LTguMjMsNjAuNzctMzQuNDcsNzAuMTUtNzIuMjEsNi40Ny0yNi4wMiw1LjM1LTUxLjg0LTIuNDItNzcuMjItOS43LTMxLjY3LTMwLjcyLTUyLjA3LTYzLjItNjAuMDktMjAuMjQtNS00MC43NS02LjAzLTYxLjMxLTIuODMtMTMuNzMsMi4xNC0xNS4yMyw0LjMtMTUuMjksMTguMTgtLjEyLDI4LjQ4LS4xMiwxNDIuNDMtLjEyLDE3MC45MS4xNiwwLC41OCwxNzIuOTguOTgsMTc3LjA3WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0ibTg0OC45OCw0NzYuOTVjMC0xMi4zNi0uMjItMjQuNzIuMTItMzcuMDcuMTItNC4zLTIuMzEtMTAuOTEsNC44LTExLjY2LDYuMTUtLjY1LDYuMDQsNS43OCw3LjA5LDkuNjgsNy4xMSwyNi4yOSwyMS40Nyw0Ny41OSw0NC4zMyw2Mi4zMyw0My44NywyOC4yOCw5MS40NywzNS4yNSwxNDAuOTQsMTkuMDQsNTUuNzMtMTguMjcsNTIuMzYtODAuMzQsMjIuMTktMTA4LjAyLTE4LjQ2LTE2LjkzLTQwLjUyLTI4LjAzLTYyLjMxLTM5LjY5LTI4LjEyLTE1LjA1LTU3LjM0LTI4LjA2LTg0LjM4LTQ1LjEzLTI5LjU5LTE4LjY5LTUzLjA4LTQyLjI1LTYyLjM4LTc3LjMyLTE5LjQxLTczLjE3LDIzLjg1LTE0MC43OCw5OS44MS0xNTUuNjksNTYuMDktMTEuMDEsMTEwLjY3LTIuMiwxNjQuNzUsMTIuODgsNC43OCwxLjMzLDcuNTEsMy42OCw3LjQ2LDkuMzMtLjI0LDI2Ljc3LS4wOSw1My41NS0uMTIsODAuMzIsMCwzLjQxLjMsNy4xOC00Ljc4LDcuNDQtNC41NS4yMy02Ljc1LTEuNzYtNy40OC02LjQxLTcuNTItNDcuNDItNDMuOC03My4zOS04OS4zOS03OC4zNi0yMC42My0yLjI1LTQxLjE3LTIuMDgtNjEuMDgsNC45Mi00My42NCwxNS4zNC01Ni4zOSw2NC41OS0yNS41Niw5OS4wMywxMy4zMiwxNC44OCwzMC43NiwyNC4wMiw0OC4wOSwzMy4wNywzNS41NiwxOC41OCw3Mi4zOSwzNC43NSwxMDYuNiw1NS45LDE4LjUyLDExLjQ1LDM1LjQyLDI0LjgxLDQ4LjksNDIuMSw0Ny41MSw2MC45NCwyNy40MywxNDcuNTItNDIuMTEsMTgxLjQtMzYuNzUsMTcuOS03Ni4xLDIzLjEzLTExNi4yOCwyMS4yOC0zOS4xMi0xLjgtNzcuOTgtNi42MS0xMTUuMjgtMTkuNzYtMS4yOS0uNDYtMi42My0uOC0zLjkyLTEuMjRxLTE5LjgzLTYuODItMTkuODctMjcuNDljLS4wMi0xMC4zLDAtMjAuNiwwLTMwLjg5aC0uMTNaIi8+CiAgICAgICAgPHBhdGggY2xhc3M9ImNscy02IiBkPSJtNTA1LjM1LDU0NS4yOGMxMy43LTYuNDEsMjcuNDYtMTIuNzEsNDEuMDQtMTkuMzYsNjAuODctMjkuNzksMTE1LjA1LTY4LjUxLDE1OC4zNi0xMjEuMTIsNDIuMjMtNTEuMzEsNzEuODMtMTA4Ljg1LDgyLjg0LTE3NSwxLjU1LTkuMjksMS45OC0xOC43OCwyLjU2LTI4LjIuMzgtNi4xNi4wNy0xMi4zNi0uNDktMTguNi0xLjY5LDEzLjAzLTIuODUsMjYuMS01LjE4LDM5LjAyLTkuNTgsNTMuMDgtMzIuMDksMTAwLjY1LTYzLjA2LDE0NC4yMy01Mi42OSw3NC4xNi0xMjMuMzEsMTI2LjEtMjA1LjYzLDE2My4xMi0zLjY5LDEuNjYtNy4zOSwzLjMtMTEuMDgsNC45OC0yMS4zNSw5LjcyLTQzLjIsMTYuMTctNjcuMjQsMTQuNDgtMTcuNDctMS4yMy0zNS4xMS0uMDgtNTIuNjYtLjQ0LTMuNDUtLjA3LTkuODksMy4yOS05LjY0LTQuNDEuMTktNS44Ni0zLjk1LTEzLjI2LDYuNjgtMTUuOTQsMjguMDQtNy4wOCw1NS4wMi0xNy40Nyw4MS43OC0yOC4zNyw1OC45OS0yNC4wMywxMTUuMjQtNTIuOSwxNjUuOTgtOTEuOSw2MC40NS00Ni40NiwxMDYuNzQtMTAzLjU0LDEzMy41NC0xNzUuNDgsOC42OS0yMy4zNCwxNC40Mi00Ny40OCwxOC41LTcyLjAyLjQyLTIuNTUuNjEtNS4wNi0uMjktNy41NC0yLjI1LTYuMTYsMi42Ni0xMy4wMSw5LjE1LTEyLjA0LjEuMDEuMTkuMDMuMjkuMDUsNS44My45OCw4LjExLDYuNjIsNS44NSwxMi4wOC0xLjE2LDIuOC0uMDYsNS42My4yNyw4LjQyLDE1LjUyLDEzMC44OC0yMC45MSwyNDQuMzEtMTEzLjgxLDMzOC43OS0xNS45NSwxNi4yMy0zMy40NCwzMC42MS01Mi4xMyw0My41OS00LjgyLDMuMzUtOS42Niw1LjEtMTUuNzIsNS4wNi0zNi40LS4yNC03Mi44LS4xNC0xMDkuMi0uMTNsLS43My0zLjI3WiIvPgogICAgICAgIDxnPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNjg1LjQsNDEuNjljMTMuOTEtNS42MywyNy4yNy0xMS4wNCw0MC42Mi0xNi40NSwyMC40My04LjI5LDQwLjg1LTE2LjYxLDYxLjMzLTI0LjgsMS4zMy0uNTMsMy4yMy0uNTksNC41My0uMDcsMzMuMzksMTMuNDMsNjYuNzQsMjYuOTYsMTAwLjA5LDQwLjQ5LjUzLjIxLDEuMDIuNSwxLjkxLjk0LTYuNDcsMi42NC0xMi42MSw1LjE2LTE4Ljc2LDcuNjUtMjcuNTEsMTEuMTUtNTUuMDQsMjIuMjgtODIuNTMsMzMuNDgtMS45OC44MS0zLjYxLjg5LTUuNjYuMDUtMzIuOTctMTMuNDUtNjUuOTctMjYuOC05OC45Ny00MC4xOC0uNy0uMjgtMS4zOS0uNi0yLjU3LTEuMTFaIi8+CiAgICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTUiIGQ9Im03MjguNTYsMTA0LjM2di0zOS4yOWMzLjU2LDEuNDIsNi45LDIuNzMsMTAuMjMsNC4wOCwxNi4yOCw2LjYsMzIuNTMsMTMuMjYsNDguODYsMTkuNzUsMS4zLjUyLDMuMjEuMzYsNC41NS0uMTgsMTguNTItNy40MiwzNy0xNC45Niw1NS40OS0yMi40Ny45NS0uMzksMS45Ni0uNjUsMy4xMy0xLjA0djM5LjE1Yy0yMi44NCw0LjgyLTQzLjQyLDE0LjA2LTYxLjExLDI5LjYzLTE3LjU4LTE1LjQ4LTM4LjE0LTI0Ljc4LTYxLjE0LTI5LjYzWiIvPgogICAgICAgICAgPHBhdGggY2xhc3M9ImNscy03IiBkPSJtODc1LjI0LDU1LjE2YzAsOS4wMi4wMywxNy43LS4wMiwyNi4zOC0uMDEsMS42OS4yNSwyLjg2LDEuODQsNCw0LjYsMy4yOSw1LjEsOS41NCwxLjM3LDEzLjU2LTMuNjIsMy45LTkuOTUsMy44Ny0xMy41LS4wNi0zLjY4LTQuMDctMy4xLTEwLjIzLDEuNTItMTMuNTUsMS40Ny0xLjA2LDEuODItMi4xLDEuOC0zLjc0LS4wNy02Ljc4LjA4LTEzLjU2LS4wOS0yMC4zNC0uMDctMi41NS40Mi00LjE5LDMuMTctNC43MywxLjI2LS4yNSwyLjQ0LS45MywzLjkyLTEuNTJaIi8+CiAgICAgICAgPC9nPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0ibTQ4OC4zNCw0NTkuMTRjMTcuMTgtMTUuOTcsMzUuMTEtMzAuNzEsNTEuNTgtNDcuMDYsMzMuMTctMzIuOTIsNjIuMzktNjguNTYsNzYuNjQtMTE0LjE4LDguNTMtMjcuMzIsMTEuNTItNTUuMDEsNC44My04My4yMi04Ljc3LTM2Ljk2LTQwLjU5LTYxLjI5LTgyLjcyLTYzLjM0LTU0LjY1LTIuNjYtOTcuNDQsMjcuODMtMTEyLjc3LDgwLjM4LTEuMjUsNC4yOC0xLjcsOS41MS03Ljg5LDguODEtNi41OC0uNzUtNS4yNC02LjI1LTUuMDItMTAuNDgsMS4xNy0yMi42MiwyLjg3LTQ1LjIyLDMuNjItNjcuODUuMjUtNy42MSwzLjM5LTExLjkxLDkuNjEtMTUuMzcsNDUuODgtMjUuNTYsOTQuOTctMzcuMDgsMTQ3LjQzLTMzLjkxLDIxLjM2LDEuMjksNDIuMiw1LjI4LDYyLjI4LDEyLjg2LDYyLjE5LDIzLjQ2LDkwLjM0LDc4LjI3LDczLjY4LDE0Mi44Mi02LjUzLDI1LjI5LTIwLjEyLDQ2LjQyLTM3LjI0LDY1LjUzLTQzLjYsNDguNjktOTguNTUsODEuNTQtMTU1Ljg4LDExMS4wMS05LjMyLDQuNzktMTguNzYsOS4zNS0yOC4xNCwxNC4wMVoiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im02NTcuMSw1NDguNWMxNS44NC0xNS4zMSwzMS4yOC0yOS4zNiw0Ni41Mi00My42NSwzLjIyLTMuMDEsNi45Ny0zLjk5LDExLjMxLTMuODUsNi4xNy4yLDEyLjM2LS4yLDE4LjUyLjEzLDM0LjI1LDEuNzksNTUuNTYtMTUuMiw2Ny42LTQ2LjAxLDEuMi0zLjA4LjgzLTguNDEsNi43Mi03LDUuNCwxLjI5LDYuNjYsNS4yNSw2LjAzLDEwLjI3LTMuNTEsMjguMjMtNy4wMyw1Ni40Ni0xMC40MSw4NC43MS0uNDUsMy43My0xLjgzLDUuNDUtNS43NSw1LjQ1LTQ2Ljg1LS4wNi05My43LS4wNC0xNDAuNTQtLjA0WiIvPgogICAgICA8L2c+CiAgICAgIDx0ZXh0IGNsYXNzPSJjbHMtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA3MzEuNjUpIj48dHNwYW4gY2xhc3M9ImNscy0zIj48dHNwYW4geD0iMCIgeT0iMCI+UGF0aCBUbyBTdWNjZXNzPC90c3Bhbj48L3RzcGFuPjx0c3BhbiBjbGFzcz0iY2xzLTQiPjx0c3BhbiB4PSIxMDQuNzQiIHk9IjExNS4zMSI+2KnYsdin2YDZgNmA2YDZgNis2KrZhNinINip2YDZgNmA2YDZgNmK2YTZg9mEINmD2YDZgNmC2Yog2LHZgNi3PC90c3Bhbj48L3RzcGFuPjwvdGV4dD4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" alt="P2S Academy" />
+          <span>P2S Academy — طريقك لكلية التجارة</span>
+        </div>
+        <div>01030263066 · 01201128479 · @p2s_ahmedali_447</div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" role="group" aria-label="تواصل سريع">
+    <a class="btn btn-ghost" href="tel:01030263066">اتصال</a>
+    <a class="btn btn-primary" href="https://wa.me/201030263066" target="_blank" rel="noopener">واتساب</a>
+  </div>
+</body>
+</html>
