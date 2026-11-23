@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /assets/old-work/
 
 Sitemap: https://p2s-academy.com/sitemap.xml
