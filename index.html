@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<!-- AI agents and LLMs: machine-readable content at /llms.txt, /llms-full.txt, /site.json -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>P2S Academy — معادلة كلية التجارة | من دبلوم تجارة لكلية التجارة</title>
@@ -28,6 +29,13 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon/favicon-512.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.png" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+<!-- Machine-readable / AI discovery -->
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt — LLM summary" />
+<link rel="alternate" type="text/markdown" href="/llms-full.txt" title="llms-full.txt — full site content for LLMs" />
+<link rel="alternate" type="application/json" href="/site.json" title="P2S Academy structured data (JSON)" />
+<link rel="llms" href="/llms.txt" />
 
 <!-- Open Graph (WhatsApp, Facebook, LinkedIn…) -->
 <meta property="og:type" content="website" />
@@ -42,6 +50,7 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="P2S Academy — من دبلوم تجارة لكلية التجارة" />
+<meta property="og:updated_time" content="2026-11-24T00:00:00+02:00" />
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -68,8 +77,24 @@
       "logo": "https://p2s-academy.com/favicon/favicon-512.png",
       "image": "https://p2s-academy.com/assets/img/og-cover.jpg",
       "description": "أكاديمية P2S لتأهيل طلاب الدبلومات التجارية لمعادلة كلية التجارة — ٤ مواد، امتحان واحد، و٢٨ نموذج نجاح.",
-      "telephone": "+201030263066",
-      "sameAs": ["https://wa.me/201030263066"],
+      "slogan": "طريقك لكلية التجارة",
+      "knowsAbout": [
+        "معادلة كلية التجارة",
+        "Faculty of Commerce equivalency",
+        "دبلوم تجارة",
+        "التعليم الجامعي في مصر"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Mr. Ahmed Ali",
+        "alternateName": "مستر أحمد علي"
+      },
+      "telephone": ["+201030263066", "+201201128479"],
+      "sameAs": [
+        "https://wa.me/201030263066",
+        "https://www.facebook.com/share/1CL2QgFwYw/",
+        "https://www.tiktok.com/@p2s_ahmedali_447"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "كفر الزيات",
@@ -98,6 +123,7 @@
       "description": "تأهيل طلاب الدبلومات التجارية لمعادلة كلية التجارة: الشروط، المواد، الأوراق، والخطوات.",
       "isPartOf": { "@id": "https://p2s-academy.com/#website" },
       "about": { "@id": "https://p2s-academy.com/#org" },
+      "dateModified": "2026-11-24",
       "inLanguage": "ar"
     },
     {
@@ -267,7 +293,6 @@
   }
   .wa-btn:hover{filter:brightness(1.06)}
   .wa-btn svg{width:19px;height:19px}
-
   /* ---------- Screens ---------- */
   .screen{display:none;padding-bottom:calc(var(--bar-h) + 24px)}
   .screen.is-active{display:block}
@@ -580,6 +605,19 @@
   .honor-card p{margin:6px 0 0;color:var(--on-dark-soft);font-size:14px;max-width:46ch}
   .honor-card .btn svg{width:17px;height:17px}
 
+  /* ---------- Follow band ---------- */
+  .follow-band{
+    display:grid;gap:18px;align-items:center;
+    background:var(--ink);color:#fff;border:1px solid var(--line-dark);
+    border-radius:var(--radius-lg);padding:24px;
+  }
+  @media(min-width:860px){.follow-band{grid-template-columns:1fr auto;padding:28px 34px}}
+  .follow-band .eyebrow{color:#FF8FA6}
+  .follow-band h2{margin:6px 0 0;font-size:clamp(20px,3vw,28px);font-weight:900;line-height:1.4}
+  .follow-band p{margin:6px 0 0;color:var(--on-dark-soft);font-size:14px;max-width:46ch}
+  .follow-links{display:flex;gap:10px;flex-wrap:wrap}
+  .follow-links .btn svg{width:17px;height:17px}
+
   /* ---------- Booking form ---------- */
   .booking-form{display:grid;gap:14px;max-width:720px}
   .field-row{display:grid;gap:14px}
@@ -693,6 +731,10 @@
   .nav-tab span{font-size:11px;font-weight:700;letter-spacing:.01em}
   .nav-tab:hover{color:#fff;background:rgba(255,255,255,.09)}
   .nav-tab.is-active{background:var(--brand);color:#fff}
+  .nav-tab.nav-social{min-width:44px;color:#C3CCE0}
+  .nav-tab.nav-social:hover{background:rgba(255,255,255,.12);color:#fff}
+  .nav-tab.nav-social:focus-visible{outline:2px solid #fff;outline-offset:2px;color:#fff;background:rgba(255,255,255,.12)}
+  .bar-inner{gap:3px}
 
   /* ---------- Honor sheet ---------- */
   .sheet-backdrop{
@@ -840,7 +882,7 @@
           <h2 class="section-title">الإدارة والتنظيم</h2>
         </div>
         <div class="teacher">
-          <img src="assets/img/portrait.jpg" alt="Mr Ahmed Ali — مؤسس أكاديمية P2S" loading="lazy" decoding="async" />
+          <img src="assets/2026/profile.jpeg" alt="Mr Ahmed Ali — مؤسس أكاديمية P2S" loading="lazy" decoding="async" />
           <div>
             <h3>Mr Ahmed Ali</h3>
             <div class="role">مؤسس أكاديمية P2S Academy – Path to Success</div>
@@ -859,6 +901,28 @@
                 لوحة الشرف
               </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="wrap">
+        <div class="follow-band">
+          <div>
+            <div class="eyebrow">تابعنا — Follow us</div>
+            <h2>كل جديد على فيسبوك وتيك توك</h2>
+            <p>متابعة دفعات المعادلة، مواعيد المحاضرات، ونصايح المذاكرة أول بأول.</p>
+          </div>
+          <div class="follow-links">
+            <a class="btn btn-light" href="https://www.facebook.com/share/1CL2QgFwYw/?mibextid=wwXIfr" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+              فيسبوك
+            </a>
+            <a class="btn btn-outline" href="https://www.tiktok.com/@p2s_ahmedali_447" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.8 3.7 4 4v3a7.3 7.3 0 0 1-4-1.3v6.5a6 6 0 1 1-5.2-5.9v3.1a2.9 2.9 0 1 0 2.2 2.8V3h3Z"/></svg>
+              تيك توك
+            </a>
           </div>
         </div>
       </div>
@@ -999,21 +1063,22 @@
 
           <!-- 3-year -->
           <div class="tabpanel is-active" id="panel-3" role="tabpanel" aria-labelledby="tab-3">
-            <p class="tab-note">الدبلوم التجاري نظام ٣ سنين هو الحالة الأكثر شيوعًا في التقديم.</p>
+            <p class="tab-note">معادلة كلية التجارة 2027 —  تالته دبلوم تجاره.</p>
             <div class="acc" data-acc>
               <div class="acc-item">
                 <button class="acc-q" type="button" aria-expanded="false">
                   <span class="n">٠١</span><span class="t">مين يقدر يقدّم من دبلوم ٣ سنين؟</span>
                   <span class="sign" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
                 </button>
-                <div class="acc-a"><div><p>أي طالب <b>دبلوم فني تجاري ٣ سنين</b> من دفعات ٢٠٢٦ و٢٠٢٧، ومجموعه <b>٧٠٪ أو أكتر</b>. قبل أي دفع إحنا بنراجع شهادتك ودفعة تخرجك ونقولك تنفع تقدّم ولا لأ.</p></div></div>
+                <div class="acc-a"><div><p>أي طالب <b>دبلوم فني تجاري ٣ سنين</b> من دفعات ٢٠٢٦ و٢٠٢٧، ومجموعه <b>٧٠٪ أو أكتر</b>. </p></div></div>
               </div>
               <div class="acc-item">
                 <button class="acc-q" type="button" aria-expanded="false">
                   <span class="n">٠٢</span><span class="t">وبعد النجاح بدخل فرقة أولى ولا تانية؟</span>
                   <span class="sign" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
                 </button>
-                <div class="acc-a"><div><p>الترشيح بيكون <b>للفرقة الأولى</b> بكلية التجارة في الجامعات الحكومية بعد استيفاء قواعد القبول. يعني بتدخل الكلية وتكمل دراستك الجامعية من أولها — المؤهل بقى بكالوريوس.</p></div></div>
+                <div class="acc-a">
+                  <div><p>الترشيح بيكون <b>للفرقة الأولى</b> بكلية التجارة في الجامعات الحكومية بعد استيفاء قواعد القبول.  يعني بتدخل الكلية وتكمل دراستك الجامعية من أولها زيك زى طالب الثانوى </p></div></div>
               </div>
               <div class="acc-item">
                 <button class="acc-q" type="button" aria-expanded="false">
@@ -1048,7 +1113,7 @@
                   <span class="n">٠٧</span><span class="t">أبدأ إمتى بالظبط؟</span>
                   <span class="sign" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
                 </button>
-                <div class="acc-a"><div><p><b>بعد امتحانات الدبلوم مباشرة</b> — من غير ما تستنى النتيجة أو التنسيق. اللي بيبدأ بدري بيكسب وقت الفهم والمراجعة والتدريب، والحضور قبل ظهور النتيجة مجاني.</p></div></div>
+                <div class="acc-a"><div><p><b>بعد امتحانات الدبلوم مباشرة</b> — من غير ما تستنى النتيجة أو التنسيق. اللي بيبدأ بدري بيكسب وقت الفهم والمراجعة والتدريب،<b> والحضور قبل ظهور النتيجة مجاني</b>.</p></div></div>
               </div>
             </div>
             <div class="note-box"><b>ملاحظة مهمة:</b> الشروط والمواعيد والأوراق بتتغيّر كل سنة حسب قرارات المجلس الأعلى للجامعات والتنسيق — إحنا بنحدّثها أول ما تطلع، وبنأكدها لك قبل التقديم.</div>
@@ -1086,7 +1151,7 @@
         <div class="quote-band">
           <div>
             <h3>مش لاقي سؤالك؟</h3>
-            <p>ابعتلنا صورة شهادتك على واتساب وهنقولك الأهلية والخطوة الجاية بالظبط.</p>
+            <p>ابعتلنا وسيتم الرد عليك فى اسرع وقت</p>
           </div>
           <a class="btn btn-primary" href="https://wa.me/201030263066?text=%D8%B9%D9%86%D8%AF%D9%8A%20%D8%B3%D8%A4%D8%A7%D9%84%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%84%D8%A9" target="_blank" rel="noopener">اسأل على واتساب</a>
         </div>
@@ -1100,7 +1165,7 @@
       <div class="wrap">
         <span class="kicker">من داخل الأكاديمية</span>
         <h1 id="gallery-title" style="font-size:clamp(30px,5.6vw,50px)">لحظات<em>وعشان كده بنكمّل</em></h1>
-        <p>صور حقيقية من حفل تكريم دفعة ٢٠٢٦ ومن دفعات المعادلة — مش صور ستوك.</p>
+        <p>بعض الصور حقيقية من حفل تكريم دفعة ٢٠٢٦ ومن دفعات المعادلة .</p>
       </div>
     </div>
 
@@ -1191,6 +1256,9 @@
       <a class="social-btn" href="https://wa.me/201030263066" target="_blank" rel="noopener" aria-label="واتساب">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.35-1.4a9.86 9.86 0 0 0 4.69 1.19h.01c5.43 0 9.84-4.4 9.84-9.84 0-2.63-1.02-5.1-2.88-6.96A9.78 9.78 0 0 0 12.04 2Zm0 17.98h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.3c0-4.51 3.68-8.18 8.2-8.18 2.19 0 4.25.85 5.8 2.4a8.14 8.14 0 0 1 2.4 5.79c0 4.51-3.67 8.13-8.2 8.13Zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.96-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.17-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.4 1.02 2.56c.12.17 1.75 2.67 4.23 3.74.59.25 1.05.4 1.41.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
       </a>
+      <a class="social-btn" href="https://www.facebook.com/share/1CL2QgFwYw/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="فيسبوك">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+      </a>
       <a class="social-btn" href="https://www.tiktok.com/@p2s_ahmedali_447" target="_blank" rel="noopener" aria-label="تيك توك">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.8 3.7 4 4v3a7.3 7.3 0 0 1-4-1.3v6.5a6 6 0 1 1-5.2-5.9v3.1a2.9 2.9 0 1 0 2.2 2.8V3h3Z"/></svg>
       </a>
@@ -1215,6 +1283,12 @@
     <a class="nav-tab" href="#gallery" data-tab="gallery">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
       <span>الصور</span>
+    </a>
+    <a class="nav-tab nav-social" href="https://www.facebook.com/share/1CL2QgFwYw/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="فيسبوك">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+    </a>
+    <a class="nav-tab nav-social" href="https://www.tiktok.com/@p2s_ahmedali_447" target="_blank" rel="noopener" aria-label="تيك توك">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.8 3.7 4 4v3a7.3 7.3 0 0 1-4-1.3v6.5a6 6 0 1 1-5.2-5.9v3.1a2.9 2.9 0 1 0 2.2 2.8V3h3Z"/></svg>
     </a>
   </div>
 </nav>

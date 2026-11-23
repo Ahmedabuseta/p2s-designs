@@ -1,0 +1,38 @@
+name: IndexNow re-crawl ping
+
+on:
+  push:
+    branches: [gh-pages]
+    paths:
+      - index.html
+      - llms.txt
+      - llms-full.txt
+      - site.json
+      - sitemap.xml
+      - robots.txt
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Wait for the Pages deployment to settle
+        run: sleep 45
+
+      - name: Submit changed URLs to IndexNow
+        env:
+          INDEXNOW_WAIT_SECONDS: "600"
+        run: node scripts/indexnow.mjs

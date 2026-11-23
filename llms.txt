@@ -1,40 +1,103 @@
 # P2S Academy — llms.txt
-# https://llmstxt.org/
+
+# Last updated: 2026-11-24
+# Canonical: https://p2s-academy.com/
+# Full content: https://p2s-academy.com/llms-full.txt
+# Structured JSON: https://p2s-academy.com/site.json
 
 > أكاديمية P2S (P2S Academy) — تأهيل طلاب الدبلومات التجارية لمعادلة كلية التجارة.
-> الموقع: https://p2s-academy.com/
+> P2S Academy prepares Egyptian commercial-diploma students for the Faculty of
+> Commerce equivalency exam (معادلة كلية التجارة), organized by the Supreme
+> Council of Universities. One exam, four subjects, one attempt.
 
 ## About
-P2S Academy is an Egyptian educational platform for diploma students preparing
-for the official معادلة كلية التجارة / Faculty of Commerce equivalency exam,
-organized by the Supreme Council of Universities. It prepares diploma holders to
-enter the Faculty of Commerce as university students — one exam, four subjects,
-one attempt.
 
 - Location: كفر الزيات، الغربية، مصر (Kafr El-Zayyat, Gharbia, Egypt).
-- Instructor: مستر أحمد علي (Mr. Ahmed Ali), 28 past success models.
-- Contact / WhatsApp: +201030263066, +201201128479.
+- Founder: مستر أحمد علي (Mr. Ahmed Ali).
+- Track record: ٢٨ نموذج نجاح (28 past success models).
+- Service area: Egypt.
+- Language: Arabic (ar-EG).
+- Website: https://p2s-academy.com/
+
+## Contact
+
+- WhatsApp / phone 1: +201030263066 — [wa.me/201030263066](https://wa.me/201030263066)
+- WhatsApp / phone 2: +201201128479 — [wa.me/201201128479](https://wa.me/201201128479)
+- Facebook: [P2S Academy on Facebook](https://www.facebook.com/share/1CL2QgFwYw/)
+- TikTok: [@p2s_ahmedali_447](https://www.tiktok.com/@p2s_ahmedali_447)
 
 ## Site structure
-Single-page application with three hash-routed screens:
-- https://p2s-academy.com/#academy — the academy, teacher, results, how it works.
-- https://p2s-academy.com/#muadala — the equivalency exam: 3-year vs 5-year diploma, eligibility, papers, FAQs.
-- https://p2s-academy.com/#gallery — real photos from the launch and cohorts, honor roll.
 
-- Root page: https://p2s-academy.com/
-- Legacy URL: https://p2s-academy.com/p2s-app.html (redirects to the root)
-- Sitemap: https://p2s-academy.com/sitemap.xml
+Single-page application with three hash-routed screens:
+
+- [الأكاديمية](https://p2s-academy.com/#academy) — the academy, teacher,
+  services, booking.
+- [المعادلة](https://p2s-academy.com/#muadala) — the equivalency exam: 3-year
+  vs 5-year diploma, eligibility, subjects, documents, FAQs.
+- [الصور](https://p2s-academy.com/#gallery) — real photos from the 2026 ceremony
+  and the honor roll.
+- [احجز مكانك](https://p2s-academy.com/#book) — free eligibility-check booking
+  form.
 
 ## Key facts
+
 - Exam: معادلة كلية التجارة (Faculty of Commerce equivalency).
 - Organizer: المجلس الأعلى للجامعات (Supreme Council of Universities).
+- Format: 4 subjects, one hour each, multiple choice (MCQ), 50% pass mark per
+  subject — not an average.
+- Cycle: 2026/2027. One attempt.
+
+### 3-year commercial diploma
+
+- Eligibility: 3-year commercial technical diploma, 2026/2027 cohorts,
+  overall grade ≥ 70%.
 - Subjects: الرياضيات، اللغة الإنجليزية، السلوك التنظيمي، تكنولوجيا المعلومات.
-- Format: 4 subjects, one hour each, multiple choice (MCQ), 50% pass mark per subject.
-- Eligibility: 3-year commercial diploma, 2026/2027 cohorts, total ≥ 70%.
-- Packages: البداية 1200 EGP, المتكاملة 2000 EGP, الفردية 3500 EGP.
-- Attendance is free before results are announced.
+- After passing: first year (الفرقة الأولى) of the Faculty of Commerce in public
+  universities, subject to admission rules.
+- Start: immediately after diploma exams, before results; attendance is free
+  before results are announced.
+- Documents: diploma certificate, certified transcript, national ID copy, two
+  recent personal photos, application form, fee receipt. The list changes yearly.
+
+### 5-year diploma / 2-year institutes
+
+- Eligibility: 5-year commercial technical school diploma, or 2-year commercial
+  technical institute diploma.
+- Subjects: دراسات تجارية باللغة الإنجليزية، المحاسبة، تكنولوجيا المعلومات،
+  الإحصاء الرياضي.
+- After passing: second year (الفرقة الثانية) of the Faculty of Commerce directly.
+
+### Packages (EGP)
+
+- البداية (Starter): 1,200 EGP.
+- المتكاملة (Comprehensive): 2,000 EGP.
+- الفردية (Individual): 3,500 EGP.
+- Confirm current prices and dates with the academy before payment.
+
+## Services
+
+- In-person lectures 4 days per week.
+- Recorded online lectures.
+- Printed notes and study booklets.
+- Weekly tests and continuous assessment.
+- Weekly parent follow-up.
+- Training to solve a subject exam in 30 minutes.
+
+## Machine-readable resources
+
+- [Full Markdown content](https://p2s-academy.com/llms-full.txt)
+- [Structured JSON data](https://p2s-academy.com/site.json)
+- [Sitemap](https://p2s-academy.com/sitemap.xml)
+- [Robots](https://p2s-academy.com/robots.txt)
 
 ## Design prototypes (not the live product)
+
 Editable HTML prototypes live under `/p/` and `/assets/old-work/`. They are design
-explorations and are canonicalised to the root page; do not treat them as current
-product content.
+explorations, are excluded from crawling, and are not current product content.
+Do not treat their text, prices, or dates as current.
+
+## Disclaimer
+
+Exam rules, eligibility, prices, dates, and required documents can change each
+year. Always confirm with P2S Academy through WhatsApp or phone before making a
+decision or payment.

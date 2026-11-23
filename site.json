@@ -1,0 +1,304 @@
+{
+  "schemaVersion": "1.0",
+  "lastUpdated": "2026-11-24",
+  "canonical": "https://p2s-academy.com/",
+  "language": "ar-EG",
+  "generator": "static-site",
+  "organization": {
+    "@type": "EducationalOrganization",
+    "@id": "https://p2s-academy.com/#org",
+    "name": "P2S Academy",
+    "alternateName": ["أكاديمية P2S", "P2S Academy – Path to Success"],
+    "slogan": "طريقك لكلية التجارة",
+    "url": "https://p2s-academy.com/",
+    "logo": "https://p2s-academy.com/favicon/favicon-512.png",
+    "image": "https://p2s-academy.com/assets/img/og-cover.jpg",
+    "description": "أكاديمية P2S لتأهيل طلاب الدبلومات التجارية لمعادلة كلية التجارة — ٤ مواد، امتحان واحد، و٢٨ نموذج نجاح.",
+    "descriptionEn": "P2S Academy prepares Egyptian commercial-diploma students for the Faculty of Commerce equivalency exam.",
+    "foundingLocation": "كفر الزيات، الغربية، مصر",
+    "areaServed": "EG",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "كفر الزيات",
+      "addressRegion": "الغربية",
+      "addressCountry": "EG"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Mr. Ahmed Ali",
+      "alternateName": "مستر أحمد علي"
+    },
+    "telephone": ["+201030263066", "+201201128479"],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+201030263066",
+        "contactType": "customer service",
+        "availableLanguage": ["ar"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+201201128479",
+        "contactType": "customer service",
+        "availableLanguage": ["ar"]
+      }
+    ],
+    "sameAs": [
+      "https://wa.me/201030263066",
+      "https://www.facebook.com/share/1CL2QgFwYw/",
+      "https://www.tiktok.com/@p2s_ahmedali_447"
+    ]
+  },
+  "course": {
+    "@type": "Course",
+    "name": "معادلة كلية التجارة",
+    "nameEn": "Faculty of Commerce Equivalency Exam",
+    "description": "مسار تأهيل طلاب الدبلومات التجارية لامتحان معادلة كلية التجارة: ٤ مواد، امتحان واحد، ومحاولة واحدة.",
+    "url": "https://p2s-academy.com/#muadala",
+    "provider": "https://p2s-academy.com/#org",
+    "inLanguage": "ar",
+    "courseMode": ["Online", "OnSite"],
+    "location": "كفر الزيات، الغربية، مصر",
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "courseMode": ["Online", "OnSite"],
+        "location": {
+          "@type": "Place",
+          "name": "كفر الزيات، الغربية، مصر"
+        }
+      }
+    ],
+    "organizer": "المجلس الأعلى للجامعات (Supreme Council of Universities)",
+    "attempts": 1,
+    "subjects": [
+      {
+        "name": "الرياضيات",
+        "nameEn": "Mathematics",
+        "track": "3-year"
+      },
+      {
+        "name": "اللغة الإنجليزية",
+        "nameEn": "English",
+        "track": "3-year"
+      },
+      {
+        "name": "السلوك التنظيمي",
+        "nameEn": "Organizational Behavior",
+        "track": "3-year"
+      },
+      {
+        "name": "تكنولوجيا المعلومات",
+        "nameEn": "Information Technology",
+        "track": "3-year"
+      },
+      {
+        "name": "دراسات تجارية باللغة الإنجليزية",
+        "nameEn": "Commercial Studies in English",
+        "track": "5-year"
+      },
+      {
+        "name": "المحاسبة",
+        "nameEn": "Accounting",
+        "track": "5-year"
+      },
+      {
+        "name": "تكنولوجيا المعلومات",
+        "nameEn": "Information Technology",
+        "track": "5-year"
+      },
+      {
+        "name": "الإحصاء الرياضي",
+        "nameEn": "Mathematical Statistics",
+        "track": "5-year"
+      }
+    ],
+    "exam": {
+      "format": "multiple-choice (MCQ)",
+      "subjectCount": 4,
+      "durationPerSubjectMinutes": 60,
+      "passMarkPerSubjectPercent": 50,
+      "passRule": "50% in each subject separately, not an average",
+      "cycle": "2026/2027"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "البداية",
+        "nameEn": "Starter",
+        "price": "1200",
+        "priceCurrency": "EGP",
+        "availability": "https://schema.org/InStock",
+        "note": "Confirm current price and dates with the academy before payment."
+      },
+      {
+        "@type": "Offer",
+        "name": "المتكاملة",
+        "nameEn": "Comprehensive",
+        "price": "2000",
+        "priceCurrency": "EGP",
+        "availability": "https://schema.org/InStock",
+        "note": "Confirm current price and dates with the academy before payment."
+      },
+      {
+        "@type": "Offer",
+        "name": "الفردية",
+        "nameEn": "Individual",
+        "price": "3500",
+        "priceCurrency": "EGP",
+        "availability": "https://schema.org/InStock",
+        "note": "Confirm current price and dates with the academy before payment."
+      }
+    ]
+  },
+  "tracks": {
+    "threeYearDiploma": {
+      "label": "دبلوم تجارة ٣ سنين",
+      "eligibility": "3-year commercial technical diploma, 2026 or 2027 cohort, overall grade 70% or higher.",
+      "start": "Immediately after diploma exams, before results and coordination; attendance is free before results are announced.",
+      "afterPassing": "First year (الفرقة الأولى) of the Faculty of Commerce in public universities, after meeting admission rules.",
+      "documents": [
+        "شهادة الدبلوم",
+        "بيان درجات معتمد",
+        "صورة بطاقة الرقم القومي",
+        "صورتان شخصيتان حديثان",
+        "استمارة التقديم",
+        "إيصال سداد الرسوم"
+      ],
+      "documentsNote": "The list can change yearly; confirm with the academy."
+    },
+    "fiveYearDiploma": {
+      "label": "دبلوم تجارة ٥ سنين / معاهد فنية",
+      "eligibility": "5-year commercial technical school diploma, or 2-year commercial technical institute diploma.",
+      "afterPassing": "Second year (الفرقة الثانية) of the Faculty of Commerce directly.",
+      "subjects": [
+        "دراسات تجارية باللغة الإنجليزية",
+        "المحاسبة",
+        "تكنولوجيا المعلومات",
+        "الإحصاء الرياضي"
+      ]
+    }
+  },
+  "services": [
+    "محاضرات حضورية ٤ أيام أسبوعيًا",
+    "محاضرات مسجلة أونلاين للمراجعة في أي وقت",
+    "توفير الملازم والمذكرات الدراسية",
+    "اختبارات أسبوعية لقياس مستوى الطالب ومتابعة تقدمه",
+    "تقييم مستمر وتحديد نقاط الضعف",
+    "المتابعة مع أولياء الأمور أسبوعيًا",
+    "تدريب الطالب على فهم المنهج وحل امتحان المادة في ٣٠ دقيقة"
+  ],
+  "booking": {
+    "free": true,
+    "fields": ["name", "phone", "diploma", "graduationYear", "governorate"],
+    "note": "Submitting the form does not create a payment obligation. Phone numbers are not published or shared.",
+    "whatsapp": "https://wa.me/201030263066"
+  },
+  "sections": [
+    {
+      "id": "academy",
+      "name": "الأكاديمية",
+      "description": "من نحن، الخدمات، الإدارة، والتقديم.",
+      "url": "https://p2s-academy.com/#academy"
+    },
+    {
+      "id": "muadala",
+      "name": "المعادلة",
+      "description": "شروط التقديم، المواد، الأوراق، والأسئلة الشائعة.",
+      "url": "https://p2s-academy.com/#muadala"
+    },
+    {
+      "id": "gallery",
+      "name": "الصور",
+      "description": "صور حقيقية من حفل تكريم دفعة ٢٠٢٦ ولوحة الشرف.",
+      "url": "https://p2s-academy.com/#gallery"
+    },
+    {
+      "id": "book",
+      "name": "احجز مكانك",
+      "description": "نموذج حجز مجاني للتحقق من الأهلية.",
+      "url": "https://p2s-academy.com/#book"
+    }
+  ],
+  "faq": [
+    {
+      "track": "3-year",
+      "question": "مين يقدر يقدّم في معادلة كلية التجارة من دبلوم ٣ سنين؟",
+      "answer": "أي طالب دبلوم فني تجاري ٣ سنين من دفعات ٢٠٢٦ و٢٠٢٧ ومجموعه ٧٠٪ أو أكتر. نراجع شهادتك ودفعة تخرجك ونأكد الأهلية قبل أي دفع."
+    },
+    {
+      "track": "3-year",
+      "question": "وبعد النجاح بدخل فرقة أولى ولا تانية؟",
+      "answer": "الترشيح بيكون للفرقة الأولى بكلية التجارة في الجامعات الحكومية بعد استيفاء قواعد القبول."
+    },
+    {
+      "track": "3-year",
+      "question": "الامتحان بياخد كام يوم؟",
+      "answer": "ساعة لكل مادة، ٤ مواد، وكل الأسئلة اختيار من متعدد (MCQ)."
+    },
+    {
+      "track": "3-year",
+      "question": "النجاح في كل مادة لوحده ولا بالمجموع؟",
+      "answer": "لكل مادة على حدة حد نجاح ٥٠٪ — مش متوسط. مادة واحدة تحت النص بتقفل الطريق كله."
+    },
+    {
+      "track": "3-year",
+      "question": "مجموعي أقل من ٧٠٪ — فيه أمل؟",
+      "answer": "الشرط الأساسي للمعادلة إن المجموع ٧٠٪ أو أكتر. لو أقل، كلّمنا بالرقم — فيه حالات بترشيح من التنسيق أو بمسار مختلف."
+    },
+    {
+      "track": "3-year",
+      "question": "إيه الأوراق اللي بجهّزها؟",
+      "answer": "شهادة الدبلوم، بيان درجات معتمد، صورة بطاقة الرقم القومي، صورتين شخصيتين حديثين، استمارة التقديم، وإيصال سداد الرسوم. القائمة بتتغيّر من سنة لسنة."
+    },
+    {
+      "track": "3-year",
+      "question": "أبدأ إمتى بالظبط؟",
+      "answer": "بعد امتحانات الدبلوم مباشرة — من غير ما تستنى النتيجة أو التنسيق. الحضور قبل ظهور النتيجة مجاني."
+    },
+    {
+      "track": "5-year",
+      "question": "ما هي معادلة كلية التجارة؟",
+      "answer": "اختبار تابع للمجلس الأعلى للجامعات، وهدفه منحك فرصة استكمال تعليمك الجامعي والالتحاق بكلية التجارة."
+    },
+    {
+      "track": "5-year",
+      "question": "مين الفئات المسموح لها بالتقديم؟",
+      "answer": "الحاصلون على دبلوم المدارس الفنية التجارية نظام الخمس سنوات، والحاصلون على دبلوم المعاهد الفنية التجارية نظام السنتين."
+    },
+    {
+      "track": "5-year",
+      "question": "إيه مواد امتحان المعادلة؟",
+      "answer": "٤ مواد: دراسات تجارية باللغة الإنجليزية، المحاسبة، تكنولوجيا المعلومات، والإحصاء الرياضي."
+    },
+    {
+      "track": "5-year",
+      "question": "بعد النجاح بدخل فرقة كام؟",
+      "answer": "بتدخل الفرقة الثانية بكلية التجارة مباشرة."
+    },
+    {
+      "track": "5-year",
+      "question": "إيه أهمية المعادلة؟",
+      "answer": "فرصتك الحقيقية لاستكمال تعليمك الجامعي والحصول على بكالوريوس تجارة."
+    }
+  ],
+  "social": {
+    "whatsapp": "https://wa.me/201030263066",
+    "facebook": "https://www.facebook.com/share/1CL2QgFwYw/",
+    "tiktok": "https://www.tiktok.com/@p2s_ahmedali_447"
+  },
+  "resources": {
+    "llmsTxt": "https://p2s-academy.com/llms.txt",
+    "llmsFullTxt": "https://p2s-academy.com/llms-full.txt",
+    "siteJson": "https://p2s-academy.com/site.json",
+    "sitemap": "https://p2s-academy.com/sitemap.xml",
+    "robots": "https://p2s-academy.com/robots.txt"
+  },
+  "indexNow": {
+    "host": "p2s-academy.com",
+    "key": "p2s-f6f17c57a31832608040d4cfdf8f98c8",
+    "keyLocation": "https://p2s-academy.com/p2s-f6f17c57a31832608040d4cfdf8f98c8.txt",
+    "endpoint": "https://api.indexnow.org/indexnow"
+  },
+  "disclaimer": "Exam rules, eligibility, prices, dates, and required documents can change. Always confirm with P2S Academy before making a decision or payment."
+}

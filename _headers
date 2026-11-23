@@ -1,4 +1,6 @@
 # Cloudflare Pages / Netlify compatible headers
+# Last updated: 2026-11-24
+
 # HTML: always revalidate so new deploys appear immediately
 /*
   X-Content-Type-Options: nosniff
@@ -10,6 +12,7 @@
 /
   ! Cache-Control
   Cache-Control: public, max-age=0, must-revalidate
+  Link: <https://p2s-academy.com/llms.txt>; rel="llms-txt", <https://p2s-academy.com/llms-full.txt>; rel="alternate"; type="text/markdown", <https://p2s-academy.com/site.json>; rel="alternate"; type="application/json"
 
 /*.html
   ! Cache-Control
@@ -30,11 +33,39 @@
   ! Cache-Control
   Cache-Control: public, max-age=31536000, immutable
 
+# Design prototypes are not current product content
+/p/*
+  X-Robots-Tag: noindex, nofollow
+
+/assets/old-work/*
+  X-Robots-Tag: noindex, nofollow
+
+# Machine-readable data for search engines and AI agents
 /robots.txt
   Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
 
 /sitemap.xml
   Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
 
 /llms.txt
   Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain; charset=utf-8
+
+/llms-full.txt
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain; charset=utf-8
+
+/site.json
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+  Content-Type: application/json; charset=utf-8
+
+# IndexNow key file — must be publicly readable at the site root
+/p2s-f6f17c57a31832608040d4cfdf8f98c8.txt
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+  Content-Type: text/plain; charset=utf-8

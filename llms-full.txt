@@ -1,0 +1,282 @@
+# P2S Academy — Complete Site Content for LLMs and AI Agents
+
+> Last updated: 2026-11-24
+> Canonical URL: https://p2s-academy.com/
+> Language: Arabic (Egyptian) — `ar-EG`
+> Machine-readable JSON: https://p2s-academy.com/site.json
+> Short index: https://p2s-academy.com/llms.txt
+> Sitemap: https://p2s-academy.com/sitemap.xml
+
+This file contains the full public content of the P2S Academy website in plain
+Markdown so AI agents and LLMs can read it without parsing the interactive
+single-page app.
+
+## About P2S Academy
+
+P2S Academy (أكاديمية P2S) — also written “P2S Academy – Path to Success” and
+“طريقك لكلية التجارة” — is an Egyptian educational platform in Kafr El-Zayyat,
+Gharbia, Egypt. It prepares commercial-diploma students for the
+**معادلة كلية التجارة** (Faculty of Commerce Equivalency Exam), which is
+organized by the **المجلس الأعلى للجامعات** (Supreme Council of Universities).
+
+The academy helps diploma holders become eligible to enter the Faculty of
+Commerce as university students. The program covers one exam, four subjects,
+and one attempt.
+
+- Founder and director: **Mr. Ahmed Ali** (مستر أحمد علي).
+- Track record shown on the site: **28 past success models** (٢٨ نموذج نجاح).
+- Location: كفر الزيات، الغربية، مصر (Kafr El-Zayyat, Gharbia, Egypt).
+- Service area: Egypt.
+- Languages: Arabic.
+- Website: https://p2s-academy.com/
+
+## Contact
+
+- WhatsApp / phone: **+20 103 026 3066** (`+201030263066`)
+  - WhatsApp link: https://wa.me/201030263066
+  - Local phone link: tel:01030263066
+- WhatsApp / phone: **+20 120 112 8479** (`+201201128479`)
+  - WhatsApp link: https://wa.me/201201128479
+- Facebook: https://www.facebook.com/share/1CL2QgFwYw/
+- TikTok: https://www.tiktok.com/@p2s_ahmedali_447
+
+## What the academy offers
+
+- In-person lectures 4 days per week.
+- Recorded online lectures for review at any time.
+- Printed notes and study booklets.
+- Weekly tests to measure each student’s level and progress.
+- Continuous assessment and identification of weak points.
+- Weekly follow-up with parents/guardians.
+- Training students to understand the curriculum and solve a subject exam in
+  **30 minutes**.
+- The stated goal is not just attending lectures, but being able to understand
+  the material and solve the exam quickly, calmly, and confidently.
+
+## The equivalency exam (معادلة كلية التجارة)
+
+### Common facts
+
+- Organizer: Supreme Council of Universities (المجلس الأعلى للجامعات).
+- Purpose: allow commercial-diploma holders to continue university education
+  and enter the Faculty of Commerce.
+- Attempts: one attempt.
+- Format: multiple-choice questions (MCQ).
+- Number of subjects: 4.
+- Time: one hour per subject.
+- Pass mark: **50% in each subject separately** — not an average. One subject
+  below 50% closes the whole path.
+- The exam is offered for the 2026/2027 cycle.
+
+### 3-year commercial diploma (دبلوم تجارة ٣ سنين)
+
+Eligibility:
+
+- Any student with a **3-year commercial technical diploma**
+  (دبلوم فني تجاري ٣ سنين).
+- Graduation cohorts: **2026 and 2027**.
+- Overall grade: **70% or higher** (٧٠٪ أو أكتر).
+
+Subjects:
+
+1. Mathematics (الرياضيات) — algebra, ratios, sequences, and fast solving.
+2. English (اللغة الإنجليزية) — grammar, vocabulary, and reading comprehension.
+3. Organizational Behavior (السلوك التنظيمي) — individual and group behavior
+   inside organizations.
+4. Information Technology (تكنولوجيا المعلومات) — computer, network, and
+   information fundamentals.
+
+After passing:
+
+- Nomination is for the **first year** (الفرقة الأولى) of the Faculty of
+  Commerce in public universities, after meeting admission rules. The student
+  then completes university study from the beginning, like a secondary-school
+  student.
+
+When to start:
+
+- Start **immediately after the diploma exams**, without waiting for results or
+  the coordination/placement process.
+- Attendance is **free before results are announced**.
+
+Documents to prepare:
+
+- Diploma certificate (شهادة الدبلوم).
+- Certified transcript / grade statement (بيان درجات معتمد).
+- Copy of the national ID card (صورة بطاقة الرقم القومي).
+- Two recent personal photos (صورتان شخصيتان حديثان).
+- Application form (استمارة التقديم).
+- Fee payment receipt (إيصال سداد الرسوم).
+
+The document list can change from year to year. The academy reviews it with the
+student before the deadline.
+
+If the overall grade is below 70%:
+
+- 70% is the basic requirement for the equivalency.
+- Some cases may be nominated through the coordination process or a different
+  path. The academy advises contacting them with the actual grade rather than
+  paying for a closed path.
+
+### 5-year commercial diploma and 2-year technical institutes
+(نظام الخمس سنوات والمعاهد الفنية التجارية)
+
+Eligibility:
+
+- Holders of a **5-year commercial technical school diploma**
+  (دبلوم المدارس الفنية التجارية نظام الخمس سنوات).
+- Holders of a **2-year commercial technical institute diploma**
+  (دبلوم المعاهد الفنية التجارية نظام السنتين).
+
+Subjects:
+
+1. Commercial Studies in English (دراسات تجارية باللغة الإنجليزية).
+2. Accounting (المحاسبة).
+3. Information Technology (تكنولوجيا المعلومات).
+4. Mathematical Statistics (الإحصاء الرياضي).
+
+After passing:
+
+- The student enters the **second year** (الفرقة الثانية) of the Faculty of
+  Commerce directly.
+
+Importance:
+
+- The equivalency is the student’s opportunity to complete university education
+  and obtain a Bachelor of Commerce (بكالوريوس تجارة).
+
+### Yearly change disclaimer
+
+Conditions, dates, subjects, and required documents can change every year
+according to decisions of the Supreme Council of Universities and the
+coordination office. P2S Academy updates the site when changes are announced
+and confirms details with each student before applying.
+
+## Packages and prices
+
+The site’s structured data lists three packages (EGP):
+
+| Package | Arabic name | Price |
+|---|---|---|
+| Starter | البداية | 1,200 EGP |
+| Comprehensive | المتكاملة | 2,000 EGP |
+| Individual | الفردية | 3,500 EGP |
+
+Prices and dates must be confirmed with the academy before payment.
+
+## Booking / free consultation
+
+The site includes a free booking form asking for:
+
+- Name.
+- Mobile / WhatsApp number.
+- Diploma type: 3-year or 5-year commercial diploma.
+- Graduation year: 2026 or 2027.
+- Governorate.
+
+The academy reviews the student’s certificate and graduation year, then explains
+eligibility and the next step. Submitting the form does not create a payment
+obligation. The site states that phone numbers are not published or shared.
+
+Direct booking/contact link: https://wa.me/201030263066
+
+## Site sections
+
+- **#academy** — About the academy, services, management, booking form.
+  https://p2s-academy.com/#academy
+- **#muadala** — Equivalency exam conditions, subjects, documents, and FAQs for
+  3-year and 5-year diplomas.
+  https://p2s-academy.com/#muadala
+- **#gallery** — Real photos from the 2026 cohort ceremony, honor moments, and
+  the honor roll.
+  https://p2s-academy.com/#gallery
+
+## Frequently asked questions
+
+### 3-year diploma
+
+**Who can apply for the equivalency from a 3-year diploma?**
+Any student with a 3-year commercial technical diploma from the 2026 or 2027
+cohorts with an overall grade of 70% or higher. The academy reviews the
+certificate and graduation year and confirms eligibility before any payment.
+
+**After passing, does the student enter the first or second year?**
+Nomination is for the first year of the Faculty of Commerce in public
+universities after meeting admission rules. The student completes university
+study from the beginning.
+
+**How many days does the exam take?**
+One hour per subject, four subjects, all multiple-choice. No essay memorization
+is required; understanding, time management, and question practice make the
+difference.
+
+**Is passing per subject or based on the total?**
+Passing is **50% per subject**, not an average. One subject below 50% closes the
+whole path, so the academy works on the student’s weakest subject from the
+start.
+
+**My overall grade is below 70% — is there hope?**
+70% or higher is the basic requirement. Some cases may be nominated through
+coordination or a different path. Contact the academy with the actual grade for
+an honest assessment.
+
+**What documents should I prepare?**
+Diploma certificate, certified transcript, copy of the national ID, two recent
+personal photos, application form, and fee payment receipt. The list changes
+yearly and is reviewed with the student before the deadline.
+
+**When exactly should I start?**
+Immediately after the diploma exams, without waiting for results or coordination.
+Starting early gains time for understanding, revision, and practice. Attendance
+before results are announced is free.
+
+### 5-year diploma / 2-year institutes
+
+**What is the Faculty of Commerce equivalency?**
+An exam affiliated with the Supreme Council of Universities that gives students
+the opportunity to complete university education and join the Faculty of
+Commerce.
+
+**Who is allowed to apply?**
+Holders of a 5-year commercial technical school diploma and holders of a 2-year
+commercial technical institute diploma.
+
+**What are the exam subjects?**
+Four subjects: Commercial Studies in English, Accounting, Information
+Technology, and Mathematical Statistics.
+
+**Which year does the student enter after passing?**
+The second year of the Faculty of Commerce directly.
+
+**Why is the equivalency important?**
+It is the student’s real opportunity to complete university education and obtain
+a Bachelor of Commerce.
+
+## Photos and results
+
+The gallery shows real photos from the 2026 cohort honor ceremony, students
+receiving certificates, honor boards, and moments with Mr. Ahmed Ali. The site
+also displays an honor roll of students from the 2024, 2025, and 2026 cohorts
+who reached the Faculty of Commerce.
+
+## Design prototypes (not live product content)
+
+Editable HTML design explorations live under `/p/` and `/assets/old-work/`.
+They are prototypes, are excluded from crawling, and must not be treated as
+current product content or current offers.
+
+## Machine-readable resources
+
+- `https://p2s-academy.com/llms.txt` — short LLM index.
+- `https://p2s-academy.com/llms-full.txt` — this full content file.
+- `https://p2s-academy.com/site.json` — structured JSON data.
+- `https://p2s-academy.com/sitemap.xml` — XML sitemap with `lastmod`.
+- `https://p2s-academy.com/robots.txt` — crawler rules.
+- `https://p2s-academy.com/p2s-f6f17c57a31832608040d4cfdf8f98c8.txt` — IndexNow
+  key file.
+
+## Disclaimer
+
+This content is provided for information and discovery. Exam rules, eligibility,
+prices, dates, and required documents can change. Always confirm with P2S
+Academy through WhatsApp or phone before making a decision or payment.
