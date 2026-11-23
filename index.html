@@ -293,6 +293,15 @@
   }
   .wa-btn:hover{filter:brightness(1.06)}
   .wa-btn svg{width:19px;height:19px}
+  .head-socials{display:flex;align-items:center;gap:6px;flex:0 0 auto}
+  .head-social{
+    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+    background:#1A2440;border:1px solid #2A3552;color:#D8E0F2;text-decoration:none;
+    transition:background .18s,border-color .18s,color .18s;
+  }
+  .head-social:hover{background:#223056;border-color:#3A4566;color:#fff}
+  .head-social svg{width:15px;height:15px}
+  @media(max-width:899px){.honor-btn{margin-inline-start:auto}}
   /* ---------- Screens ---------- */
   .screen{display:none;padding-bottom:calc(var(--bar-h) + 24px)}
   .screen.is-active{display:block}
@@ -731,10 +740,6 @@
   .nav-tab span{font-size:11px;font-weight:700;letter-spacing:.01em}
   .nav-tab:hover{color:#fff;background:rgba(255,255,255,.09)}
   .nav-tab.is-active{background:var(--brand);color:#fff}
-  .nav-tab.nav-social{min-width:44px;color:#C3CCE0}
-  .nav-tab.nav-social:hover{background:rgba(255,255,255,.12);color:#fff}
-  .nav-tab.nav-social:focus-visible{outline:2px solid #fff;outline-offset:2px;color:#fff;background:rgba(255,255,255,.12)}
-  .bar-inner{gap:3px}
 
   /* ---------- Honor sheet ---------- */
   .sheet-backdrop{
@@ -814,6 +819,14 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3"/><path d="M7 5H4v2a3 3 0 0 0 3 3"/></svg>
       <span>لوحة الشرف</span>
     </button>
+    <div class="head-socials" role="group" aria-label="تابعنا">
+      <a class="head-social" href="https://www.facebook.com/share/1CL2QgFwYw/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="فيسبوك">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
+      </a>
+      <a class="head-social" href="https://www.tiktok.com/@p2s_ahmedali_447" target="_blank" rel="noopener" aria-label="تيك توك">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.8 3.7 4 4v3a7.3 7.3 0 0 1-4-1.3v6.5a6 6 0 1 1-5.2-5.9v3.1a2.9 2.9 0 1 0 2.2 2.8V3h3Z"/></svg>
+      </a>
+    </div>
     <a class="wa-btn" href="https://wa.me/201030263066" target="_blank" rel="noopener" aria-label="كلّمنا على واتساب">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.35-1.4a9.86 9.86 0 0 0 4.69 1.19h.01c5.43 0 9.84-4.4 9.84-9.84 0-2.63-1.02-5.1-2.88-6.96A9.78 9.78 0 0 0 12.04 2Zm0 17.98h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.3c0-4.51 3.68-8.18 8.2-8.18 2.19 0 4.25.85 5.8 2.4a8.14 8.14 0 0 1 2.4 5.79c0 4.51-3.67 8.13-8.2 8.13Zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.96-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.17-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.4 1.02 2.56c.12.17 1.75 2.67 4.23 3.74.59.25 1.05.4 1.41.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
     </a>
@@ -837,7 +850,7 @@
         </div>
         <figure class="photo-frame">
           <img src="assets/img/hero.jpg" alt="طلاب P2S بيرفعوا إيديهم في يوم إطلاق الأكاديمية — دفعة ٢٠٢٦" fetchpriority="high" />
-          <figcaption class="badge"><b>٢٨</b>نموذج نجاح في المعادلة</figcaption>
+          <!-- <figcaption class="badge"><b>٢٨</b>نموذج نجاح في المعادلة</figcaption> -->
         </figure>
       </div>
     </div>
@@ -1284,12 +1297,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
       <span>الصور</span>
     </a>
-    <a class="nav-tab nav-social" href="https://www.facebook.com/share/1CL2QgFwYw/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="فيسبوك">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>
-    </a>
-    <a class="nav-tab nav-social" href="https://www.tiktok.com/@p2s_ahmedali_447" target="_blank" rel="noopener" aria-label="تيك توك">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.8 3.7 4 4v3a7.3 7.3 0 0 1-4-1.3v6.5a6 6 0 1 1-5.2-5.9v3.1a2.9 2.9 0 1 0 2.2 2.8V3h3Z"/></svg>
-    </a>
   </div>
 </nav>
 
@@ -1532,7 +1539,7 @@
 
   /* ---------- Booking form → Google Sheet ---------- */
   // الصق رابط Google Apps Script Web App (اللي ينتهي بـ /exec) هنا عشان الفورم يتحفظ في الشيت.
-  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbyOv3zutHtiswn47QnqMkEGaWx_F1LQOCMwHwBjkMclGbtOGo2Yj7kkg7UFJRdz6vUuFw/exec';
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzbU-HGPuK7HXdieawppeMUe3WQs7mQWwFOPcfEle8cXzTQ3SLJ-MVeyURJL4rK7RAQfQ/exec';
   var bookingForm = document.getElementById('booking-form');
   if(bookingForm){
     var statusEl = document.getElementById('booking-status');
@@ -1577,6 +1584,8 @@
     function collect(){
       var data = {};
       new FormData(bookingForm).forEach(function(v,k){ data[k] = v; });
+      data.governorate = data.gov || '';
+      data.graduationYear = data.year || '';
       data.source = 'p2s-academy';
       data.sentAt = new Date().toISOString();
       return data;
