@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>P2S Academy — معادلة كلية التجارة | من دبلوم تجارة لكلية التجارة</title>
 <meta name="description" content="أكاديمية P2S: تأهيل طلاب الدبلومات التجارية لمعادلة كلية التجارة — ٤ مواد، امتحان واحد، و٢٨ نموذج نجاح. اعرف شروط التقديم والأوراق واحجز مكانك." />
-<meta name="keywords" content="معادلة كلية التجارة, P2S Academy, أكاديمية P2S, دبلوم تجارة, دبلوم ٣ سنين, دبلوم ٥ سنين, معادلة كلية Commerce, كفر الزيات, بكالوريوس تجارة" />
+<meta name="keywords" content="معادلة كلية التجارة, معادلة كلية التجارة 2026, معادلة كلية التجارة 2027, P2S Academy, أكاديمية P2S, دبلوم تجارة, دبلوم تجارة ٣ سنين, دبلوم تجارة ٥ سنين, شروط معادلة كلية التجارة, أوراق التقديم للمعادلة, أسئلة معادلة كلية التجارة, مواد معادلة كلية التجارة, امتحان معادلة كلية التجارة, دبلوم فني تجاري, معادلة كلية Commerce, بكالوريوس تجارة, كلية التجارة, كفر الزيات, الغربية" />
 <meta name="author" content="P2S Academy" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="theme-color" content="#0C1120" />
 <meta name="color-scheme" content="light" />
 <meta name="application-name" content="P2S Academy" />
@@ -148,6 +149,34 @@
           "@type": "Question",
           "name": "إيه الأوراق المطلوبة للتقديم؟",
           "acceptedAnswer": { "@type": "Answer", "text": "شهادة الدبلوم، بيان درجات معتمد، صورة بطاقة الرقم القومي، صورتان شخصيتان، استمارة التقديم، وإيصال سداد الرسوم — والقائمة تتغير من سنة لسنة ونراجعها معاك." }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://p2s-academy.com/#sections",
+      "name": "أقسام موقع P2S Academy",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "الأكاديمية — من نحن وخدماتنا",
+          "description": "نبذة عن أكاديمية P2S: محاضرات حضورية وأونلاين، ملازم، اختبارات أسبوعية، ومتابعة مع أولياء الأمور.",
+          "url": "https://p2s-academy.com/#academy"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "معادلة كلية التجارة — الشروط والأسئلة",
+          "description": "شروط التقديم للمعادلة من دبلوم ٣ سنين و٥ سنين، المواد، الأوراق المطلوبة، وأسئلة شائعة.",
+          "url": "https://p2s-academy.com/#muadala"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "صور من داخل الأكاديمية",
+          "description": "صور حقيقية من يوم إطلاق P2S ودفعات المعادلة ولوحة الشرف.",
+          "url": "https://p2s-academy.com/#gallery"
         }
       ]
     }
@@ -551,26 +580,118 @@
   .honor-card p{margin:6px 0 0;color:var(--on-dark-soft);font-size:14px;max-width:46ch}
   .honor-card .btn svg{width:17px;height:17px}
 
+  /* ---------- Booking form ---------- */
+  .booking-form{display:grid;gap:14px;max-width:720px}
+  .field-row{display:grid;gap:14px}
+  @media(min-width:600px){.field-row{grid-template-columns:1fr 1fr}}
+  .field{display:grid;gap:6px}
+  .field > span{font-size:12px;font-weight:700;color:var(--ink-soft)}
+  .field input{
+    width:100%;min-height:48px;padding:10px 14px;
+    border:1px solid var(--line);border-radius:12px;background:#fff;
+    font:inherit;font-size:15px;color:var(--ink);
+  }
+  .field input::placeholder{color:#A9A296}
+  .field input:focus{border-color:var(--ink);outline:none}
+
+  /* Custom themed select */
+  .cselect{position:relative}
+  .cselect-btn{
+    width:100%;min-height:48px;padding:10px 14px;padding-inline-end:40px;
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    border:1px solid var(--line);border-radius:12px;background:#fff;
+    font:inherit;font-size:15px;color:var(--ink);cursor:pointer;text-align:start;
+    transition:border-color .18s,box-shadow .18s;
+  }
+  .cselect-btn:hover{border-color:#CFC7B8}
+  .cselect-btn:focus-visible{border-color:var(--ink);box-shadow:0 0 0 3px var(--brand-soft);outline:none}
+  .cselect.is-open .cselect-btn{border-color:var(--ink)}
+  .cselect.is-empty .cselect-label{color:#A9A296}
+  .cselect.is-invalid .cselect-btn{border-color:var(--brand)}
+  .cselect-caret{flex:0 0 14px;width:14px;height:14px;color:var(--ink-soft);transition:transform .22s}
+  .cselect.is-open .cselect-caret{transform:rotate(180deg)}
+  .cselect-menu{
+    position:absolute;inset-inline:0;top:calc(100% + 6px);z-index:40;
+    margin:0;padding:6px;list-style:none;
+    background:var(--ink);color:#fff;border:1px solid var(--line-dark);
+    border-radius:14px;max-height:240px;overflow-y:auto;
+    opacity:0;transform:translateY(-6px);pointer-events:none;
+    transition:opacity .18s ease,transform .18s ease;
+  }
+  .cselect.is-open .cselect-menu{opacity:1;transform:none;pointer-events:auto}
+  .cselect-menu li{
+    padding:10px 12px;border-radius:9px;font-size:14px;cursor:pointer;
+    transition:background .15s;
+  }
+  .cselect-menu li:hover,.cselect-menu li.is-active{background:#1F2A48}
+  .cselect-menu li[aria-selected="true"]{background:var(--brand);color:#fff}
+  .booking-foot{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:4px}
+  .form-status{font-size:13px;font-weight:700;color:var(--ink-soft);min-height:18px}
+  .form-status.is-success{color:#1E7B45}
+  .form-status.is-error{color:var(--brand-deep)}
+  .form-status.is-busy{color:var(--ink-soft)}
+  .form-note{margin:0;font-size:12px;color:var(--ink-soft)}
+  .field-error{display:none;font-size:11.5px;font-weight:700;color:var(--brand-deep);line-height:1.5}
+  .field-error.is-shown{display:block}
+  .field input.is-invalid,.cselect.is-invalid .cselect-btn{
+    border-color:var(--brand);box-shadow:0 0 0 3px rgba(228,17,63,.08);
+  }
+
+  /* ---------- Footer ---------- */
+  .site-footer{
+    background:var(--ink);color:#fff;border-top:1px solid var(--line-dark);
+    padding:8px 0 calc(var(--bar-h) + 2px);
+  }
+  .site-footer .wrap{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;min-height:38px}
+  .foot-brand{display:flex;align-items:center;gap:7px;text-decoration:none;flex:0 0 auto}
+  .foot-brand img{height:20px;width:auto}
+  .foot-brand b{display:none}
+  .foot-brand small{font-size:11px;line-height:1;color:var(--on-dark-soft);white-space:nowrap}
+  .foot-links{display:flex;gap:14px;flex-wrap:wrap}
+  .foot-links a{font-size:11.5px;font-weight:700;color:var(--on-dark-soft);text-decoration:none;letter-spacing:.01em}
+  @media(max-width:599px){
+    .foot-brand small{display:none}
+    .foot-links{gap:12px}
+    .site-footer .wrap{gap:8px 12px}
+  }
+  .foot-links a:hover{color:#fff}
+  .foot-socials{display:flex;gap:6px;margin-inline-start:auto}
+  .social-btn{
+    width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+    border:1px solid #2A3552;background:#1A2440;color:#fff;text-decoration:none;
+    transition:background .18s,border-color .18s;
+  }
+  .social-btn:hover{background:#223056;border-color:#3A4566}
+  .social-btn svg{width:14px;height:14px}
+  .foot-copy{display:none}
+  @media(min-width:1000px){
+    .foot-copy{display:block;flex-basis:auto;margin:0;padding:0;border:0;font-size:10px;color:var(--on-dark-soft);white-space:nowrap}
+  }
+
   /* ---------- Bottom bar ---------- */
   .bottom-bar{
     position:fixed;inset-inline:0;bottom:0;z-index:70;
-    padding:8px 10px calc(8px + env(safe-area-inset-bottom));
-    background:linear-gradient(to top,rgba(12,17,32,.98),rgba(12,17,32,.86));
-    border-top:1px solid var(--line-dark);
-    backdrop-filter:blur(14px);
+    display:flex;justify-content:center;
+    padding:10px 10px calc(10px + env(safe-area-inset-bottom));
+    background:none;border:0;
   }
   .bar-inner{
-    width:min(100%,560px);margin-inline:auto;display:grid;grid-template-columns:repeat(3,1fr);
-    gap:4px;background:#101829;border:1px solid #222B45;border-radius:999px;padding:5px;
+    display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px;
+    border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:5px;
+    background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0) 48%),rgba(12,17,32,.24);
+    -webkit-backdrop-filter:blur(6px) saturate(180%);
+    backdrop-filter:blur(5px) saturate(180%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.22);
   }
   .nav-tab{
-    display:grid;justify-items:center;gap:3px;min-height:52px;padding:7px 4px;border:0;border-radius:999px;
-    background:none;cursor:pointer;color:#8C97B2;text-decoration:none;
+    display:grid;justify-items:center;gap:3px;min-width:84px;min-height:52px;padding:7px 12px;
+    border:0;border-radius:999px;background:transparent;
+    cursor:pointer;color:#D8E0F2;text-decoration:none;
     transition:color .2s,background .25s;
   }
   .nav-tab svg{width:20px;height:20px}
   .nav-tab span{font-size:11px;font-weight:700;letter-spacing:.01em}
-  .nav-tab:hover{color:#D8E0F2}
+  .nav-tab:hover{color:#fff;background:rgba(255,255,255,.09)}
   .nav-tab.is-active{background:var(--brand);color:#fff}
 
   /* ---------- Honor sheet ---------- */
@@ -740,6 +861,61 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="section section-alt" id="book">
+      <div class="wrap">
+        <div class="section-head split">
+          <div>
+            <div class="eyebrow">٠٤ — احجز مكانك</div>
+            <h2 class="section-title">سيب بياناتك وهنكلّمك</h2>
+          </div>
+          <p class="section-lead">من غير أي التزام — نراجع شهادتك وسنة تخرجك ونقولك الأهلية والخطوة الجاية.</p>
+        </div>
+        <form class="booking-form" id="booking-form" novalidate>
+          <div class="field-row">
+            <label class="field"><span>الاسم</span><input name="name" type="text" required placeholder="اسمك بالكامل" autocomplete="name" /><small class="field-error" data-error="name"></small></label>
+            <label class="field"><span>رقم الموبايل / واتساب</span><input name="phone" type="tel" required inputmode="tel" placeholder="01xxxxxxxxx" autocomplete="tel" dir="ltr" /><small class="field-error" data-error="phone"></small></label>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <span>نوع الدبلوم</span>
+              <div class="cselect" data-required>
+                <button class="cselect-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cselect-label">اختر</span>
+                  <svg class="cselect-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <ul class="cselect-menu" role="listbox" aria-label="نوع الدبلوم">
+                  <li role="option" data-value="دبلوم تجارة ٣ سنين" aria-selected="false">دبلوم تجارة ٣ سنين</li>
+                  <li role="option" data-value="دبلوم تجارة ٥ سنين" aria-selected="false">دبلوم تجارة ٥ سنين</li>
+                </ul>
+                <input type="hidden" name="diploma" value="" />
+              </div>
+              <small class="field-error" data-error="diploma"></small>
+            </div>
+            <div class="field">
+              <span>سنة التخرج</span>
+              <div class="cselect" data-required>
+                <button class="cselect-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cselect-label">اختر</span>
+                  <svg class="cselect-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <ul class="cselect-menu" role="listbox" aria-label="سنة التخرج">
+                  <li role="option" data-value="2026" aria-selected="false">2026</li>
+                  <li role="option" data-value="2027" aria-selected="false">2027</li>
+                </ul>
+                <input type="hidden" name="year" value="" />
+              </div>
+              <small class="field-error" data-error="year"></small>
+            </div>
+          </div>
+          <div class="booking-foot">
+            <button class="btn btn-primary" type="submit">ابعت وهنكلّمك</button>
+            <span class="form-status" id="booking-status" role="status" aria-live="polite"></span>
+          </div>
+          <p class="form-note">رقمك مش بيتنشر ولا بيتبعت لحد.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -945,6 +1121,32 @@
 
 </main>
 
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="foot-brand" href="#academy">
+      <img src="assets/img/mark-light.png" alt="P2S Academy" />
+      <span><b>P2S Academy</b><small>طريقك لكلية التجارة</small></span>
+    </a>
+    <nav class="foot-links" aria-label="روابط سريعة">
+      <a href="#academy" data-tab="academy">الأكاديمية</a>
+      <a href="#muadala" data-tab="muadala">المعادلة</a>
+      <a href="#gallery" data-tab="gallery">الصور</a>
+    </nav>
+    <div class="foot-socials" aria-label="تابعنا">
+      <a class="social-btn" href="https://wa.me/201030263066" target="_blank" rel="noopener" aria-label="واتساب">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.35-1.4a9.86 9.86 0 0 0 4.69 1.19h.01c5.43 0 9.84-4.4 9.84-9.84 0-2.63-1.02-5.1-2.88-6.96A9.78 9.78 0 0 0 12.04 2Zm0 17.98h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.25-4.3c0-4.51 3.68-8.18 8.2-8.18 2.19 0 4.25.85 5.8 2.4a8.14 8.14 0 0 1 2.4 5.79c0 4.51-3.67 8.13-8.2 8.13Zm4.5-6.1c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.12-.17.25-.64.8-.79.96-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.45-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.17-.25.25-.42.08-.16.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.07s.89 2.4 1.02 2.56c.12.17 1.75 2.67 4.23 3.74.59.25 1.05.4 1.41.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29Z"/></svg>
+      </a>
+      <a class="social-btn" href="https://www.tiktok.com/@p2s_ahmedali_447" target="_blank" rel="noopener" aria-label="تيك توك">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 3c.4 2.2 1.8 3.7 4 4v3a7.3 7.3 0 0 1-4-1.3v6.5a6 6 0 1 1-5.2-5.9v3.1a2.9 2.9 0 1 0 2.2 2.8V3h3Z"/></svg>
+      </a>
+      <a class="social-btn" href="tel:01030263066" aria-label="اتصال">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+    <div class="foot-copy">© ٢٠٢٦ P2S Academy · Path to Success · الأسعار والمواعيد بتتأكد من الأكاديمية</div>
+  </div>
+</footer>
+
 <nav class="bottom-bar" aria-label="التنقل بين الصفحات">
   <div class="bar-inner">
     <a class="nav-tab is-active" href="#academy" data-tab="academy">
@@ -1136,6 +1338,175 @@
       else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
     }
   });
+
+  /* ---------- Custom themed selects ---------- */
+  document.querySelectorAll('.cselect').forEach(function(root){
+    var btn = root.querySelector('.cselect-btn');
+    var label = root.querySelector('.cselect-label');
+    var menu = root.querySelector('.cselect-menu');
+    var input = root.querySelector('input[type="hidden"]');
+    var opts = Array.prototype.slice.call(menu.querySelectorAll('[role="option"]'));
+    root.classList.add('is-empty');
+
+    function closeSelect(){
+      root.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+    }
+    function openSelect(){
+      document.querySelectorAll('.cselect.is-open').forEach(function(o){
+        if(o !== root){ o.classList.remove('is-open'); o.querySelector('.cselect-btn').setAttribute('aria-expanded','false'); }
+      });
+      root.classList.add('is-open');
+      btn.setAttribute('aria-expanded','true');
+    }
+    function choose(li){
+      input.value = li.getAttribute('data-value');
+      label.textContent = li.textContent;
+      root.classList.remove('is-empty','is-invalid');
+      var err = root.parentNode.querySelector('.field-error');
+      if(err){ err.textContent = ''; err.classList.remove('is-shown'); }
+      opts.forEach(function(o){ o.setAttribute('aria-selected', o === li ? 'true' : 'false'); });
+      closeSelect();
+      btn.focus();
+    }
+
+    btn.addEventListener('click', function(){
+      if(root.classList.contains('is-open')) closeSelect(); else openSelect();
+    });
+    opts.forEach(function(li){
+      li.addEventListener('click', function(){ choose(li); });
+    });
+    root.addEventListener('keydown', function(e){
+      if(e.key === 'Escape'){ closeSelect(); btn.focus(); return; }
+      if(e.key === 'ArrowDown' || e.key === 'ArrowUp'){
+        e.preventDefault();
+        if(!root.classList.contains('is-open')) openSelect();
+        var idx = opts.indexOf(menu.querySelector('.is-active'));
+        idx = (idx + (e.key === 'ArrowDown' ? 1 : -1) + opts.length) % opts.length;
+        opts.forEach(function(o){ o.classList.remove('is-active'); });
+        opts[idx].classList.add('is-active');
+      }
+      if((e.key === 'Enter' || e.key === ' ') && root.classList.contains('is-open')){
+        e.preventDefault();
+        var active = menu.querySelector('.is-active');
+        if(active) choose(active);
+      }
+    });
+  });
+  document.addEventListener('click', function(e){
+    if(e.target.closest('.cselect')) return;
+    document.querySelectorAll('.cselect.is-open').forEach(function(o){
+      o.classList.remove('is-open');
+      o.querySelector('.cselect-btn').setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- Booking form → Google Sheet ---------- */
+  // الصق رابط Google Apps Script Web App (اللي ينتهي بـ /exec) هنا عشان الفورم يتحفظ في الشيت.
+  var SHEET_URL = '';
+  var bookingForm = document.getElementById('booking-form');
+  if(bookingForm){
+    var statusEl = document.getElementById('booking-status');
+    var submitBtn = bookingForm.querySelector('button[type="submit"]');
+
+    function setStatus(state, msg){
+      statusEl.className = 'form-status' + (state ? ' is-' + state : '');
+      statusEl.textContent = msg || '';
+    }
+    function showFieldError(name, msg){
+      var el = bookingForm.querySelector('.field-error[data-error="' + name + '"]');
+      if(el){ el.textContent = msg; el.classList.add('is-shown'); }
+    }
+    function clearFieldError(name){
+      var el = bookingForm.querySelector('.field-error[data-error="' + name + '"]');
+      if(el){ el.textContent = ''; el.classList.remove('is-shown'); }
+    }
+    function validate(){
+      var ok = true, firstBad = null;
+
+      var name = bookingForm.querySelector('input[name="name"]');
+      if(!name.value.trim() || name.value.trim().length < 2){
+        name.classList.add('is-invalid'); showFieldError('name','اكتب اسمك بالكامل'); ok = false; firstBad = firstBad || name;
+      } else { name.classList.remove('is-invalid'); clearFieldError('name'); }
+
+      var phone = bookingForm.querySelector('input[name="phone"]');
+      var digits = phone.value.replace(/[^\d+]/g, '');
+      if(!/^(?:\+?20|0)?1[0125]\d{8}$/.test(digits)){
+        phone.classList.add('is-invalid'); showFieldError('phone','اكتب رقم موبايل مصري صحيح'); ok = false; firstBad = firstBad || phone;
+      } else { phone.classList.remove('is-invalid'); clearFieldError('phone'); }
+
+      [['diploma','اختر نوع الدبلوم'],['year','اختر سنة التخرج']].forEach(function(pair){
+        var cs = bookingForm.querySelector('.cselect input[name="' + pair[0] + '"]').closest('.cselect');
+        if(!cs.querySelector('input[type="hidden"]').value){
+          cs.classList.add('is-invalid'); showFieldError(pair[0], pair[1]); ok = false; firstBad = firstBad || cs.querySelector('.cselect-btn');
+        } else { cs.classList.remove('is-invalid'); clearFieldError(pair[0]); }
+      });
+
+      if(!ok && firstBad) firstBad.focus();
+      return ok;
+    }
+    function collect(){
+      var data = {};
+      new FormData(bookingForm).forEach(function(v,k){ data[k] = v; });
+      data.source = 'p2s-academy';
+      data.sentAt = new Date().toISOString();
+      return data;
+    }
+    function sendWhatsApp(data){
+      var msg = 'طلب حجز جديد\nالاسم: ' + data.name +
+                '\nالموبايل: ' + data.phone +
+                '\nنوع الدبلوم: ' + data.diploma +
+                '\nسنة التخرج: ' + data.year;
+      window.open('https://wa.me/201030263066?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+    }
+
+    bookingForm.querySelectorAll('input:not([type="hidden"])').forEach(function(inp){
+      inp.addEventListener('input', function(){
+        inp.classList.remove('is-invalid');
+        clearFieldError(inp.name);
+        if(statusEl.classList.contains('is-error')) setStatus('', '');
+      });
+    });
+
+    bookingForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!validate()){
+        setStatus('error', 'راجع الحقول المطلوبة بالأحمر.');
+        return;
+      }
+      var data = collect();
+
+      if(!SHEET_URL){
+        sendWhatsApp(data);
+        setStatus('', 'تم فتح واتساب لإرسال طلبك.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      setStatus('busy', 'جاري الإرسال…');
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+        body: new URLSearchParams(data).toString()
+      }).then(function(){
+        setStatus('success', 'تم إرسال طلبك بنجاح، هنكلّمك قريب.');
+        bookingForm.reset();
+        bookingForm.querySelectorAll('.cselect').forEach(function(cs){
+          cs.classList.add('is-empty');
+          cs.classList.remove('is-invalid');
+          cs.querySelector('.cselect-label').textContent = 'اختر';
+          cs.querySelector('input[type="hidden"]').value = '';
+          cs.querySelectorAll('[role="option"]').forEach(function(o){ o.setAttribute('aria-selected','false'); });
+        });
+      }).catch(function(){
+        setStatus('error', 'حصل خطأ في الإرسال. جرّب واتساب.');
+        sendWhatsApp(data);
+      }).finally(function(){
+        submitBtn.disabled = false;
+      });
+    });
+  }
 })();
 </script>
 </body>
